@@ -150,6 +150,9 @@ h1, h2, h3, h4, h5, h6{
 .margin-only30{
     margin: 30px;
 }
+.margin-Center20{
+    margin-bottom: 20px;
+}
 .margin-bottom30{
     margin-bottom: 30px;
 }
@@ -2298,6 +2301,10 @@ img.mfp-img {
 /*------------------------------------------------*/
 /*--------------[BLOG STYLE]-----------*/
 /*------------------------------------------------*/
+.standar-margin-centerblock{
+    margin-top: 5px;
+    text-align: center;
+}
 .standard-post-thumbnail .owl-theme .owl-controls {
     margin-top: -29px;
     text-align: center;
@@ -3040,6 +3047,16 @@ textarea {
 /*------------------------------------------------*/
 .main-product-block .product {
     margin-bottom: 30px;
+}
+.product-sidePrin {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    padding: 8px;
+    position: relative;
+    transition: all 0.3s ease 0s;
+   -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
 }
 .product {
     background: #fff none repeat scroll 0 0;
