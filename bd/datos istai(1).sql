@@ -1,5 +1,12 @@
 use istai;
-INSERT ct_usr (usr_username,usr_passwd,usr_tipo,usr_perfil,activo,usr_nombre) VALUES ('daniel','istai123',1,1,2,'daniel eduardo mendez robles');
+
+insert ct_tipousr(tusr_nombre) VALUES('ADMIN');
+insert ct_tipousr(tusr_nombre) VALUES('DIFUSION');
+insert ct_tipousr(tusr_nombre) VALUES('PLENO');
+insert ct_tipousr(tusr_nombre) VALUES('JURIDICO');
+insert ct_tipousr(tusr_nombre) VALUES('INFORMATICA');
+
+INSERT ct_usr (usr_username,usr_passwd,usr_tipo,usr_perfil,activo,usr_nombre,usr_apellido) VALUES ('daniel','istai123',1,1,2,'daniel eduardo mendez robles');
 
 insert leyes(descripcion,tipo,fk_user_leyes) values ('Ley general ','General',1);
 

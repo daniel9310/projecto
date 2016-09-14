@@ -3,17 +3,16 @@
 
 class notas{
 	
-	
 	function consultarNotas($tipo){
 		global $link;
 		$sql = "CALL consultarNotas(%1\$s) ";
 		$sql = sprintf($sql, $tipo);
-		$result = mysqli_query($link,$sql);
+		$result = $link->query($sql);
 		$resultado = array();
 		while( $row = mysqli_fetch_assoc($result) ){
-			$resultado[] = $row;	
+			$resultado[] = $row;
 		}
-		return $resultado;	
+		return $resultado;
 	}
 	
 	function detalleNota($id_nota){

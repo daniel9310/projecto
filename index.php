@@ -61,7 +61,7 @@ unset($objNotas);
                 <div class="top-slidingbar" style="display: none;">
                     <div class="container">
                         <div class="row">
-                          <div class="col col-md-6 col-sm-4">
+                          <div class="col col-md-4 col-sm-4">
                                 <h3 class="cv-theme-widget-title">
                                     <span class="main-border">Información</span>
                                 </h3>
@@ -71,7 +71,7 @@ unset($objNotas);
                                     <li class="social-icons"><a data-toggle="tooltip" data-placement="top" title="Twitter!" href="https://twitter.com/transparenteSon?lang=es"><i class="fa fa-twitter"></i></a></li>           
                                 </ul>
                             </div>
-                            <div class="col col-md-6 col-sm-4">
+                            <div class="col col-md-4 col-sm-4">
                                 <h3 class="cv-theme-widget-title">
                                     <span class="main-border">Contacto</span>
                                 </h3>
@@ -80,6 +80,32 @@ unset($objNotas);
                                     <li><i class="fa fa-phone"></i>Teléfono : (662) 2131543</li>
                                     <li><i class="fa fa-envelope-o"></i>Email:  <a href="#">contacto@transparenciasonora.org</a></li>
                                     <li><i class="fa fa-connectdevelop"></i>Web :  <a href="#">soporte@transparenciasonora.org</a></li>
+                                </ul>
+                            </div>
+                             <div class="col col-md-4 col-sm-4">
+                                <h3 class="cv-theme-widget-title">
+                                    <span class="main-border">Login</span>
+                                </h3>
+                                <ul class="contact-list-unstyled">
+                                    <li><i class="fa fa-info-circle" ></i>En esta Liga Podras Ingresar al Panel Administrativo </li>
+                                    <li><i class="fa fa fa-users"></i><a href="#" id="MosOcu" >Acceso al Panel</a></li>
+                                    <div id="uno" style="display:none;">
+                                        <form action=“ingresar.php” method=“POST”>
+                                            <div  class="input-group margin-bottom-sm" >
+                                                  <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                                  <input class="form-control" type="text" placeholder="User" name="nnombre">
+                                            </div>
+                                            <div class="input-group">
+                                                  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                                  <input class="form-control" type="password" placeholder="Password" name="">
+                                            </div>
+                                            
+                                            <div align="center" style="padding:5px;top-align:8px; align-content: center; position: center;" >
+
+                                                  <a type="submit" class="btn-custom btn-mini border-btn btn-gray" ><i class="fa fa-sign-in"></i> Ingresar</a>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </ul>
                             </div>
                           <!-- <div class="col col-md-6 col-sm-6 footer-links">
@@ -1269,6 +1295,19 @@ unset($objNotas);
                         }
                     });	/*ready*/
                 </script>	
+                <script >
+                    $(document).ready(function(){ 
+                        $('#MosOcu').on('click',function(){
+                        $('#uno').toggle();
+                       });
+                    });
+                    function mostrar(){
+                        document.getElementById('uno').style.display='block';
+                    }
+                    function ocultar(){
+                        document.getElementById('uno').style.display='none';
+                    }
+                   </script>
         <!-- JS Global Compulsory -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="plugins/owl-carousel/owl.carousel.min.js"></script>

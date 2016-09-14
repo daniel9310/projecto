@@ -2,15 +2,22 @@ create database istai;
 
 use istai;
 
+create table ct_tipousr (
+	id_tipousr int primary key auto_increment,
+    tusr_nombre varchar(40)
+);
+
 create table ct_usr (
 	id_usr int primary key auto_increment,
     usr_username varchar(40),
     usr_passwd varchar(30),
-    usr_tipo int,
-    usr_perfil int,
+    usr_perfil varchar(40),
     fecha_mod timestamp,
     activo tinyint,
-    usr_nombre varchar(70)
+    usr_nombre varchar(70),
+    usr_apellido varchar(50),
+    fk_tipousuario int,
+    foreign key (fk_tipousuario) references ct_tipousr (id_tipousr)
 );
 
 create table leyes (

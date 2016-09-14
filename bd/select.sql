@@ -7,3 +7,4 @@ inner join ct_usr as u on id_usr = fk_user_leyes
 inner join formatos as form on id_formatos=fk_idformatos_rel
 inner join campoformatos as cf on id_campo=fk_idformatos_cf
 where id_usr=1 and id_formatos=1
+
