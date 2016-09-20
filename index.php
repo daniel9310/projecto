@@ -90,19 +90,18 @@ unset($objNotas);
                                     <li><i class="fa fa-info-circle" ></i>En esta Liga Podras Ingresar al Panel Administrativo </li>
                                     <li><i class="fa fa fa-users"></i><a href="#" id="MosOcu" >Acceso al Panel</a></li>
                                     <div id="uno" style="display:none;">
-                                        <form action=“ingresar.php” method=“POST”>
+                                        <form action="ingresar.php" method="POST" name="form_login">
                                             <div  class="input-group margin-bottom-sm" >
                                                   <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                                                   <input class="form-control" type="text" placeholder="User" name="nnombre">
                                             </div>
                                             <div class="input-group">
                                                   <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                                                  <input class="form-control" type="password" placeholder="Password" name="">
+                                                  <input class="form-control" type="password" placeholder="Password" name="npassword">
                                             </div>
                                             
                                             <div align="center" style="padding:5px;top-align:8px; align-content: center; position: center;" >
-
-                                                  <a type="submit" class="btn-custom btn-mini border-btn btn-gray" ><i class="fa fa-sign-in"></i> Ingresar</a>
+                                                 <a type="submit" class="btn-custom btn-mini border-btn btn-gray"  href="javascript: form_login.submit();"><i class="fa fa-sign-in"></i> Ingresar</a>
                                             </div>
                                         </form>
                                     </div>
@@ -398,14 +397,18 @@ unset($objNotas);
                                     <h3 class="cv-theme-widget-title">
                                         <span class="main-border">Sesiones de Pleno</span>
                                     </h3>
-                                    <ul class="sidebar-recent-post">
-                                        <li><a href="paginas/Pleno/pln_Convo.html"><img src="img/blog/recent1.jpg" title="Convocatorias" /></a></li>
-                                        <li><a href="paginas/Pleno/pln_act.html"><img src="img/blog/recent2.jpg" title="Actas" /></a></li>
-                                        <li><a href="paginas/Pleno/pln_acu.html"><img src="img/blog/recent3.jpg" title="Listas de Acuerdos" /></a></li>
-                                        <li><a href="paginas/Pleno/pln_resol.html"><img src="img/blog/recent4.jpg" title="Resoluciones" /></a></li>
-                                        <li><a href="paginas/Pleno/pln_sesion.html"><img src="img/blog/recent5.jpg" title="Sesion en Vivo" /></a></li>
-                                        <li><a href="paginas/Pleno/pln_rr.html"><img src="img/blog/recent6.jpg" title="Recurso de Revision" /></a></li>
-                                    </ul>
+                                    <div class="sidebar-recent-post"  style="text-align:center;">
+                                        <div class="sidebar-recent-post">
+                                            <a href="paginas/Pleno/pln_Convo.html" class="fa fa-bullhorn fa-5x" title="Convocatorias" style="padding:10px; left-border:15px;"></a>
+                                            <a href="paginas/Pleno/pln_act.html" class="fa fa-file-text-o fa-5x"  title="Actas" style="padding:10px;"</a>
+                                            <a href="paginas/Pleno/pln_acu.html" class="fa fa-newspaper-o fa-5x" title="Listas de Acuerdos" style="padding:10px;"></a>
+                                        </div>
+                                        <div  style="text-align:center;" >
+                                            <a href="paginas/Pleno/pln_resol.html" class="fa fa-gavel fa-5x" aria-hidden="true"  title="Resoluciones" style="padding:10px;"></a>
+                                            <a href="paginas/Pleno/pln_sesion.html" class="fa fa-bar-chart fa-5x" title="Estadistica" style="padding:10px;"></a>
+                                            <a href="paginas/Pleno/pln_rr.html" class="fa fa-archive fa-5x" title="Informes" style="padding:10px;"></a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- End Sidebar Recent Blogs -->		
 								
@@ -574,14 +577,23 @@ unset($objNotas);
 								
                                 <!--  Inicio Imagenes de lado--> 
                                     <div class="col-md-3 col-sm-6 col-xs-12">
-                                        <div class="product">
+                                        <div class="product-sidePrin">
                                             </ul-->
-                                            <div class="product-image">
+                                            <div class="product-image-2">
                                                 <a class="product-link" href="img/home/sujetoobligados/docs/listasujetosobligados2014.pdf" target="_blank">
-                                                <img class="product-img-pri" title="Image" alt="Image" src="img/product/pro1.jpg">
-                                                <img class="product-img-second" title="Image" alt="Image" src="img/product/pro2.jpg">
-                                            </a>
-                                                </div>
+                                                <img class="product-img-pri" title="Image" alt="Image" src="img/home/RR_recurso_de_revisi_n_.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-sidePrin">                                        
+                                            <div class="product-image">
+                                                <a class="product-link" href="http://ities.org/redmunicipios/" target="_blank">
+                                                <img src="img/home/Red_Municipios.jpg" class="product-img-pri">
+                                                <!--<img class="product-img-pri" title="Image" alt="Image" src="img/product/pro1.jpg">
+                                                <img class="product-img-second" title="Image" alt="Image" src="img/product/pro2.jpg">-->
+                                                </a>
+                                            </div>                                  
                                         </div>
 
                                         <div class="product-sidePrin">                                        
@@ -593,16 +605,8 @@ unset($objNotas);
                                                 </a>
                                             </div>                                  
                                         </div>
-                                        <div class="product-sidePrin">                                        
-                                            <div class="product-image">
-                                                <a class="product-link" href="http://ities.org/redmunicipios/" target="_blank">
-                                                <img src="img/home/imageside1.jpg" class="product-img-pri">
-                                                <!--<img class="product-img-pri" title="Image" alt="Image" src="img/product/pro1.jpg">
-                                                <img class="product-img-second" title="Image" alt="Image" src="img/product/pro2.jpg">-->
-                                                </a>
-                                            </div>                                  
-                                        </div>
-                                    </div>   
+                                        
+                                    </div>  
                                     
                                 <!-- Fin de Imagenes de lado-->
 

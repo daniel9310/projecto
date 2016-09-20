@@ -6,23 +6,33 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS Global -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="plugins/owl-carousel/owl.carousel.css">
-        <link rel="stylesheet" href="plugins/owl-carousel/owl.theme.css">
-        <link rel="stylesheet" href="plugins/FlexSlider/jquery.flexslider.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/style.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/owl-carousel/owl.theme.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/FlexSlider/jquery.flexslider.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/animate.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/magnific-popup.css">       
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     <!-- WEB FONTS -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link href="http://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
-        <link rel="stylesheet" href="plugins/FlexSlider/jquery.flexslider.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
+       
+
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/FlexSlider/jquery.flexslider.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/animate.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/font-awesome.min.css">
+        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/magnific-popup.css">
 
         <!-- WEB FONTS -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
@@ -30,39 +40,229 @@
         <link href="http://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
 
         <!-- REVOLUTION STYLE ICON/FONT -->
-        <link rel="stylesheet" type="text/css" href="plugins/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+        <link rel="stylesheet" type="text/css" href="<?=$CONFIG['sitio']?>plugins/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
         <link rel="stylesheet" type="text/css" href="plugins/revolution/fonts/font-awesome/css/font-awesome.min.css">
 
         <!-- REVOLUTION STYLE SHEETS -->
-        <link rel="stylesheet" type="text/css" href="plugins/revolution/css/settings.css">
+        <link rel="stylesheet" type="text/css" href="<?=$CONFIG['sitio']?>plugins/revolution/css/settings.css">
         <!-- REVOLUTION LAYERS STYLES -->
-        <link rel="stylesheet" type="text/css" href="plugins/revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="<?=$CONFIG['sitio']?>plugins/revolution/css/layers.css">
 
         <!-- REVOLUTION NAVIGATION STYLES -->
-        <link rel="stylesheet" type="text/css" href="plugins/revolution/css/navigation.css">
+        <link rel="stylesheet" type="text/css" href="<?=$CONFIG['sitio']?>plugins/revolution/css/navigation.css">
 
-</head>
-<body>
+
+        <!-- Start Header -->
+            <div class="header cd-header-block col-md-12 col-sm-12" style="background: #DEDEDE; color:steelblue; padding: 8px; border: 1px solid #CCCCCC">
+                <aside class="col-md-9 col-sm-9">
+                    <h3 class="cv-theme-widget-title">
+                        <span class="main-border">Panel Administrativo</span>
+                         <i class="fa fa-sign-out " aria-hidden="true"></i>
+                    </h3>
+                </aside>
+                <aside class="rigth-side col-md-3 col-sm-3">
+                <form action="<?=$CONFIG['sitio']?>cerrarsesion.php" name="form_logout">
+                    <div></div>
+                    <div class="list-group" style="text-align:right; align:right;">
+                      <a class="list-group-item" href="#"><i class=" fa-fw" ></i>&nbsp; Cerrar Sesion</a>   
+                      <a type="submit" class="btn-custom btn-mini border-btn btn-gray"  href="javascript: form_logout.submit();"><i class="fa fa-sign-out"></i> Cerrar Sesion</a>                  
+                  </div>
+                </form>
+                            
+
+                </aside>
+            </div>
+        <!-- End Header -->
+
+<!-- Cuerpo -->
+    <aside class="left-side sidebar-offcanvas" >
+        <div class="sidebar-block">
+            
+            <ul class="nav nav-pills nav-stacked sidebar col-md-1 col-sm-1">
+              <li class="active">
+              <a data-toggle="pill" href="#home">Inicio
+              <li><a data-toggle="pill" href="#Tran">Transparencia</a></li>
+              <li><a data-toggle="pill" href="#Dif">Difusion</a></li>
+              <li><a data-toggle="pill" href="#Cap">Capacitacion</a></li>
+              <li><a data-toggle="pill" href="#Pln">Pleno</a></li>
+              <li><a data-toggle="pill" href="#Eva">Evaluacion</a></li>
+              <li><a data-toggle="pill" href="#Gal">Galerias</a></li>
+            </ul> 
+        </div>
+    </aside>
+    <aside class="right-side">
+        <!-- 
+            ***Trasnparencia
+                -Obligaciones
+                -Unidades
+            ***Difusion
+                -notas
+                -convocatorias
+                -material
+            ***Capacitacion
+                -programa
+                -solicitudes
+            ***Pleno
+                -convocatorias
+                -lista de acuerdos
+                -resoluciones
+                -actas
+                -informes
+            ***Evaluacion
+                -registrar evaluaciones
+            ***Galerias
+                -abc
+            -->
+           
+            <section >
+                <div class="tab-content col-md-11 col-sm-11 home-main-contant-style blog-page-blog-style sidebar row" >
+                  <div id="home" class="tab-pane fade in active">
+                    <h3>Inicio</h3>
+                    <p>Informacion necesaria</p>
+
+                  </div class="tab-pane fade">
+
+                  <div id="Tran" class="tab-pane fade">
+                    <div class="">
+                      <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#trans1">Obligaciones</a></li>
+                        <li><a data-toggle="pill" href="#trans2">Unidades</a></li>
+                      </ul>
+                      
+                      <div class="tab-content">
+                        <div id="trans1" class="tab-pane fade in active">
+                          <h3>Obligaciones</h3>
+                          <p> </p>
+                        </div>
+                        <div id="trans2" class="tab-pane fade">
+                          <h3>Unidades</h3>
+                          <p></p>
+                        </div>                      
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="Dif" class="tab-pane fade">
+                    <div class="">
+                      <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#difu1">Notas</a></li>
+                        <li><a data-toggle="pill" href="#difu2">Convocatorias</a></li>                        
+                        <li><a data-toggle="pill" href="#difu3">Material</a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <div id="difu1" class="tab-pane fade in active">
+                          <h3>Notas</h3>
+                          <p></p>
+                        </div>
+                        <div id="difu2" class="tab-pane fade">
+                          <h3>Convocatorias</h3>
+                          <p></p>
+                        </div> 
+                        <div id="difu3" class="tab-pane fade">
+                          <h3>Material</h3>
+                          <p></p>
+                        </div>                      
+                      </div>
+                    </div>
+                  </div>
+
+                   <div id="Cap" class="tab-pane fade">
+                    <div class="">
+                      <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#capa1">Programa</a></li>
+                        <li><a data-toggle="pill" href="#capa2">Solicitudes</a></li>
+                      </ul>
+                      
+                      <div class="tab-content">
+                        <div id="capa1" class="tab-pane fade in active">
+                          <h3>Programa</h3>
+                          <p></p>
+                        </div>
+                        <div id="capa2" class="tab-pane fade">
+                          <h3>Solicitudes</h3>
+                          <p></p>
+                        </div>                      
+                      </div>
+                    </div>                  
+                  </div>
+
+                  <div id="Pln" class="tab-pane fade">
+                    <div class="">
+                      <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#pleno1">Convocatorias</a></li>
+                        <li><a data-toggle="pill" href="#pleno2">Lista de Acuerdos</a></li>
+                        <li><a data-toggle="pill" href="#pleno3">Resoluciones</a></li>
+                        <li><a data-toggle="pill" href="#pleno4">Actas</a></li>
+                        <li><a data-toggle="pill" href="#pleno5">Informes</a></li>
+                      </ul>
+                      
+                      <div class="tab-content">
+                        <div id="pleno1" class="tab-pane fade in active">
+                          <h3>Convocatorias</h3>
+                          <p></p>
+                        </div>
+                        <div id="pleno2" class="tab-pane fade">
+                          <h3>Listas de Acuerdos</h3>
+                          <p></p>
+                        </div>    
+                        <div id="pleno3" class="tab-pane fade">
+                          <h3>Programa</h3>
+                          <p></p>
+                        </div>
+                        <div id="pleno4" class="tab-pane fade">
+                          <h3>Actas</h3>
+                          <p></p>
+                        </div>     
+                        <div id="pleno5" class="tab-pane fade">
+                          <h3>Informes</h3>
+                          <p></p>
+                        </div>               
+                      </div>
+                    </div> 
+                  </div>
+
+                  <div id="Eva" class="tab-pane fade">
+                    <div class="">
+                      <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#evalu1">Registrar Evaluaciones</a></li>
+                        
+                      </ul>
+                      
+                      <div class="tab-content">
+                        <div id="evalu1" class="tab-pane fade in active">
+                          <h3>Registrar Evaluaciones</h3>
+                          <p></p>
+                        </div>                                          
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="Gal" class="tab-pane fade">
+                    <div class="">
+                      <ul class="nav nav-pills">
+                        <li><a data-toggle="pill" href="#gale1">abc</a></li>
+                        
+                      </ul>
+                      
+                      <div class="tab-content">
+                        <div id="gale1" class="tab-pane fade in active">
+                          <h3>abc</h3>
+                          <p></p>
+                        </div>                                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+    </aside>
 	<section>
-		<div class="sidebar-block category sidebar-category-block cv-theme-30">
-            <h3 class="cv-theme-widget-title">
-                <span class="main-border">Secciones</span>
-            </h3>
-            <ul class="list-unstyled">
-                <li><a href="#">Difusion</a></li>
-                <li><a href="#">Convocatoria</a></li>
-                <li><a href="#">Informes</a></li>
-                <li><a href="#">Design</a></li>
-
-            </ul>
+		
+            
+                
+            
+           
         </div>
 	</section>
+<!-- Fin Cuerpo -->
 </body>
 </html>
-te amo mi gordo 
-
-
-TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-
-
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMMMMMMMMMMMMMMMMMMMMMMMMMMOOOOOOOOOOOOOOOOOOOOOOOOOOO
