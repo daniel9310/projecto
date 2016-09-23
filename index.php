@@ -15,6 +15,7 @@ unset($objNotas);
     <head>
         <title>Transparencia Sonora</title>
         <!-- Meta -->
+        <meta http-equiv="refresh" content="600" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="The Dream Multipurpose HTML5 Template">
