@@ -77,58 +77,64 @@
                 </aside>
             </div>
         <!-- End Header -->
-<?php echo $_SESSION['fk_típousuario'] ?>
+
+      <?php  trim($_SESSION['fk_típousuario']); ?>
+
 <!-- Cuerpo -->
     <aside class="left-side sidebar-offcanvas" >
         <div class="sidebar-block">
              
             <ul class="nav nav-pills nav-stacked sidebar col-md-1 col-sm-1" >
 
-             <li id="inicio" class="<?php echo $pagina == 'inicio' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='?p=inicio'">Inicio</a></li>
-
-              <?php
-                 if($_SESSION['fk_típousuario'] == 1 OR $_SESSION['fk_típousuario'] == 5) {               
-               ?>                  
-
+              <li id="inicio" class="<?php echo $pagina == 'inicio' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='?p=inicio'">Inicio</a></li>
+  
+                <?php if ($_SESSION['fk_típousuario'] != 2 or $_SESSION['fk_típousuario'] != 3 or $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6){ ?>
+                  
+                
               <li id="transparencia" class="<?php echo $pagina == 'transparencia' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=transparencia'">Transparencia</a></li>
-             <?php
-                }
-                if($_SESSION['fk_típousuario'] == 1 OR $_SESSION['fk_típousuario'] == 2 OR $_SESSION['fk_típousuario'] == 5) { 
-             ?>
+               <?php } 
+                if ($_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6) {
+                
+               ?>
+               
               <li id="difusion" class="<?php echo $pagina == 'difusion' ? 'active' : ''; ?>">   <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=difusion'">Difusion</a></li>
-              
-              <?php
-                }
-                if($_SESSION['fk_típousuario'] == 1 OR $_SESSION['fk_típousuario'] == 4 OR $_SESSION['fk_típousuario'] == 5) { 
-              ?>
-
+                <?php }
+                  if ($_SESSION['fk_típousuario'] != 2 OR $_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 6) {
+                   
+                 ?>
+           
+               
               <li class="<?php echo $pagina == 'capacitacion' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=capacitacion'">Capacitacion</a></li>
+              <?php }
+                if ($_SESSION['fk_típousuario'] != 4) {
+                 
+               ?>
               
-              <?php
-                }
-               if($_SESSION['fk_típousuario'] <= 3 OR $_SESSION['fk_típousuario'] == 5 OR $_SESSION['fk_típousuario'] == 6) { 
-              ?>
-
               <li id="pleno" class="<?php echo $pagina == 'pleno' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=pleno'">Pleno</a></li>
-              
-              <?php
-                }
-                if($_SESSION['fk_típousuario'] == 1) { 
+             <?php  }
+                if ($_SESSION['fk_típousuario'] != 2 OR $_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6) {
+                  # code...
+                
               ?>
-
+             
               <li id="evaluacion" class="<?php echo $pagina == 'evaluacion' ? 'active' : ''; ?>">   <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=evaluacion'">Evaluacion</a></li>
+                  <?php }
+                    if ($_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6) {
+                    
+                   ?>          
               
-              <?php
-                }
-                if($_SESSION['fk_típousuario'] == 1 OR $_SESSION['fk_típousuario'] == 2 OR $_SESSION['fk_típousuario'] == 5) { 
-              ?>
-
               <li id="galerias" class="<?php echo $pagina == 'galeria' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=galeria'">Galerias</a></li>
-                <?php
-                    }
-                    ?>
+                <?php }
+                  if ($_SESSION['fk_típousuario'] != 2 OR $_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 5 OR $_SESSION['fk_típousuario'] != 6) {
+                   
+                 ?>                
+               
+                
               <li id="usuarios" class="<?php echo $pagina == 'usuarios' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=usuarios'">Usuarios</a></li>
-
+             <?php 
+              } 
+             ?>
+                
              
             </ul> 
         </div>

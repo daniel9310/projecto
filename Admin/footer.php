@@ -1,9 +1,6 @@
 				</div>
 			</section>		
-	    </aside>
-		<section>
-        </div>
-	</section>
+	    </aside> 	
 <!-- Fin Cuerpo -->
 </body>
 </html>

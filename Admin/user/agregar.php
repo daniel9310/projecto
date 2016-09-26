@@ -43,23 +43,32 @@
 		  return $data;
 		}
 	?>
- 	 <h2>PHP Form Validation Example</h2>
-		<p><span class="error">* required field.</span></p>
-		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-		  Name: <input type="text" name="name">
+ 	 <h2>Agregar Usuarios</h2>
+		<form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+		  <input type="hidden" name="p" value="usuarios">
+		  <input type="hidden" name="j" value="agregar">
+		  Nombre: <input type="text" name="name">
 		  <span class="error">* <?php echo $nameErr;?></span>
 		  <br><br>
-		  E-mail: <input type="text" name="email">
+		  Apellido: <input type="text" name="email">
 		  <span class="error">* <?php echo $emailErr;?></span>
 		  <br><br>
-		  Website: <input type="text" name="website">
-		  <span class="error"><?php echo $websiteErr;?></span>
+		  Nombre de Usuario: <input type="text" name="email">
+		  <span class="error">* <?php echo $emailErr;?></span>
 		  <br><br>
-		  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+		  Contraseña: <input type="text" name="email">
+		  <span class="error">* <?php echo $emailErr;?></span>
 		  <br><br>
-		  Gender:
-		  <input type="radio" name="gender" value="female">Female
-		  <input type="radio" name="gender" value="male">Male
+		 
+		  Tipo de Usuario: <input type="number" name="email" min="1" max="5">
+		  <span class="error">* <?php echo $emailErr;?></span>
+		  <br><br>
+		  Perfil de Usuario: <input type="text" name="email">
+		  <span class="error">* <?php echo $emailErr;?></span>
+		  <br><br>
+		  Sexo:
+		  <input type="radio" name="gender" value="female">Femenino
+		  <input type="radio" name="gender" value="male">Masculino
 		  <span class="error">* <?php echo $genderErr;?></span>
 		  <br><br>
 		  <input type="submit" name="submit" value="Submit">  
