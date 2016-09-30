@@ -1,0 +1,10 @@
+drwxr-xr-x    6 675      675          4096 May 28 16:17 .
+drwxr-xr-x    8 675      675          4096 May 28 16:16 ..
+-rw-r--r--    1 675      675          7638 May 28 16:16 LGPLv3.txt
+-rw-r--r--    1 675      675           514 May 28 16:16 contents.html
+drwxr-xr-x    2 675      675          4096 May 28 16:16 images
+-rw-r--r--    1 675      675         17916 May 28 16:16 index.php
+drwxr-xr-x    2 675      675          4096 May 28 16:17 scripts
+drwxr-xr-x    2 675      675          4096 May 28 16:17 src
+drwxr-xr-x    2 675      675          4096 May 28 16:17 styles
+-rw-r--r--    1 675      675          2122 May 28 16:16 test.html

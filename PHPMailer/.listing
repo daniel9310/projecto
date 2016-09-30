@@ -1,0 +1,15 @@
+drwxr-xr-x    8 675      675          4096 May 28 16:16 .
+drwxr-x---   12 675      99           4096 Aug 25 14:11 ..
+-rw-r--r--    1 675      675         26421 May 28 16:16 LICENSE
+-rw-r--r--    1 675      675          5306 May 28 16:16 README
+-rw-r--r--    1 675      675         20644 May 28 16:16 changelog.txt
+-rw-r--r--    1 675      675         90881 May 28 16:16 class.phpmailer.php
+-rw-r--r--    1 675      675         10511 May 28 16:16 class.pop3.php
+-rw-r--r--    1 675      675         31062 May 28 16:16 class.smtp.php
+drwxr-xr-x    3 675      675          4096 May 28 16:16 docs
+-rw-r--r--    1 675      675          3570 May 28 16:16 docs.ini
+drwxr-xr-x    3 675      675          4096 May 28 16:16 examples
+drwxr-xr-x    2 675      675          4096 May 28 16:16 extras
+drwxr-xr-x    2 675      675          4096 May 28 16:16 language
+drwxr-xr-x    2 675      675          4096 May 28 16:16 test
+drwxr-xr-x    6 675      675          4096 May 28 16:17 test_script

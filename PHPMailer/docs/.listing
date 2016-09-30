@@ -1,0 +1,11 @@
+drwxr-xr-x    3 675      675          4096 May 28 16:16 .
+drwxr-xr-x    8 675      675          4096 May 28 16:16 ..
+-rw-r--r--    1 675      675           599 May 28 16:16 Callback_function_notes.txt
+-rw-r--r--    1 675      675          2070 May 28 16:16 DomainKeys_notes.txt
+-rw-r--r--    1 675      675          1155 May 28 16:16 Note_for_SMTP_debugging.txt
+-rw-r--r--    1 675      675          3780 May 28 16:16 extending.html
+-rw-r--r--    1 675      675          3419 May 28 16:16 faq.html
+-rw-r--r--    1 675      675           199 May 28 16:16 makedocs2.sh
+drwxr-xr-x    8 675      675          4096 May 28 16:17 phpdoc
+-rw-r--r--    1 675      675          4305 May 28 16:16 pop3_article.txt
+-rw-r--r--    1 675      675          1393 May 28 16:16 use_gmail.txt
