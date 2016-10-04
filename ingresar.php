@@ -13,7 +13,7 @@
 		$nameErre=""; $passErre="";
 		
 	 	
-		require_once($CONFIG['sitio']."include/config/config.php");
+		require_once("include/config/config.php");
 		require_once($CONFIG['pathinclude']."config/cx.php");
 		require_once($CONFIG['pathinclude']."cls/login.php");
 		$objLogin = new login;

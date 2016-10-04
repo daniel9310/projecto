@@ -12,7 +12,7 @@
 	require_once($CONFIG['pathinclude']."config/cx.php");
 	require_once($CONFIG['pathinclude']."cls/usuario.php");
 	$objUsr = new Datos;
-	$Usr = $objUsr->ingresar_datos($vidusr, $vnombreusuario, $vnombre, $vapellido, $vcontra, $vperfil, $vtipousr);
+	$Usr = $objUsr->ingresar_datos($vnombreusuario, $vcontra, $vperfil,$vnombre, $vapellido,  $vtipousr);
 	
 	if ($Usr[nombre] == $vnombre) {
 		if (empty($vnombreusuario) and empty($vnombre) and empty($vapellido) and empty($vcontra) and empty($vperfil) and empty($vtipousr)) {
