@@ -41,9 +41,23 @@
 			$result = $link->query($sql);
 			$resultado = array();
 			while( $row = mysqli_fetch_assoc($result) ){
-				array_push($resultado,$row);
+				$resultado[]=$row;
+				//array_push($resultado,$row);
 			}
 			return $resultado;
+		}
+
+		function Consultar_usuario($idusr){
+			global $link;
+			$sql = "CALL Usuario_ver('%1\$s')";
+			$sql = sprintf($sql, $idusr);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado=$row;
+				//array_push($resultado,$row);
+			}
+			return $resultado;			
 		}
 
 		function Modificar_datos($idusr,$nombreusr, $nombre, $apellido, $passwd, $perfil, $tipousr )

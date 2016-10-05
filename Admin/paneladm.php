@@ -6,7 +6,7 @@ require_once("../include/config/config.php");
     $pagina = isset($_GET['p']) ? strtolower($_GET['p']) : 'inicio';
 
 
-    $inactivo = 900;
+    $inactivo = 1200;
     if (isset($_SESSION['tiempo'])) {
     	$vida_sesion = time() - $_SESSION['tiempo'];
     		if ($vida_sesion > $inactivo) {

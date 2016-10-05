@@ -37,7 +37,7 @@
                                                 </p>
 
                                                 <div class="submit">
-                                                    <input type="submit" value="Submit" class="form-button" />
+                                                    <input type="submit" value="Enviar" class="form-button" />
 
                                                 </div>
                                             </form>
