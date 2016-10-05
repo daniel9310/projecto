@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	$vidusr = $_POST['idusr'];
+	//$vidusr = $_POST['idusr'];
 	$vnombre = $_POST['name'];
 	$vapellido = $_POST['lastname'];
 	$vnombreusuario = $_POST['usrname'];

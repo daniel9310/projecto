@@ -1,7 +1,8 @@
-
- 	 <h2>Agregar Usuarios</h2>		
-		<div  >
-          <div class="col-md-6 col-sm-4 col-xs-12" style="align-items: center; text-align: center;" align="center">
+    <section class="services-style-3 main-contain">
+ 	 	
+		<div  class="container">
+          <div class=" col-md-11 col-sm-4 col-xs-12" style="align-items: center; text-align: center;" align="center">
+                <h2>Agregar Usuarios</h2>   
                                         <div class="form-main">
                                             <form class="form" action="<?=$CONFIG['sitio']?>Modificarlink.php" method="POST">
                                             	<input type="hidden" name="p" value="usuarios" class="feedback-input">
@@ -45,6 +46,7 @@
 
                                     </div>
                                 </div>
+                            </section>
 
 	
 
