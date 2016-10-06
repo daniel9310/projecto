@@ -19,7 +19,7 @@
                                                 </p> 
 
                                                 <p >
-                                                    <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" value="<?=$Modi['NOMBRE']?>" />
+                                                    <input name="named" type="text" class="feedback-input" placeholder="NOMBRE" id="name" value="<?=$Modi['NOMBRE']?>" />
                                                 </p>
 
                                                 <p >

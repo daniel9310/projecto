@@ -54,23 +54,24 @@
 			$result = $link->query($sql);
 			$resultado = array();
 			while( $row = mysqli_fetch_assoc($result) ){
-				$resultado=$row;
+				$resultado =$row;
 				//array_push($resultado,$row);
 			}
 			return $resultado;			
 		}
 
-		function Modificar_datos($idusr,$nombreusr, $nombre, $apellido, $passwd, $perfil, $tipousr )
+		function Modificar_datos($idusr,$nombreusr,  $perfil,$nombre, $apellido, $tipousr )
 		{
-			global $link3;
-			$sql = "CALL Usuario_ingresar('%1\$s','%2\$s','%3\$s','%4\$s','%5\$s','%6\$s','%7\$s')";
-			$sql = sprintf($sql,$idusr, $nombreusr, $passwd, $perfil,$nombre, $apellido,   $tipousr);
-			echo $sql;
-			$result = $link3->query($sql);
+			
+			global $link;
+			$sql = "CALL Usuario_modificar('%1\$s','%2\$s','%3\$s','%4\$s','%5\$s','%6\$s','%7\$s')";
+			$sql = sprintf($sql,$idusr, $nombreusr, $perfil,$nombre, $apellido,   $tipousr);
+			//echo $sql;
+			$result = $link->query($sql);
 			$resultado = array();
-			while( $row = mysqli_fetch_assoc($result) ){
+			/*while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
-			}
+			}*/
 			return $resultado;
 		}
 	}

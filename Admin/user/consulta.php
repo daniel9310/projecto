@@ -13,8 +13,10 @@
 					frmEditUser.submit();
 			 	}
 
-			 	function borrar(){
-
+			 	function BorrarId(id_usr){
+			 		print_r(id_usr);
+			 		frmDeleUsr.elements['id_usr'].value = id_usr;					
+					frmDeleUsr.submit();
 			 	}
 			 </script>
 			 <div class="table-responsive" >
@@ -64,7 +66,7 @@
 			      			</td>
 			      			<td style="text-align: center;" >
 			      				<div type="submit" class="btn-custom btn-mini border-btn "  align="center" style="text-align: center;" >
-                                        <a href="#" onclick="javascript:borrar();">
+			      						<a href="#" onclick="javascript:BorrarId('<?=$dato["ID"]?>');">
 			      							<i class="fa fa-trash fa-2x" aria-hidden="true"></i>
 			      						</a>
                                                <!--  <a type="submit" class="btn-custom btn-mini border-btn btn-gray"  href="javascript: form_login.submit();"><i class="fa fa-sign-in"></i> Ingresar</a>-->
@@ -80,7 +82,10 @@
 			    </tbody>
 			  </table>
 			  </div>
+			  <form name="frmDeleUsr" action="../../borrarlink.php" method="post">
+			  <input type="hidden" name="id_usr">
+			  	
+			  </form>
 			  <form  name="frmEditUser" action="paneladm.php?p=usuarios&j=modificar" method="post" > 
 			  <input type="hidden" name="id_usr">
 			  </form>
-			  <form name="frmDeleUsr" ></form>
