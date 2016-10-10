@@ -9,7 +9,7 @@
 			$sql = "CALL Usuario_insertar('%1\$s','%2\$s','%3\$s','%4\$s','%5\$s','%6\$s')";
 			$sql = sprintf($sql, $nombreusr, $passwd, $perfil,$nombre, $apellido, $tipousr);
 			$result = $link->query($sql);
-			$resultado = array(); 	
+			//$resultado = array(); 	
 			
 			//while( $row = mysqli_fetch_assoc($result) ){
 			//	var_dump($row);
@@ -21,16 +21,16 @@
 		}
 
 		function Borrar_datos($idusr){
-			global $link1;
+			global $link;
 			$sql = "CALL Usuario_borrar('%1\$s')";
 			$sql = sprintf($sql, $idusr);
 			echo $sql;
 			$result = $link->query($sql);
-			$resultado = array();
+			/*$resultado = array();
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
-			}
-			return $resultado;
+			}*/
+			return $result;
 
 		}
 

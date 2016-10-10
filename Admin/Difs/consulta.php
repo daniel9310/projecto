@@ -1,24 +1,24 @@
 			<?php  
 				require_once($CONFIG['pathinclude']."config/cx.php");
-				require_once($CONFIG['pathinclude']."cls/usuario.php");
-				$objUser = new datos;
-				$datos = $objUser->Consultar_datos(1);
+				require_once($CONFIG['pathinclude']."cls/notas.php");
+				$objUser = new notas;
+				$notas = $objUser->consultanota(1);
 				//echo "<pre>".print_r($dato,1)."</pre>";
 				//$delete = $objUser->Borrar_datos()
 			 ?>
 			 <script type="text/javascript">
-			 	function editar(id_usr){
+			 	function editarnota(nts_id){
 			 		
-			 		frmEditUser.elements['id_usr'].value = id_usr;					
-					frmEditUser.submit();
+			 		frmEditNts.elements['nts_id'].value = nts_id;					
+					frmEditNts.submit();
 			 	}
 
-			 	function BorrarId(id_usr){
+			 	function Borrarnota(nts_id){
 			 		//print_r(id_usr);
 			 		//frmEditUser.elements['id_usr'].value = id_usr;					
 					//frmEditUser.submit();
-			 		frmDeleUsr.elements['id_usr'].value = id_usr;					
-					frmDeleUsr.submit();
+			 		frmDeleNts.elements['nts_id'].value = nts_id;					
+					frmDeleNts.submit();
 			 	}
 			 </script>
 			 <div class="table-responsive" >
@@ -26,11 +26,9 @@
 			    <thead>
 			      <tr style="background: #737677;">
 			        <th>ID</th>
-			        <th>USUARIO</th>
-			        <th>NOMBRE</th>
-			        <th>APELLIDO</th>
-			        <th>PERFIL</th>
-			        <th>DEPARTAMENTO</th>			        
+			        <th>FECHA</th>
+			        <th>TITULO PRINCIPAL</th>
+			        <th>TITULO</th>		        
 			        <th></th>
 			        <th></th>
 			      </tr>
@@ -38,7 +36,7 @@
 			    <tbody>
 			      <tr>
 			      <?php 
-			      	foreach ($datos as $row => $dato) {
+			      	foreach ($notas as $row => $dato) {
 			      		
 			      		?> 
 			      			
@@ -47,12 +45,10 @@
 			      			?>
 			      			<!--<td><?=$dato?></td>-->
 
-			      			<td><?=$dato['ID']?></td>
-							<td><?=$dato['USUARIO']?></td>
-				      		<td><?=$dato['NOMBRE']?></td>
-				      		<td><?=$dato['APELLIDO']?></td>
-				      		<td><?=$dato['PERFIL']?></td>
-				      		<td><?=$dato['DEPARTAMENTO']?></td>
+			      			<td><?=$dato['nts_id']?></td>
+							<td><?=$dato['nts_fecha']?></td>
+				      		<td><?=$dato['nts_ptitulo']?></td>
+				      		<td><?=$dato['nts_titulo']?></td>
 				      		
 			      			<?php		
 			      			//	}
@@ -60,7 +56,7 @@
 			      			<td style="text-align: center;" >
 			      				
 			      				<div type="submit" class="btn-custom btn-mini border-btn "  align="center" style="text-align: center;" >
-                                        <a href="#" onclick="javascript:editar('<?=$dato["ID"]?>');">
+                                        <a href="#" onclick="javascript:editarnota('<?=$dato["nts_id"]?>');">
 			      							<i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
 			      						</a>
                                                <!--  <a type="submit" class="btn-custom btn-mini border-btn btn-gray"  href="javascript: form_login.submit();"><i class="fa fa-sign-in"></i> Ingresar</a>-->
@@ -69,7 +65,7 @@
 
 			      			<td style="text-align: center;" >
 			      				<div type="submit" class="btn-custom btn-mini border-btn "  align="center" style="text-align: center;" >
-			      						<a href="#" onclick="javascript:BorrarId('<?=$dato["ID"]?>');">
+			      						<a href="#" onclick="javascript:Borrarnota('<?=$dato["nts_id"]?>');">
 			      							<i class="fa fa-trash fa-2x" aria-hidden="true"></i>
 			      						</a>
                                                <!--  <a type="submit" class="btn-custom btn-mini border-btn btn-gray"  href="javascript: form_login.submit();"><i class="fa fa-sign-in"></i> Ingresar</a>-->
@@ -85,10 +81,10 @@
 			    </tbody>
 			  </table>
 			  </div>
-			  <form name="frmDeleUsr" action="<?=$CONFIG['sitio']?>borrarlink.php" method="post">
-			  <input type="hidden" name="id_usr">
+			  <form name="frmDeleNts" action="<?=$CONFIG['sitio']?>borrarnota.php" method="post">
+			  <input type="hidden" name="nts_id">
 			  </form>
 
-			  <form  name="frmEditUser" action="paneladm.php?p=usuarios&j=modificar" method="post" > 
-			  <input type="hidden" name="id_usr">
+			  <form  name="frmEditNts" action="paneladm.php?p=difusion&j=notas&k=modificar" method="post" > 
+			  <input type="hidden" name="nts_id">
 			  </form>

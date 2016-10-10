@@ -14,11 +14,10 @@
 	$objUsr = new Datos;
 	$Usr = $objUsr->ingresar_datos($vnombreusuario, $vcontra, $vperfil,$vnombre, $vapellido,  $vtipousr);
 	
-	if ($Usr[nombre] == $vnombre) {
 		if (empty($vnombreusuario) and empty($vnombre) and empty($vapellido) and empty($vcontra) and empty($vperfil) and empty($vtipousr)) {
 			echo '<script type="text/javascript">
 				          alert("Todos los Campos son Requeridos");
-				          window.location="Admin/paneladm.php?p=usuarios&j=consulta"
+				          window.location="Admin/paneladm.php?p=usuarios&j=agregar"
 				          </script>';
 		}else{
 		echo '<script type="text/javascript">
@@ -27,28 +26,5 @@
 				          window.location="Admin/paneladm.php?p=usuarios&j=consulta"
 				          </script>';
 		}
-	}elseif (empty($vidusr)) {
-		$idusr=0;
-		if (!preg_match("/^[0-9]$/",$vtipousr)) {
-			echo '<script type="text/javascript">
-				          alert("El campo admite solamente Digitos");
-				          window.location="Admin/paneladm.php?p=usuarios&j=consulta"
-				          
-				          </script>';
-		}		
-		if (empty($vnombreusuario) and empty($vnombre) and empty($vapellido) and empty($vcontra) and empty($vperfil)) {
-			echo '<script type="text/javascript">
-				          alert("Todos los Campos son Requeridos");
-				          window.location="Admin/paneladm.php?p=usuarios&j=consulta"
-				          
-				          </script>';
-		}else{
-		echo '<script type="text/javascript">
-				          alert("Usuario Guardado Satisfactoriamente");
-				          window.location="Admin/paneladm.php?p=usuarios&j=consulta"
-				          
-				          </script>';
-		}
-	}
-
+	
  ?>
