@@ -18,7 +18,7 @@ function connect($usr,$pw,$db,$host) {
 } 
 
 try { 
-  connect('root','','istai','localhost'); 
+  connect('root','','backupist','localhost'); 
   //echo 'Connected to database'; 
 } catch( Exception $e) { 
   echo "Error al conectar en BD mensaje :".$e; 
