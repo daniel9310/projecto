@@ -33,32 +33,37 @@
                                                 </p>
                                                 
                                                 <p>
-                                                    <textarea name="descripcioncorta_nts" rows="5" class="feedback-input" placeholder="DESCRIPCION CORTA" > <?=$ConsulModi['nts_descripcioncorta']?>
+                                                    <textarea name="descripcioncorta_nts" class="feedback-input" placeholder="DESCRIPCION CORTA" > <?=$ConsulModi['nts_descripcioncorta']?>
                                                     </textarea>
                                                 </p>
                                                 
                                                 <p>
-                                                    <textarea name="descripcion_nts" rows="5" class="feedback-input" placeholder="DESCRIPCION" value="<?=$ConsulModi['nts_descripcion']?>"> <?=$ConsulModi['nts_descripcion']?>
+                                                    <textarea name="descripcion_nts" class="feedback-input" placeholder="DESCRIPCION" value="<?=$ConsulModi['nts_descripcion']?>">
+                                                        <?=$ConsulModi['nts_descripcion']?>
                                                     </textarea>
                                                 </p>
 
                                                 <p>
-                                                    <textarea name="descripcioninterior_nts" rows="5" class="feedback-input" placeholder="DESCRIPCION INTERIOR" value="<?=$ConsulModi['nts_descinteriorcorta']?>"> <?=$ConsulModi['nts_descinteriorcorta']?>
+                                                    <textarea name="descripcioninterior_nts" class="feedback-input" placeholder="DESCRIPCION INTERIOR" value="<?=$ConsulModi['nts_descinteriorcorta']?>">
+                                                    <?=$ConsulModi['nts_descinteriorcorta']?>
                                                         
                                                     </textarea>
                                                 </p>
 
                                                 <p>
-                                                    <textarea name="nota_nts" class="feedback-input" rows="5" placeholder="CUERPO DE LA NOTA" value="<?=$ConsulModi['nts_nota']?>"><?=$ConsulModi['nts_nota']?>
+                                                    <textarea name="nota_nts" class="feedback-input" placeholder="CUERPO DE LA NOTA" value="<?=$ConsulModi['nts_nota']?>">
+                                                    <?=$ConsulModi['nts_nota']?>
                                                         
                                                     </textarea>
                                                 </p>
 
                                                 <p>
-                                                    <textarea name="pie_nts" class="feedback-input" rows="5" placeholder="PIE DE NOTA" value="<?=$ConsulModi['nts_pie']?>"> <?=$ConsulModi['nts_pie']?>
+                                                    <textarea name="pie_nts" class="feedback-input" placeholder="PIE DE NOTA" value="<?=$ConsulModi['nts_pie']?>">
+                                                    <?=$ConsulModi['nts_pie']?>
                                                         
                                                     </textarea>
                                                 </p>
+
                                                 <p >
                                                     <input name="imagen_nts" type="text" class="feedback-input" placeholder="IMAGEN" " value="<?=$ConsulModi['nts_imagen']?>"/>
                                                 </p>
