@@ -1,48 +1,41 @@
-<?php 
-    session_start();
-    $vid = $_SESSION['id_usr'];
-    $vnombre = $_POST['nombre'];
-    $vdescripcion = $_POST['descripcion'];
-
-    require_once($CONFIG['pathinclude']."config/cx.php");
-    require_once($CONFIG['pathinclude']."cls/procedimientos.php");
-    $objLeyIn = new leyes;
-    $LeyIn = $objLeyIn->insertar_leyes($vid,$vnombre,$vdescripcion);
-    if ($vid >0) {
-        echo '<script type="text/javascript">
-                          alert("Ley Guardada Satisfactoriamente");
-                          window.location="Admin/paneladm.php?p=transparencia&j=unidades&k=Ley"                          
-                          </script>';
-    }else{
-        echo '<script type="text/javascript">
-                          alert("El Usuario Ingresado es Incorrecto");
-                          window.location="Admin/paneladm.php?p=transparencia&j=unidades&k=Ley"                          
-                          </script>';
-    }
-
- ?>
  <section class="services-style-3 main-contain">
  	 	
 		<div  class="container">
           <div class=" col-md-11 col-sm-4 col-xs-12" style="align-items: center; text-align: center;" align="center">
-                <h2>Agregar Ley</h2>   
+                <h2>Agregar Usuarios</h2>   
                                         <div class="form-main">
                                             <form class="form"  method="POST">
                                             	<input type="hidden" name="p" value="transparencia" class="feedback-input">
-		  										<input type="hidden" name="j" value="unidades" class="feedback-input">                                
-                                                <input type="hidden" name="k" value="Ley" class="feedback-input">
+		  										<input type="hidden" name="j" value="obligaciones" class="feedback-input">
                                                 
-                                               <p>
-                                                    <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                                                </p>                                                    
+                                               <!-- <p>
+                                                    <input name="idusr" type="number" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
+                                                </p> -->
 
                                                 <p >
-                                                    <input name="nombre" type="text" class="feedback-input" placeholder="LEY" id="name" />
+                                                    <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
                                                 </p>
 
                                                 <p >
-                                                <textarea name="descripcion" placeholder="DESCRIPCION DE LA LEY" ></textarea>
-                                                
+                                                    <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
+                                                </p>
+
+                                                <p>
+                                                    <input name="usrname" type="text" class="feedback-input" placeholder="NOMBRE DE USUARIO" id="usrname" />
+                                                </p>
+
+                                                <p >
+                                                    <input name="password" type="password" class="feedback-input" placeholder="CONTRASEÑA" id="password" />
+                                                </p>
+
+                                                <p >
+                                                    <input name="perfil" type="text" class="feedback-input" id="perfil" placeholder="PERFIL" />
+                                                </p>
+
+                                                <p >
+                                                    <input name="tipo" type="number" max="6" maxlength="2" min="1" class="feedback-input" id="tipo" placeholder="TIPO DE USUARIO" />
+                                                </p>
+
                                                 <div class="submit">
                                                     <input type="submit" value="Enviar" class="form-button" />
 

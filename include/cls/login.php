@@ -10,9 +10,9 @@
 			$result = $link->query($sql);
 			$resultado = array();
 			while( $row = mysqli_fetch_assoc($result) ){
-				$resultado[] = $row;
+				$resultado = $row;
 			}
-			//$this->register_Vars($resultado);
+			$this->register_Vars($resultado);
 			return $resultado;
 		}
 
