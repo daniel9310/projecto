@@ -85,10 +85,11 @@
 			    </tbody>
 			  </table>
 			  </div>
-			  <form name="frmDeleUsr" action="<?=$CONFIG['sitio']?>borrarlink.php" method="post">
+			  <form name="frmDeleUsr" target="IFBorrar" action="<?=$CONFIG['sitio']?>borrarlink.php" method="post">
 			  <input type="hidden" name="id_usr">
 			  </form>
 
 			  <form  name="frmEditUser" action="paneladm.php?p=usuarios&j=modificar" method="post" > 
 			  <input type="hidden" name="id_usr">
 			  </form>
+			  <iframe name="IFBorrar"  height="500" width="500"></iframe>

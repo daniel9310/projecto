@@ -75,7 +75,6 @@
                                                     <input name="url_nts" type="text"  class="feedback-input"  placeholder="URL" value="<?=$ConsulModi['nts_url']?>"/>
                                                 </p>
 
-
                                                 <div class="submit">
                                                     <input type="submit" value="Enviar" class="form-button" />
 

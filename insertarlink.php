@@ -12,18 +12,19 @@
 	require_once($CONFIG['pathinclude']."config/cx.php");
 	require_once($CONFIG['pathinclude']."cls/usuario.php");
 	$objUsr = new Datos;
-	$Usr = $objUsr->ingresar_datos($vnombreusuario, $vcontra, $vperfil,$vnombre, $vapellido,  $vtipousr);
+	
 	
 		if (empty($vnombreusuario) and empty($vnombre) and empty($vapellido) and empty($vcontra) and empty($vperfil) and empty($vtipousr)) {
 			echo '<script type="text/javascript">
 				          alert("Todos los Campos son Requeridos");
-				          window.location="Admin/paneladm.php?p=usuarios&j=agregar"
+				          window.parent.location="Admin/paneladm.php?p=usuarios&j=agregar"
 				          </script>';
 		}else{
+			$Usr = $objUsr->ingresar_datos($vnombreusuario, $vcontra, $vperfil,$vnombre, $vapellido,  $vtipousr);
 		echo '<script type="text/javascript">
 				          alert("Usuario Guardado Satisfactoriamente");
 				          
-				          window.location="Admin/paneladm.php?p=usuarios&j=consulta"
+				          window.parent.location="Admin/paneladm.php?p=usuarios&j=consulta"
 				          </script>';
 		}
 	

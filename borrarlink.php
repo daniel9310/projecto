@@ -10,7 +10,7 @@
 	if (!empty($vidusr)) {
 			echo '<script type="text/javascript">
 				          alert("El Usuario Fue Borrado Satisfactoriamente");
-				          window.location="Admin/paneladm.php?p=usuarios&j=consulta"
+				          window.parent.location="Admin/paneladm.php?p=usuarios&j=consulta"
 				          
 				          </script>';
 		}	
