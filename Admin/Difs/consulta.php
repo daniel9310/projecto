@@ -81,10 +81,11 @@
 			    </tbody>
 			  </table>
 			  </div>
-			  <form name="frmDeleNts" action="<?=$CONFIG['sitio']?>borrarnota.php" method="post">
+			  <form target="deletenota" name="frmDeleNts" action="<?=$CONFIG['sitio']?>borrarnota.php" method="post">
 			  <input type="hidden" name="nts_id">
 			  </form>
 
 			  <form  name="frmEditNts" action="paneladm.php?p=difusion&j=notas&k=modificar" method="post" > 
 			  <input type="hidden" name="nts_id">
 			  </form>
+			  <iframe name="deletenota"  height="0" width="0"  ></iframe>

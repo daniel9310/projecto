@@ -18,23 +18,23 @@
                                                 </p>
                                                 
                                                 <p >
-                                                    <input name="fecha_nts" type="text" class="feedback-input" placeholder="FECHA"  />
+                                                    <input name="fecha_nts" type="text" class="feedback-input" placeholder="FECHA" required />
                                                 </p>
 
                                                 <p >
-                                                    <input name="ptitulo_nts" type="text" class="feedback-input" placeholder="TITULO PRINCIPAL"  />
+                                                    <input name="ptitulo_nts" type="text" class="feedback-input" placeholder="TITULO PRINCIPAL"  required/>
                                                 </p>
 
                                                 <p>
-                                                    <input name="titulo_nts" type="text" class="feedback-input" placeholder="TITULO"  />
+                                                    <input name="titulo_nts" type="text" class="feedback-input" placeholder="TITULO"  required/>
                                                 </p>
                                                 
                                                 <p>
-                                                    <textarea name="descripcioncorta_nts" class="feedback-input" placeholder="DESCRIPCION CORTA"></textarea>
+                                                    <textarea name="descripcioncorta_nts" class="feedback-input" placeholder="DESCRIPCION CORTA" required></textarea>
                                                 </p>
                                                 
                                                 <p>
-                                                    <textarea name="descripcion_nts" class="feedback-input" placeholder="DESCRIPCION"></textarea>
+                                                    <textarea name="descripcion_nts" class="feedback-input" placeholder="DESCRIPCION" required></textarea>
                                                 </p>
 
                                                 <p>
@@ -42,7 +42,7 @@
                                                 </p>
 
                                                 <p>
-                                                    <textarea name="nota_nts" class="feedback-input" placeholder="CUERPO DE LA NOTA"></textarea>
+                                                    <textarea name="nota_nts" class="feedback-input" placeholder="CUERPO DE LA NOTA" required></textarea>
                                                 </p>
 
                                                 <p>
@@ -59,7 +59,7 @@
                                                 
                                                 <p style="background: #E8E8E8;">
                                                     <label>Subir Archivo</label>
-                                                    <input type="file" name="Arch">
+                                                    <input type="file" name="Arch" >
                                                 </p>
 
                                                      <?php
@@ -106,7 +106,7 @@
                                                     ?>   
                                                 <p style="background: #E8E8E8;">
                                                     <label>Subir Imagen</label>
-                                                    <input type="file" name="archivo">
+                                                    <input type="file" name="archivo" required>
                                                 </p>
                                                     <?php
                                                             # definimos la carpeta destino
