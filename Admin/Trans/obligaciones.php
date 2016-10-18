@@ -1,600 +1,16 @@
-<section class="services-style-3 main-contain"  id="uno" style="display:none;" data-toggle="modal" data-target="#myModal">        
-    <div  class="container">
-        <h2>Leyes</h2>
-          <ul class="nav nav-pills">
-            <li><a data-toggle="pill" href="#menu1">Agregar</a></li>
-            <li><a data-toggle="pill" href="#menu2">Consulta</a></li>
-            <li><a data-toggle="pill" href="#menu3">Modificar</a></li>
-          </ul>
-          
-          <div class="tab-content">                    
-                <div id="menu1" class="tab-pane fade">
-                  <h3>Menu 1</h3>
-                    <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                       <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                          
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-
-                <div id="menu2" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <form class="form"  method="POST">
-                    <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                    <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                    
-                   <p>
-                        <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                    </p> 
-
-                    <p >
-                        <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                    </p>
-
-                    <p >
-                        <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                    </p>                                  
-
-                    <div class="submit">
-                        <input type="submit" value="Enviar" class="form-button" />
-                    </div>
-                    </form>
-                </div>
-
-                <div id="menu3" class="tab-pane fade">
-                  <h3>Menu 3</h3>
-                      <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                        <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                                    
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-          </div>        
-
-
-    </div>
-</section>                         
-                            <!-- -->
-<section class="services-style-3 main-contain"  id="dos" style="display:none;">        
-    <div  class="container">
-        <h2>Articulos</h2>
-          <ul class="nav nav-pills">
-            <li><a data-toggle="pill" href="#menu4">Agregar</a></li>
-            <li><a data-toggle="pill" href="#menu5">Consulta</a></li>
-            <li><a data-toggle="pill" href="#menu6">Modificar</a></li>
-          </ul>
-          
-          <div class="tab-content">                    
-                <div id="menu4" class="tab-pane fade">
-                  <h3>Menu 1</h3>
-                    <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                       <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                          
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-
-                <div id="menu5" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <form class="form"  method="POST">
-                    <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                    <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                    
-                   <p>
-                        <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                    </p> 
-
-                    <p >
-                        <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                    </p>
-
-                    <p >
-                        <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                    </p>                                  
-
-                    <div class="submit">
-                        <input type="submit" value="Enviar" class="form-button" />
-                    </div>
-                    </form>
-                </div>
-
-                <div id="menu6" class="tab-pane fade">
-                  <h3>Menu 3</h3>
-                      <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                        <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                                    
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-          </div>                  
-    </div>
-</section>                         
-                            <!-- -->
-<section class="services-style-3 main-contain"  id="tres" style="display:none;">        
-    <div  class="container">
-        <h2>Fracciones</h2>
-          <ul class="nav nav-pills">
-            <li><a data-toggle="pill" href="#menu1">Agregar</a></li>
-            <li><a data-toggle="pill" href="#menu2">Consulta</a></li>
-            <li><a data-toggle="pill" href="#menu3">Modificar</a></li>
-          </ul>
-          
-          <div class="tab-content">                    
-                <div id="menu1" class="tab-pane fade">
-                  <h3>Menu 1</h3>
-                    <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                       <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                          
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-
-                <div id="menu2" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <form class="form"  method="POST">
-                    <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                    <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                    
-                   <p>
-                        <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                    </p> 
-
-                    <p >
-                        <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                    </p>
-
-                    <p >
-                        <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                    </p>                                  
-
-                    <div class="submit">
-                        <input type="submit" value="Enviar" class="form-button" />
-                    </div>
-                    </form>
-                </div>
-
-                <div id="menu3" class="tab-pane fade">
-                  <h3>Menu 3</h3>
-                      <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                        <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                                    
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-          </div>                  
-    </div>
-</section>                         
-                            <!-- -->
-<section class="services-style-3 main-contain"  id="cuatro" style="display:none;">        
-    <div  class="container">
-        <h2>Incisos</h2>
-          <ul class="nav nav-pills">
-            <li><a data-toggle="pill" href="#menu1">Agregar</a></li>
-            <li><a data-toggle="pill" href="#menu2">Consulta</a></li>
-            <li><a data-toggle="pill" href="#menu3">Modificar</a></li>
-          </ul>
-          
-          <div class="tab-content">                    
-                <div id="menu1" class="tab-pane fade">
-                  <h3>Menu 1</h3>
-                    <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                       <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                          
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-
-                <div id="menu2" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <form class="form"  method="POST">
-                    <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                    <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                    
-                   <p>
-                        <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                    </p> 
-
-                    <p >
-                        <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                    </p>
-
-                    <p >
-                        <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                    </p>                                  
-
-                    <div class="submit">
-                        <input type="submit" value="Enviar" class="form-button" />
-                    </div>
-                    </form>
-                </div>
-
-                <div id="menu3" class="tab-pane fade">
-                  <h3>Menu 3</h3>
-                      <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                        <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                                    
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-          </div>                  
-    </div>
-</section>                         
-                            <!-- -->
-<section class="services-style-3 main-contain"  id="cinco" style="display:none;">        
-    <div  class="container">
-        <h2>Formatos</h2>
-          <ul class="nav nav-pills">
-            <li><a data-toggle="pill" href="#menu1">Agregar</a></li>
-            <li><a data-toggle="pill" href="#menu2">Consulta</a></li>
-            <li><a data-toggle="pill" href="#menu3">Modificar</a></li>
-          </ul>
-          
-          <div class="tab-content">                    
-                <div id="menu1" class="tab-pane fade">
-                  <h3>Menu 1</h3>
-                    <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                       <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                          
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-
-                <div id="menu2" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <form class="form"  method="POST">
-                    <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                    <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                    
-                   <p>
-                        <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                    </p> 
-
-                    <p >
-                        <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                    </p>
-
-                    <p >
-                        <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                    </p>                                  
-
-                    <div class="submit">
-                        <input type="submit" value="Enviar" class="form-button" />
-                    </div>
-                    </form>
-                </div>
-
-                <div id="menu3" class="tab-pane fade">
-                  <h3>Menu 3</h3>
-                      <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                        <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                                    
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-          </div>                  
-    </div>
-</section>                         
-                            <!-- -->
-<section class="services-style-3 main-contain"  id="seis" style="display:none;">        
-    <div  class="container">
-        <h2>Campos de Formatos</h2>
-          <ul class="nav nav-pills">
-            <li><a data-toggle="pill" href="#menu1">Agregar</a></li>
-            <li><a data-toggle="pill" href="#menu2">Consulta</a></li>
-            <li><a data-toggle="pill" href="#menu3">Modificar</a></li>
-          </ul>
-          
-          <div class="tab-content">                    
-                <div id="menu1" class="tab-pane fade">
-                  <h3>Menu 1</h3>
-                    <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                       <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                          
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-
-                <div id="menu2" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <form class="form"  method="POST">
-                    <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                    <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                    
-                   <p>
-                        <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                    </p> 
-
-                    <p >
-                        <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                    </p>
-
-                    <p >
-                        <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                    </p>                                  
-
-                    <div class="submit">
-                        <input type="submit" value="Enviar" class="form-button" />
-                    </div>
-                    </form>
-                </div>
-
-                <div id="menu3" class="tab-pane fade">
-                  <h3>Menu 3</h3>
-                      <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                        <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                                    
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-          </div>                  
-    </div>
-</section>                         
-                            <!-- -->
-<section class="services-style-3 main-contain"  id="siete" style="display:none;">        
-    <div  class="container">
-        <h2>Llenar Formatos</h2>
-          <ul class="nav nav-pills">
-            <li><a data-toggle="pill" href="#menu1">Agregar</a></li>
-            <li><a data-toggle="pill" href="#menu2">Consulta</a></li>
-            <li><a data-toggle="pill" href="#menu3">Modificar</a></li>
-          </ul>
-          
-          <div class="tab-content">                    
-                <div id="menu1" class="tab-pane fade">
-                  <h3>Menu 1</h3>
-                    <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                       <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                          
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-
-                <div id="menu2" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <form class="form"  method="POST">
-                    <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                    <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                    
-                   <p>
-                        <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                    </p> 
-
-                    <p >
-                        <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                    </p>
-
-                    <p >
-                        <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                    </p>                                  
-
-                    <div class="submit">
-                        <input type="submit" value="Enviar" class="form-button" />
-                    </div>
-                    </form>
-                </div>
-
-                <div id="menu3" class="tab-pane fade">
-                  <h3>Menu 3</h3>
-                      <form class="form"  method="POST">
-                        <input type="hidden" name="p" value="transparencia" class="feedback-input">
-                        <input type="hidden" name="j" value="obligaciones" class="feedback-input">
-                        
-                        <p>
-                            <input name="idusr" type="hidden" max="100"  min="0" class="feedback-input" id="idusr" placeholder="ID DE USUARIO" />
-                        </p> 
-
-                        <p >
-                            <input name="name" type="text" class="feedback-input" placeholder="NOMBRE" id="name" />
-                        </p>
-
-                        <p >
-                            <input name="lastname" type="text" class="feedback-input" placeholder="APELLIDO" id="lastname" />
-                        </p>                                    
-
-                        <div class="submit">
-                            <input type="submit" value="Enviar" class="form-button" />
-                        </div>
-                    </form>
-                </div>
-          </div>                  
-    </div>
-</section>                         
-                            <!-- -->
+<?php 
+    session_start();
+    require_once("../include/config/config.php");
+    require_once($CONFIG['pathinclude']."config/cx.php");
+    require_once($CONFIG['pathinclude']."cls/transparencia.php");
+    $objLey = new leyes;
+   /* $objArt = new articulos;
+    $objFrac = new fracciones;
+    $objInc = new incisos;
+    $objForm = new formatos;
+    $objCampo = new campoformatos;
+    $objIng = new ingresardatos;*/
+ ?>
 
 <section class="services-style-3 main-contain">
                 <div class="container">
@@ -610,7 +26,7 @@
 
                                 <div class="row text-center">
                                         <div class="col-sm-4 col-md-4 cv-theme-30"  >
-                                            <div class="serviceBox_2" id="MosOcu" >
+                                            <div class="serviceBox_2" id="clickeable"  onclick="window.location='?p=transparencia&j=leyes'" >
                                                 <i class="fa fa-bell"></i>
                                                 <h3>Leyes</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
@@ -619,7 +35,7 @@
 
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30" >
-                                            <div class="serviceBox_2" id="MosOcu1">
+                                            <div class="serviceBox_2"  onclick="window.location='?p=transparencia&j=articulos'">
                                                 <i class="fa fa-briefcase"></i>
                                                 <h3>Articulos</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
@@ -627,7 +43,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
-                                            <div class="serviceBox_2" id="MosOcu2">
+                                            <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=fraciones'">
                                                 <i class="fa fa-rocket"></i>
                                                 <h3>Fracciones</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
@@ -635,28 +51,28 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
-                                            <div class="serviceBox_2" id="MosOcu3">
+                                            <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=incisos'">
                                                 <i class="fa fa-location-arrow"></i>
                                                 <h3>Incisos</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
-                                            <div class="serviceBox_2" id="MosOcu4">
+                                            <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=formatos'">
                                                 <i class="fa fa-envelope-o"></i>
                                                 <h3>Formatos</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
-                                            <div class="serviceBox_2" id="MosOcu5">
+                                            <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=camposform'">
                                                 <i class="fa fa-line-chart"></i>
                                                 <h3>Campos Formatos</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
-                                            <div class="serviceBox_2" id="MosOcu6">
+                                            <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=llenarinfo'">
                                                 <i class="fa fa-line-chart"></i>
                                                 <h3>Llenar Formatos</h3>
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>

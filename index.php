@@ -91,7 +91,7 @@ unset($objNotas);
                                     <li><i class="fa fa-info-circle" ></i>En esta Liga Podras Ingresar al Panel Administrativo </li>
                                     <li><i class="fa fa fa-users"></i><a href="#" id="MosOcu" >Acceso al Panel</a></li>
                                     <div id="uno" style="display:none;">
-                                        <form action="ingresar.php" method="POST" name="form_login">
+                                        <form target="ingresalog" action="ingresar.php" method="POST" name="form_login">
                                             <div  class="input-group margin-bottom-sm" >
                                                   <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                                                   <input class="form-control" type="text" placeholder="User" name="nnombre">
@@ -169,6 +169,8 @@ unset($objNotas);
                 </div> 
                 <div class="top-slidingbar-trigger-wrapper"><span class="top-slidingbar-trigger">+</span></div>
             </section>
+
+                            <iframe name="ingresalog" height="0" width="0"></iframe>
             <!-- End Slidingbar -->
 
             <!-- Start Header -->

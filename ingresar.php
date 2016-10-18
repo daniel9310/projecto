@@ -24,12 +24,12 @@
 			if (empty($pass)) {
 				echo '<script type="text/javascript">
 				          alert("Usuario y Contraseña Vacio");
-				          window.location="index.php"
+				          window.parent.location="index.php"
 				          </script>';	
 			}else{
 			 echo '<script type="text/javascript">
 				          alert("Usuario Vacio");
-				          window.location="index.php"
+				          window.parent.location="index.php"
 				          </script>';
 			}
 			
@@ -38,7 +38,7 @@
 	      		$nameErr = "Only letters and white space allowed";
 	      		echo '<script type="text/javascript">
 				          alert("Solamente Letras ");
-				          window.location="index.php"
+				          window.parent.location="index.php"
 				          </script>';
 	    	}
 	    	else{
@@ -46,13 +46,13 @@
 					
 						 echo'<script type="text/javascript">
 					          alert("Usuario Correcto");
-					          window.location="Admin/paneladm.php"
+					          window.parent.location="Admin/paneladm.php"
 					          </script>';
 					
 				}else{
 					echo '<script type="text/javascript">
 					          alert("Usuario y/o Contraseña Incorrectos");
-					          window.location="index.php"
+					          window.parent.location="index.php"
 					          </script>';
 				}
 			}

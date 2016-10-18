@@ -64,7 +64,7 @@
 
                                                      <?php
                                                             # definimos la carpeta destino
-                                                            $carpetaDestino="../files/prueba/";
+                                                            $carpetaDestino="../files/archivo/";
                                                             //$carpetaDestino= $CONFIG['sitioimgnotas'];
                                                             
                                                             # si hay algun archivo que subir
@@ -110,7 +110,7 @@
                                                 </p>
                                                     <?php
                                                             # definimos la carpeta destino
-                                                            $carpetaDestino="../files/prueba/";
+                                                            $carpetaDestino="../files/notas/img/";
                                                             //$carpetaDestino= $CONFIG['sitioimgnotas'];
                                                             
                                                             # si hay algun archivo que subir

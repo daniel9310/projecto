@@ -7,6 +7,7 @@ $CONFIG['path'] = "c://xampp/htdocs/ISTAI/projecto/";
 $CONFIG['sitio'] = "http://".$_SERVER['HTTP_HOST']."/ISTAI/projecto/";
 $CONFIG['pathinclude'] = "c://xampp/htdocs/ISTAI/projecto/include/";
 $CONFIG['sitioimgnotas'] = $CONFIG['sitio']."files/notas/img/";
+$CONFIG['pathtrans'] = $CONFIG['sitio']."Admin/Trans/relacion/";
 
 $CONFIG['pathpuente'] = "/home/itiesorg/public_html/puente/";
 $CONFIG['sitiopuente'] = "http://".$_SERVER['HTTP_HOST']."/puente/";

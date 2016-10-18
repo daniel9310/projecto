@@ -24,9 +24,17 @@
                     });
                     function mostrar(){
                         document.getElementById('dos').style.display='block';
+
+                       /* document.getElementById('uno').style.display='none';
+                        document.getElementById('tres').style.display='none';
+                        document.getElementById('cuatro').style.display='none';
+                        document.getElementById('cinco').style.display='none';
+                        document.getElementById('seis').style.display='none';
+                        document.getElementById('siete').style.display='none';*/
                     }
                     function ocultar(){
                         document.getElementById('dos').style.display='none';
+
                     }
                    </script>
                    <script >
