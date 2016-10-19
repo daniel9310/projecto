@@ -7,7 +7,190 @@
 		<div  class="container">
           <div class=" col-md-11 col-sm-4 col-xs-12" style="align-items: center; text-align: center;" align="center">
                 <h2>Agregar Notas</h2>   <!-- action="<?=$CONFIG['sitio']?>insertarlink.php" -->
-                                        <div class="form-main">
+                                        
+                                        <div class="form-main" >
+                                            <div class="row">
+                                              <form class="col l12"  method="POST"   enctype="multipart/form-data" name="inscripcion">
+                                                <div class="row">
+                                                  <input type="hidden" name="id_nts" placeholder="ID DE USUARIO" >
+                                                  
+                                                  <div class="input-field col s12">
+                                                    <input id="nombre" type="text" class="validate" name="fecha_nts" required >
+                                                    <label for="first_name">Fecha</label>
+                                                  </div>
+
+                                                  <div class="input-field col s12">
+                                                    <input name="ptitulo_nts" id="apellidos" type="text" class="validate" >
+                                                    <label for="last_name">Titulo Principal</label>
+                                                  </div>                                               
+                                               
+                                                  <div class="input-field col s12">
+                                                    <input name="titulo_nts" id="nombre_usuario" type="text" class="validate" >
+                                                    <label for="username">Titulo</label>
+                                                  </div>                      
+
+                                                  <div class="input-field col s12">
+                                                      <i class="material-icons prefix">mode_edit</i>
+                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcioncorta_nts"></textarea>
+                                                      <label for="icon_prefix2">Descripcion Corta</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                      <i class="material-icons prefix">mode_edit</i>
+                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcion_nts"></textarea>
+                                                      <label for="icon_prefix2">Descripcion</label>
+                                                    </div>
+
+                                                    <div class="input-field col s12">
+                                                      <i class="material-icons prefix">mode_edit</i>
+                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcioninterior_nts"></textarea>
+                                                      <label for="icon_prefix2">Descripcion Interior</label>
+                                                    </div>                        
+                                                
+                                                    <div class="input-field col s12">
+                                                      <i class="material-icons prefix">mode_edit</i>
+                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="nota_nts"></textarea>
+                                                      <label for="icon_prefix2">Nota</label>
+                                                    </div>   
+
+                                                    <div class="input-field col s12">
+                                                      <i class="material-icons prefix">mode_edit</i>
+                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="pie_nts"></textarea>
+                                                      <label for="icon_prefix2">Pie de Nota</label>
+                                                    </div>   
+
+                                                  <div class="input-field col s12">
+                                                    <input name="rotativo_nts" type="number" value="0" max="1" min="0" class="validate" >
+                                                    <label for="rotativo_nts">Tipo de Rotativo</label>
+                                                  </div>
+
+                                                  <div class="input-field col s12">
+                                                    <input name="url_nts" type="text" class="validate" >
+                                                    <label for="url_nts">URL</label>
+                                                  </div>
+
+                                                    <div class="col s12">
+                                                        <div class="file-field input-field">
+                                                          <div class="btn">
+                                                            <span>Archivo</span>
+                                                            <input type="file" name="Arch" >
+                                                          </div>
+                                                          <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text">
+                                                          </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <?php
+                                                            # definimos la carpeta destino
+                                                            $carpetaDestino="../files/archivo/";
+                                                            //$carpetaDestino= $CONFIG['sitioimgnotas'];
+                                                            
+                                                            # si hay algun archivo que subir
+
+                                                            if($_FILES["Arch"]["name"])
+                                                            { 
+                                                                
+                                                                    # si es un formato de imagen
+
+                                                                    if( $_FILES["Arch"]["type"]=="application/pdf" || $_FILES["Arch"]["type"]=="application/msword")
+                                                                    {
+                                                                        # si exsite la carpeta o se ha creado
+
+                                                                        
+                                                                            $origen=$_FILES["Arch"]["tmp_name"];
+
+                                                                            $destino=$carpetaDestino.$_FILES["Arch"]["name"];
+                                                                            
+                                                                            # movemos el archivo
+
+                                                                            if(move_uploaded_file($origen, $destino))
+                                                                            {
+                                                                                echo "<br>".$_FILES["Arch"]["name"]." movido correctamente";
+                                                                            }else{
+                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["Arch"]["name"];
+                                                                            }
+
+                                                                        
+
+                                                                    }else{
+                                                                        echo "<br>".$_FILES["Arch"]["name"]." - NO es un archivo .doc  O .pdf";
+                                                                    }
+                                                                
+                                                            }else{
+
+                                                                echo "<br>No se ha subido ningun archivo";
+
+                                                            }
+                                                    ?>  
+
+                                                    <div class="col s12">
+                                                        <div class="file-field input-field">
+                                                          <div class="btn">
+                                                            <span>IMAGEN</span>
+                                                            <input type="file" name="archivo" required >
+                                                          </div>
+                                                          <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text">
+                                                          </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <?php
+                                                            # definimos la carpeta destino
+                                                            $carpetaDestino="../files/notas/img/";
+                                                            //$carpetaDestino= $CONFIG['sitioimgnotas'];
+                                                            
+                                                            # si hay algun archivo que subir
+
+                                                            if($_FILES["archivo"]["name"])
+                                                            { 
+                                                                
+                                                                    # si es un formato de imagen
+
+                                                                    if($_FILES["archivo"]["type"]=="image/jpeg" || $_FILES["archivo"]["type"]=="image/pjpeg" || $_FILES["archivo"]["type"]=="image/gif" || $_FILES["archivo"]["type"]=="image/png" )
+                                                                    {
+                                                                        # si exsite la carpeta o se ha creado
+
+                                                                        
+                                                                            $origen=$_FILES["archivo"]["tmp_name"];
+
+                                                                            $destino=$carpetaDestino.$_FILES["archivo"]["name"];
+                                                                            
+                                                                            # movemos el archivo
+
+                                                                            if(move_uploaded_file($origen, $destino))
+                                                                            {
+                                                                                echo "<br>".$_FILES["archivo"]["name"]." movido correctamente";
+                                                                            }else{
+                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["archivo"]["name"];
+                                                                            }
+
+                                                                        
+
+                                                                    }else{
+                                                                        echo "<br>".$_FILES["archivo"]["name"]." - NO es imagen jpg";
+                                                                    }
+                                                                
+                                                            }else{
+
+                                                                echo "<br>No se ha subido ninguna imagen";
+
+                                                            }
+                                                    ?>  
+
+                                                  <div align="center" class="col l12" style="align-items: center;">
+                                                    <!--input type="submit" value="Enviar" class="form-button" /-->
+                                                    <button class="btn waves-effect waves-light col l12" type="submit" name="InSend" >Enviar
+                                                        <i class="material-icons "></i>
+                                                      </button>
+                                                </div>
+                                              </form>
+                                            </div>
+                                        </div>
+
+
+                                       <!-- <div class="form-main">
                                             <form class="form"   method="post" enctype="multipart/form-data" name="inscripcion" >
                                             	   <input type="hidden" name="p" value="difusion" class="feedback-input">
                                                 <input type="hidden" name="j" value="notas" class="feedback-input">      
@@ -108,7 +291,7 @@
                                                     <label>Subir Imagen</label>
                                                     <input type="file" name="archivo" required>
                                                 </p>
-                                                    <?php
+                                                    <?php /*
                                                             # definimos la carpeta destino
                                                             $carpetaDestino="../files/notas/img/";
                                                             //$carpetaDestino= $CONFIG['sitioimgnotas'];
@@ -148,7 +331,7 @@
 
                                                                 echo "<br>No se ha subido ninguna imagen";
 
-                                                            }
+                                                            }*/
                                                     ?>                                     
 
                                                     
@@ -157,7 +340,7 @@
 
                                                      <input type="submit" value="Enviar"  class="form-button" name="InSend">
 
-                                                </div>
+                                                </div>-->
                                                 <?php 
                                                     session_start();
                                                     $vfecha = $_POST['fecha_nts'];
@@ -195,7 +378,7 @@
                                                                           </script>';
                                                         }
                                                      } else {
-                                                          Echo "Se ha pulsado el botón cancelar";
+                                                         # Echo "Se ha pulsado el botón cancelar";
                                                      }
                                                     
                                                     

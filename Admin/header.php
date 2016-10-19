@@ -8,8 +8,8 @@
 	<!-- Meta -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS Global -->
-    	<link href="<?=$CONFIG['sitio']?>assets/css/bootstrap.min.css" rel="stylesheet" />
+ <!-- CSS Global -->
+      <link href="<?=$CONFIG['sitio']?>assets/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/style.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/owl-carousel/owl.carousel.css">
@@ -19,6 +19,12 @@
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/font-awesome.min.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/magnific-popup.css">       
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Materialize-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="<?=$CONFIG['sitio']?>materialize/css/materialize.min.css"  media="screen,projection"/>
+
+
+   
 
 
     <!-- WEB FONTS -->
@@ -34,6 +40,10 @@
 
 </head>
 <body>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="<?=$CONFIG['sitio']?>materialize/js/materialize.min.js"></script>
+
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/FlexSlider/jquery.flexslider.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/animate.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/font-awesome.min.css">
@@ -164,7 +174,7 @@
             -->
 
         <section>
-        	<div class="tab-content col-md-11 col-sm-11 home-main-contant-style blog-page-blog-style sidebar row" >
+        	<div class="tab-content col-md-10 col-sm-10 home-main-contant-style blog-page-blog-style sidebar row" >
         
            
            

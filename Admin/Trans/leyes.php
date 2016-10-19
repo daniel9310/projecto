@@ -54,14 +54,14 @@
                                                                           alert("Todos los Campos son Requeridos");
                                                                           window.parent.location="paneladm.php?p=transparencia&j=leyes"
                                                                           </script>';
-                                }else{
-                                    $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr);
-                                     echo '<script type="text/javascript"> 
-                                                                          alert("Los Datos se Guardaron Satisfactoriamente");
-                                                                          window.parent.location="paneladm.php?p=transparencia&j=leyes"
-                                                                          </script>';
+                                    }else{
+                                        $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr);
+                                         echo '<script type="text/javascript"> 
+                                                                              alert("Los Datos se Guardaron Satisfactoriamente");
+                                                                              window.parent.location="paneladm.php?p=transparencia&j=leyes"
+                                                                              </script>';
 
-                                }
+                                    }
                                 }
                                
 
