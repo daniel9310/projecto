@@ -15,8 +15,10 @@
                                                   <input type="hidden" name="id_nts" placeholder="ID DE USUARIO" >
                                                   
                                                   <div class="input-field col s12">
-                                                    <input id="nombre" type="text" class="validate" name="fecha_nts" required >
-                                                    <label for="first_name">Fecha</label>
+
+                                                    <!--input type="date" class="datepicker validate"  name="fecha_nts" required-->        
+                                                    <input id="nombre" type="text" class="datepicker" name="fecha_nts" required >
+                                                    <label for="nombre">Fecha</label>
                                                   </div>
 
                                                   <div class="input-field col s12">
@@ -30,32 +32,32 @@
                                                   </div>                      
 
                                                   <div class="input-field col s12">
-                                                      <i class="material-icons prefix">mode_edit</i>
-                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcioncorta_nts"></textarea>
+                                                      <i class="material-icons prefix">note</i>
+                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcioncorta_nts" length="120"></textarea>
                                                       <label for="icon_prefix2">Descripcion Corta</label>
                                                     </div>
 
                                                     <div class="input-field col s12">
-                                                      <i class="material-icons prefix">mode_edit</i>
-                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcion_nts"></textarea>
+                                                      <i class="material-icons prefix">note</i>
+                                                      <textarea length="120" id="icon_prefix2" class="materialize-textarea" name="descripcion_nts"></textarea>
                                                       <label for="icon_prefix2">Descripcion</label>
                                                     </div>
 
                                                     <div class="input-field col s12">
-                                                      <i class="material-icons prefix">mode_edit</i>
-                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcioninterior_nts"></textarea>
+                                                      <i class="material-icons prefix">note</i>
+                                                      <textarea id="icon_prefix2" length="120" class="materialize-textarea" name="descripcioninterior_nts"></textarea>
                                                       <label for="icon_prefix2">Descripcion Interior</label>
                                                     </div>                        
                                                 
                                                     <div class="input-field col s12">
-                                                      <i class="material-icons prefix">mode_edit</i>
-                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="nota_nts"></textarea>
+                                                      <i class="material-icons prefix">note</i>
+                                                      <textarea id="icon_prefix2" length="120" class="materialize-textarea" name="nota_nts"></textarea>
                                                       <label for="icon_prefix2">Nota</label>
                                                     </div>   
 
                                                     <div class="input-field col s12">
-                                                      <i class="material-icons prefix">mode_edit</i>
-                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="pie_nts"></textarea>
+                                                      <i class="material-icons prefix">note</i>
+                                                      <textarea id="icon_prefix2" length="120" class="materialize-textarea" name="pie_nts"></textarea>
                                                       <label for="icon_prefix2">Pie de Nota</label>
                                                     </div>   
 
@@ -72,6 +74,7 @@
                                                     <div class="col s12">
                                                         <div class="file-field input-field">
                                                           <div class="btn">
+                                                            <i class="material-icons">attach_file</i>
                                                             <span>Archivo</span>
                                                             <input type="file" name="Arch" >
                                                           </div>
@@ -127,6 +130,7 @@
                                                     <div class="col s12">
                                                         <div class="file-field input-field">
                                                           <div class="btn">
+                                                            <i class="material-icons">photo</i>
                                                             <span>IMAGEN</span>
                                                             <input type="file" name="archivo" required >
                                                           </div>

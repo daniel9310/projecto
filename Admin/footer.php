@@ -4,6 +4,23 @@
 <!-- Fin Cuerpo -->
 
 		<script >
+                  $(document).ready(function() {
+                    $('inptextarea#icon_prefix2').characterCounter();
+
+                  });
+                   $('.datepicker').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 15, // Creates a dropdown of 15 years to control year
+                    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+weekdaysShort: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+showWeekdaysShort: true,
+today: 'Hoy',
+  clear: 'Limpiar',
+  close: 'Cerrar',
+  formatSubmit: 'dd/mm/yyyy'
+                  });
                     $(document).ready(function(){ 
                         $('#MosOcu').on('click',function(){
                         $('#uno').toggle();
