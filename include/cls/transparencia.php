@@ -5,7 +5,19 @@
 	*/
 	class leyes
 	{
-		
+		function read($idley){
+			global $link;
+			$sql = "CALL Ley_ver('%1\$s')";
+			$sql = sprintf($sql, $idley);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado =$row;
+				//array_push($resultado,$row);
+			}
+			return $resultado;	
+		}
+
 		function consult($idusr)
 		{
 			global $link;

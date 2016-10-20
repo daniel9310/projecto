@@ -17,9 +17,11 @@
                                                 <div class="row">
                                                   <input type="hidden" name="id_nts" placeholder="ID DE USUARIO" value="<?=$_POST['nts_id']?>" >
                                                   
-                                                  <div class="input-field col s12">
-                                                    <input id="nombre" type="text" class="validate" name="fecha_nts" required value="<?=$_POST['nts_fecha']?>" >
-                                                    <label for="first_name">Fecha</label>
+                                                   <div class="input-field col s12">
+
+                                                    <!--input type="date" class="datepicker validate"  name="fecha_nts" required-->        
+                                                    <input id="nombre" type="text" class="datepicker" name="fecha_nts" required value="<?=$_POST['nts_fecha']?>">
+                                                    <label for="nombre">Fecha</label>
                                                   </div>
 
                                                   <div class="input-field col s12">
