@@ -79,7 +79,7 @@
                                                           <div class="btn">
                                                             <i class="material-icons">attach_file</i>
                                                             <span>Archivo</span>
-                                                            <input type="file" name="Arch" >
+                                                            <input type="file" name="Arch" value="<?=$ConsulModi['nts_archivo']?>" >
                                                           </div>
                                                           <div class="file-path-wrapper">
                                                             <input class="file-path validate" type="text" value="<?=$ConsulModi['nts_archivo']?>" >
@@ -135,7 +135,7 @@
                                                           <div class="btn">
                                                             <i class="material-icons">photo</i>
                                                             <span>IMAGEN</span>
-                                                            <input type="file" name="archivo" required >
+                                                            <input type="file" name="archivo" value="<?=$ConsulModi['nts_imagen']?>" required >
                                                           </div>
                                                           <div class="file-path-wrapper">
                                                             <input class="file-path validate" type="text" value="<?=$ConsulModi['nts_imagen']?>">

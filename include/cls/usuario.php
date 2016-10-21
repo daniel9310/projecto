@@ -80,6 +80,18 @@
 			return $result;
 		}
 
+		function Tipo_usuario($idusr){
+			global $link;
+			$sql = "select * from ct_tipousr";
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado[] =$row;
+				//array_push($resultado,$row);
+			}
+			return $resultado;
+		}
+
 		
 	}
 

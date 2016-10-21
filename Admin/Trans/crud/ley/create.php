@@ -27,7 +27,12 @@
                             <i class="material-icons prefix">note</i>
                             <textarea id="icon_prefix2" class="materialize-textarea" name="descripcionley" length="120"></textarea>
                             <label for="icon_prefix2">Descripcion de la Ley</label>
-                          </div>     
+                        </div> 
+
+                        <div class="input-field col s12">
+                          <input name="acti" id="acti" type="hidden" max="1" min="0" class="validate" >
+                          <label for="acti">Activo</label>
+                        </div>     
 
                         <div align="center" class="col l12" style="align-items: center;">
                             <!--input type="submit" value="Enviar" class="form-button" /-->
@@ -39,6 +44,7 @@
                                 $V_leyidusr = $_SESSION['id_usr'];
                                 $v_leytipo = $_POST['ley'];
                                 $v_leydesc = $_POST['descripcionley'];
+                                $v_activo = $_POST['acti'];
 
 
                                if (isset($_POST['SubmitAgregar'])) {
@@ -49,13 +55,29 @@
                                                                           window.parent.location="paneladm.php?p=transparencia&j=leyes&crud=create"
                                                                           </script>';
                                     }else{
-                                        $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr);
-                                         echo '<script type="text/javascript"> 
-                                                                              alert("Los Datos se Guardaron Satisfactoriamente");
-                                                                              window.parent.location="paneladm.php?p=transparencia&j=leyes&crud=read"
-                                                                              </script>';
+                                        if (empty($v_activo)) {
+                                         $v_activo = 0;
+                                         $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr,$v_activo);
+                                             echo '<script type="text/javascript"> 
+                                                                                  alert("Los Datos se Guardaron Satisfactoriamente");
+                                                                                  window.parent.location="paneladm.php?p=transparencia&j=leyes&crud=read"
+                                                                                  </script>';
+                                                                                  exit();
+                                        }else{
+                                          $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr,$v_activo);
+                                             echo '<script type="text/javascript"> 
+                                                                                  alert("Los Datos se Guardaron Satisfactoriamente");
+                                                                                  window.parent.location="paneladm.php?p=transparencia&j=leyes&crud=read"
+                                                                                  </script>';
+                                        }
+                                       
+                                      }
 
-                                    }
+                                      
+                                       
+                                      
+
+                                    
                                 }
                                
 

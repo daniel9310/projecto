@@ -1,3 +1,11 @@
+    <?php 
+    session_start();
+    require_once("../include/config/config.php");
+    require_once($CONFIG['pathinclude']."config/cx.php");
+    require_once($CONFIG['pathinclude']."cls/usuario.php");
+    $objUser = new Datos;
+    $datos = $objUser->Tipo_usuario(1);
+ ?>
     <section class="services-style-3 main-contain">
  	 	
 		<div  class="container">
@@ -69,13 +77,26 @@
                                                   </div>
 
                                                   <div class="input-field col s12">
-                                                    <input name="perfil" id="password" type="text" class="validate">
-                                                    <label for="perfil">Perfil</label>
+                                                    <select name="perfil">
+                                                      <option value="Administrador">Administrador</option>
+                                                      <option value="Subir_Notas">Subir Notas</option>
+                                                      <option value="Usuario">Usuario</option>
+                                                    </select>
                                                   </div>
 
-                                                  <div class="input-field col s12">
-                                                    <input name="tipo" id="password" type="number" class="validate" max="6" maxlength="2" min="1" >
-                                                    <label for="perfil">Tipo de Usuario</label>
+
+                                                  <div class="input-field col s12">    
+                                                    <select name="tipo">
+                                                       <option value="" disabled selected>Elige el Area del Usuario</option>
+                                                       <?php 
+                                                           foreach ($datos as $row => $dato) {                                        
+                                                        ?> 
+                                                        <option value="<?=$dato['id_tipousr']?>" required><?=$dato['tusr_nombre']?></option>
+                                                        <?php 
+                                                           }
+                                                        ?>                            
+                                                    </select>
+                                                    <label>Tipo de Usuario</label>
                                                   </div>
 
                                                   <div align="center" class="col l12" style="align-items: center;">

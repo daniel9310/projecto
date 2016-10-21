@@ -4,6 +4,9 @@
 <!-- Fin Cuerpo -->
 
 		<script >
+                $(document).ready(function() {
+                  $('select').material_select();
+                });
                   $(document).ready(function() {
                     $('inptextarea#icon_prefix2').characterCounter();
 
