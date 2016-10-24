@@ -14,7 +14,7 @@
  ?>
 <div class="rows">
                   <h3></h3>
-                    <form class="form" target="agregar" method="POST"  action="<?=$CONFIG['pathtrans']?>Artagregar.php">
+                    <form class="form" target="" method="POST"  action="<?=$CONFIG['pathtrans']?>Artagregar.php">
 
                         
                         <div class="input-field col s12">                              
@@ -43,7 +43,10 @@
                             <label for="icon_prefix2">Descripcion del Articulo</label>
                         </div> 
 
-                       
+                        <div class="input-field col s12">
+                          <input name="actiArt" id="acti" type="number" max="1" min="0" class="validate" >
+                          <label for="acti">Activo</label>
+                        </div>                           
 
                         <div align="center" class="col l12" style="align-items: center;">
                             <button class="btn waves-effect waves-light col l12" type="submit" name="SubAgregar" >Enviar</button>

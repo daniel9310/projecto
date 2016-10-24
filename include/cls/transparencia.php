@@ -68,11 +68,11 @@
 	class articulos
 	{
 		
-		function create($descripcion, $articulo, $ley)
+		function create($descripcion, $articulo, $ley,$activo)
 		{
 			global $link;
-			$sql = "CALL Art_insertar('%1\$s','%2\$s','%3\$s')";
-			$sql = sprintf($sql, $descripcion, $articulo, $ley);
+			$sql = "CALL Art_insertar('%1\$s','%2\$s','%3\$s','%4\$s')";
+			$sql = sprintf($sql, $descripcion, $articulo, $ley, $activo);
 			echo $sql;
 			$result = $link->query($sql);
 			return $result;
@@ -132,11 +132,11 @@
 	class fracciones
 	{
 		
-		function create($descripcion, $numfrac, $fkart)
+		function create($descripcion, $numfrac, $fkart, $activo)
 		{
 			global $link;
-			$sql = "CALL Fracc_insertar('%1\$s','%2\$s','%3\$s')";
-			$sql = sprintf($sql, $descripcion, $numfrac, $fkart);
+			$sql = "CALL Fracc_insertar('%1\$s','%2\$s','%3\$s','%4\$s')";
+			$sql = sprintf($sql, $descripcion, $numfrac, $fkart, $activo);
 			echo $sql;
 			$result = $link->query($sql);
 			return $result;	
@@ -192,24 +192,63 @@
 	/**
 	* 
 	*/
-	/*class incisos
+	class incisos
 	{
 		
-		function consult(argument)
+		function create($descripcion, $numfinc, $fkfrac, $activo)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Inciso_insertar('%1\$s','%2\$s','%3\$s','%4\$s')";
+			$sql = sprintf($sql, $descripcion, $numfinc, $fkfrac, $activo);
+			echo $sql;
+			$result = $link->query($sql);
+			return $result;	
 		}
-		function replace(argument)
+		function read($idusr)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Inciso_consulta(%1\$s) ";
+			$sql = sprintf($sql, $idusr);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+			$resultado[] = $row;
+			}
+			return $resultado;
 		}
-		function update(argument)
-		{
-			# code...
+		function readall($idinc){
+			global $link;
+			$sql = "CALL Inciso_ver('%1\$s')";
+			$sql = sprintf($sql, $idinc);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado =$row;
+				//array_push($resultado,$row);
+			}
+			return $resultado;	
 		}
-		function delete(argument)
+		function update($incid, $descripcion, $numfinc, $fkfrac)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Inciso_modificar('%1\$s','%2\$s','%3\$s','%4\$s')";
+			$sql = sprintf($sql,$incid, $descripcion, $numfinc, $fkfrac);
+			echo $sql;
+			$result = $link->query($sql);			
+			return $result;
+		}
+		function delete($id)
+		{
+			global $link;
+			$sql = "CALL Inciso_borrar('%1\$s')";
+			$sql = sprintf($sql, $id);
+			echo $sql;
+			$result = $link->query($sql);
+			/*$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado = $row;
+			}*/
+			return $result;
 		}
 	}
 

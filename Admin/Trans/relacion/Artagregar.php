@@ -7,6 +7,7 @@
   $v_ley = $_POST['fkley'];
   $v_art = $_POST['idarticulo'];
   $v_descart = $_POST['artdesc'];
+  $v_activo = $_POST['actiArt'];
   #$v_activo = $_POST['acti'];
 
 
@@ -16,13 +17,14 @@
                                             alert("Todos los Campos son Requeridos");
                                                     window.parent.location="../../paneladm.php?p=transparencia&j=articulos&crud=create";
                                             </script>';
-      }else{
+      }else{        
+              $IngresarArt = $objArt->create($v_descart,$v_art, $v_ley,$v_activo); 
                echo '<script type="text/javascript"> 
                                                     alert("Los Datos se Guardaron Satisfactoriamente");
                                                     window.parent.location="../../paneladm.php?p=transparencia&j=articulos&crud=read";
                                                     </script>';
 
-            $IngresarArt = $objArt->create($v_descart,$v_art, $v_ley);                                        
+                                                   
          
         }                      
         

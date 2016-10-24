@@ -3,25 +3,25 @@
   require_once("../../../include/config/config.php");
   require_once($CONFIG['pathinclude']."config/cx.php");
   require_once($CONFIG['pathinclude']."cls/transparencia.php");  
-  $objFrac = new fracciones;
-  $v_fkart = $_POST['fkart'];
-  $v_numfrac = $_POST['Numfracc'];
-  $v_desfrac = $_POST['fraccdesc'];
-  $v_activo = $_POST['actiFracc'];
+  $objInc = new incisos;
+  $v_fkfracc = $_POST['fkfracc'];
+  $v_numinc = $_POST['Numinc'];
+  $v_desinc = $_POST['incdesc'];
+  $v_activo = $_POST['actiInc'];
   #$v_activo = $_POST['acti'];
 
 
    
-     if (empty($v_fkart) && empty($v_numfrac) && empty($v_desfrac)) {
+     if (empty($v_fkfracc) && empty($v_numinc) && empty($v_desinc)) {
        echo '<script type="text/javascript">
                                             alert("Todos los Campos son Requeridos");
-                                                    window.parent.location="../../paneladm.php?p=transparencia&j=fraciones&crud=create";
+                                                    window.parent.location="../../paneladm.php?p=transparencia&j=incisos&crud=create";
                                             </script>';
       }else{
-            $IngresarFrac = $objFrac->create($v_desfrac,$v_numfrac, $v_fkart, $v_activo);        
+            $IngresarInc = $objInc->create($v_desinc,$v_numinc, $v_fkfracc, $v_activo);        
                echo '<script type="text/javascript"> 
                                                     alert("Los Datos se Guardaron Satisfactoriamente");
-                                                    window.parent.location="../../paneladm.php?p=transparencia&j=fraciones&crud=read";
+                                                    window.parent.location="../../paneladm.php?p=transparencia&j=incisos&crud=read";
                                                     </script>';                                
          
         }                      

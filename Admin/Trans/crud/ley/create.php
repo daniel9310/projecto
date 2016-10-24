@@ -30,7 +30,7 @@
                         </div> 
 
                         <div class="input-field col s12">
-                          <input name="acti" id="acti" type="hidden" max="1" min="0" class="validate" >
+                          <input name="acti" id="acti" type="number" max="1" min="0" class="validate" >
                           <label for="acti">Activo</label>
                         </div>     
 
@@ -56,7 +56,6 @@
                                                                           </script>';
                                     }else{
                                         if (empty($v_activo)) {
-                                         $v_activo = 0;
                                          $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr,$v_activo);
                                              echo '<script type="text/javascript"> 
                                                                                   alert("Los Datos se Guardaron Satisfactoriamente");
@@ -64,11 +63,20 @@
                                                                                   </script>';
                                                                                   exit();
                                         }else{
-                                          $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr,$v_activo);
+                                          if ($v_activo == 0) {
+                                            $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr,$v_activo);
                                              echo '<script type="text/javascript"> 
                                                                                   alert("Los Datos se Guardaron Satisfactoriamente");
                                                                                   window.parent.location="paneladm.php?p=transparencia&j=leyes&crud=read"
                                                                                   </script>';
+                                          }else{
+                                            $IngresarLey = $objLey->replace($v_leydesc,$v_leytipo,$V_leyidusr,$v_activo);
+                                             echo '<script type="text/javascript"> 
+                                                                                  alert("Los Datos se Guardaron Satisfactoriamente");
+                                                                                  window.parent.location="paneladm.php?p=transparencia&j=leyes&crud=read"
+                                                                                  </script>';
+                                          }
+                                          
                                         }
                                        
                                       }

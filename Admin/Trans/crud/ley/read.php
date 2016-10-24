@@ -22,7 +22,7 @@
                                     frmEditLey.submit();
                                 }
 
-                                function BorrarId(leyid){
+                                function BorrarIdley(leyid){
                                     //print_r(id_usr);
                                     //frmEditUser.elements['id_usr'].value = id_usr;                    
                                     //frmEditUser.submit();
@@ -74,7 +74,7 @@
 
                                             <td style="text-align: center;" >
                                                 <div type="submit" class="btn-custom btn-mini border-btn "  align="center" style="text-align: center;" >
-                                                        <a href="#" onclick="javascript:BorrarId('<?=$dato["id_leyes"]?>');">
+                                                        <a href="#" onclick="javascript:BorrarIdley('<?=$dato["id_leyes"]?>');">
                                                             <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
                                                         </a>
                                                                <!--  <a type="submit" class="btn-custom btn-mini border-btn btn-gray"  href="javascript: form_login.submit();"><i class="fa fa-sign-in"></i> Ingresar</a>-->
@@ -90,7 +90,7 @@
                                 </tbody>
                               </table>
                               </div>
-                              <form  target="lBorrar" name="frmDelLey"  action="<?=$CONFIG['pathtrans']?>leyborrar.php" method="post">
+                              <form  target="" name="frmDelLey"  action="<?=$CONFIG['pathtrans']?>leyborrar.php" method="post">
                               <input type="hidden" name="subleyid">
                               </form>
 

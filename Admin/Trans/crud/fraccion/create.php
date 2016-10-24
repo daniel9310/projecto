@@ -42,6 +42,10 @@
                             <label for="icon_prefix2">Descripcion de la Fraccion</label>
                         </div> 
 
+                        <div class="input-field col s12">
+                          <input name="actiFracc" id="actiFracc" type="number" max="1" min="0" class="validate" >
+                          <label for="acti">Activo</label>
+                        </div>
                        
 
                         <div align="center" class="col l12" style="align-items: center;">
