@@ -3,29 +3,32 @@
     require_once("../include/config/config.php");
     require_once($CONFIG['pathinclude']."config/cx.php");
     require_once($CONFIG['pathinclude']."cls/transparencia.php");
-    $objLey = new leyes;
-    $UpLey = $objLey->read($_POST['subleyid']);
+    $objArt = new articulos;
+    $UpArt = $objArt->readall($_POST['SubArtid']);
  ?>
 <div >
               <h3></h3>
-                  <form class="form"  method="POST"  action="<?=$CONFIG['pathtrans']?>leymodificar.php">
-                        <input type="hidden" name="leyid" value="<?=$UpLey['id_leyes']?>">
-                        <input value="<?=$UpLey['fk_user_leyes']?>" name="idley" id="ley" type="hidden" class="validate" >
-                    <div class="input-field col s12">
-                          <input value="<?=$UpLey['tipo']?>" name="ley" id="ley" type="text" class="validate" required>
-                          <label for="ley">Nombre de Ley</label>
+                  <form class="form" target="upd"  method="POST"  action="<?=$CONFIG['pathtrans']?>Artmodificar.php">
+                        <input type="hidden" name="art_id" value="<?=$UpArt['id_art']?>">
+                    
+
+                    <div class="input-field col s12">      
+                          <select name="fkley" >
+                             <option value="<?=$UpArt['fk_idleyes_art']?>" ><?=$UpArt['tipo']?></option>
+                          </select>
+                          <label>Tipo de Ley</label>
                         </div>                                              
 
                         <div class="input-field col s12">
-                            <i class="material-icons prefix">note</i>
-                            <textarea id="icon_prefix2" class="materialize-textarea" name="descripcionley" ><?=$UpLey['descripcion']?></textarea>
-                            <label for="icon_prefix2">Descripcion de la Ley</label>
-                          </div>
+                          <input name="idarticulo"  type="number" class="validate" value="<?=$UpArt['num_art']?>" required >
+                          <label for="idarticulo">Numero de Articulo</label>
+                        </div> 
 
                         <div class="input-field col s12">
-                          <input value="<?=$UpLey['usr_nombre'].$UpLey['usr_apellido'] ?>" name="ley" id="ley" type="text" class="validate" disabled> 
-                          <label for="ley">Persona quien lo Subio</label>
-                        </div>      
+                            <i class="material-icons prefix">note</i>
+                            <textarea id="icon_prefix2" class="materialize-textarea" name="artdesc" length="120" required><?=$UpArt['descripcion']?></textarea>
+                            <label for="icon_prefix2">Descripcion del Articulo</label>
+                        </div> 
 
                         <div align="center" class="col l12" style="align-items: center;">
                             <!--input type="submit" value="Enviar" class="form-button" /-->
@@ -35,7 +38,7 @@
                         </div>
                 </form>
 
-                            <iframe name="update" height="0" width="0" ></iframe>
+                            <iframe name="upd" height="0" width="0" ></iframe>
             </div>
 
 

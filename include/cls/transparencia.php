@@ -89,10 +89,16 @@
 			}
 			return $resultado;
 		}
-		/*function update(argument)
+		function update($idart,$descripcion,$numart,$ley)
 		{
-			# code...
-		}*/
+			global $link;
+			$sql = "CALL Art_modificar('%1\$s','%2\$s','%3\$s','%4\$s')";
+			$sql = sprintf($sql,$idart,$descripcion,$numart,$ley);
+			echo $sql;
+			$result = $link->query($sql);
+			
+			return $result;
+		}
 		function delete($id)
 		{
 			global $link;
@@ -107,32 +113,79 @@
 			return $result;
 		}
 
-		/*function readall(argument)
+		function readall($idart)
 		{
-			# code...
-		}*/
+			global $link;
+			$sql = "CALL Art_ver('%1\$s')";
+			$sql = sprintf($sql, $idart);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado =$row;
+				//array_push($resultado,$row);
+			}
+			return $resultado;	
+		}
 	}
-	/**
-	* 
-	*/
-	/*class fracciones
+
+
+	class fracciones
 	{
 		
-		function consult(argument)
+		function create($descripcion, $numfrac, $fkart)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Fracc_insertar('%1\$s','%2\$s','%3\$s')";
+			$sql = sprintf($sql, $descripcion, $numfrac, $fkart);
+			echo $sql;
+			$result = $link->query($sql);
+			return $result;	
 		}
-		function replace(argument)
+		function read($idusr)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Fracc_consulta(%1\$s) ";
+			$sql = sprintf($sql, $idusr);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+			$resultado[] = $row;
+			}
+			return $resultado;
 		}
-		function update(argument)
-		{
-			# code...
+		function readall($idfrac){
+			global $link;
+			$sql = "CALL Fracc_ver('%1\$s')";
+			$sql = sprintf($sql, $idfrac);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado =$row;
+				//array_push($resultado,$row);
+			}
+			return $resultado;	
 		}
-		function delete(argument)
+		function update($fracid, $descripcion, $numfrac, $fkart)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Fracc_modificar('%1\$s','%2\$s','%3\$s','%4\$s')";
+			$sql = sprintf($sql,$fracid, $descripcion, $numfrac, $fkart);
+			echo $sql;
+			$result = $link->query($sql);			
+			return $result;
+		}
+		function delete($id)
+		{
+			global $link;
+			$sql = "CALL Fracc_borrar('%1\$s')";
+			$sql = sprintf($sql, $id);
+			echo $sql;
+			$result = $link->query($sql);
+			/*$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado = $row;
+			}*/
+			return $result;
 		}
 	}
 
