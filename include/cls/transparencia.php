@@ -16,6 +16,8 @@
 				//array_push($resultado,$row);
 			}
 			return $resultado;	
+
+			$link->next_result();
 		}
 
 		function consult($idusr)
@@ -28,7 +30,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 			$resultado[] = $row;
 			}
-			return $resultado;
+			$link->next_result();			return $resultado;
 		}
 		function replace($descripcion, $tipo, $idusr,$activo)
 		{
@@ -37,7 +39,7 @@
 			$sql = sprintf($sql, $descripcion, $tipo, $idusr,$activo);
 			echo $sql;
 			$result = $link->query($sql);
-			return $result;
+			$link->next_result();			return $result;
 		}
 		function update($id_ley, $descripcion, $tipoley, $user)
 		{
@@ -45,7 +47,7 @@
 			$sql = "CALL Ley_modificar('%1\$s','%2\$s','%3\$s','%4\$s')";
 			$sql = sprintf($sql,$id_ley, $descripcion, $tipoley, $user);
 			$result = $link->query($sql);
-			
+						$link->next_result();			
 			return $result;
 		}
 
@@ -60,7 +62,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;	
+						$link->next_result();			return $result;	
 		}
 	}
 
@@ -75,7 +77,7 @@
 			$sql = sprintf($sql, $descripcion, $articulo, $ley, $activo);
 			echo $sql;
 			$result = $link->query($sql);
-			return $result;
+						$link->next_result();			return $result;
 		}
 		function read($idusr)
 		{
@@ -87,7 +89,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 			$resultado[] = $row;
 			}
-			return $resultado;
+						$link->next_result();			return $resultado;
 		}
 		function update($idart,$descripcion,$numart,$ley)
 		{
@@ -96,7 +98,7 @@
 			$sql = sprintf($sql,$idart,$descripcion,$numart,$ley);
 			echo $sql;
 			$result = $link->query($sql);
-			
+						$link->next_result();			
 			return $result;
 		}
 		function delete($id)
@@ -110,7 +112,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;
+						$link->next_result();			return $result;
 		}
 
 		function readall($idart)
@@ -124,7 +126,7 @@
 				$resultado =$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;	
+						$link->next_result();			return $resultado;	
 		}
 	}
 
@@ -139,7 +141,7 @@
 			$sql = sprintf($sql, $descripcion, $numfrac, $fkart, $activo);
 			echo $sql;
 			$result = $link->query($sql);
-			return $result;	
+						$link->next_result();			return $result;	
 		}
 		function read($idusr)
 		{
@@ -151,7 +153,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 			$resultado[] = $row;
 			}
-			return $resultado;
+						$link->next_result();			return $resultado;
 		}
 		function readall($idfrac){
 			global $link;
@@ -163,7 +165,7 @@
 				$resultado =$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;	
+						$link->next_result();			return $resultado;	
 		}
 		function update($fracid, $descripcion, $numfrac, $fkart)
 		{
@@ -171,7 +173,8 @@
 			$sql = "CALL Fracc_modificar('%1\$s','%2\$s','%3\$s','%4\$s')";
 			$sql = sprintf($sql,$fracid, $descripcion, $numfrac, $fkart);
 			echo $sql;
-			$result = $link->query($sql);			
+			$result = $link->query($sql);	
+						$link->next_result();		
 			return $result;
 		}
 		function delete($id)
@@ -185,7 +188,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;
+						$link->next_result();			return $result;
 		}
 	}
 
@@ -202,7 +205,7 @@
 			$sql = sprintf($sql, $descripcion, $numfinc, $fkfrac, $activo);
 			echo $sql;
 			$result = $link->query($sql);
-			return $result;	
+						$link->next_result();			return $result;	
 		}
 		function read($idusr)
 		{
@@ -214,7 +217,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 			$resultado[] = $row;
 			}
-			return $resultado;
+						$link->next_result();			return $resultado;
 		}
 		function readall($idinc){
 			global $link;
@@ -226,7 +229,7 @@
 				$resultado =$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;	
+						$link->next_result();			return $resultado;	
 		}
 		function update($incid, $descripcion, $numfinc, $fkfrac)
 		{
@@ -234,7 +237,8 @@
 			$sql = "CALL Inciso_modificar('%1\$s','%2\$s','%3\$s','%4\$s')";
 			$sql = sprintf($sql,$incid, $descripcion, $numfinc, $fkfrac);
 			echo $sql;
-			$result = $link->query($sql);			
+			$result = $link->query($sql);	
+						$link->next_result();		
 			return $result;
 		}
 		function delete($id)
@@ -248,7 +252,7 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;
+						$link->next_result();			return $result;
 		}
 	}
 

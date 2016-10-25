@@ -12,13 +12,13 @@
        if (empty($v_incdes) && empty($v_incnum)) {
          echo '<script type="text/javascript">
                                               alert("Todos los Campos son Requeridos");
-                                              window.parent.location="../../paneladm.php?p=transparencia&j=leyes&crud=read";
+                                              window.parent.location="../../paneladm.php?p=transparencia&j=incisos&crud=read";
                                               </script>';
     }else{
         $ModiInc = $objInc->update($v_incid,$v_incdes,$v_incnum,$v_frac_id);
          echo '<script type="text/javascript">
                                               alert("Los Datos se Guardaron Satisfactoriamente");
-                                              window.parent.location="../../paneladm.php?p=transparencia&j=leyes&crud=read";
+                                              window.parent.location="../../paneladm.php?p=transparencia&j=incisos&crud=read";
                                               </script>';
 
     	}

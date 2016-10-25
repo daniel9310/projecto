@@ -20,62 +20,61 @@
                         <div class="section-title-block text-center">
                             <h3 class="section-title">Servicios</h3>
                             <p class="lead">
-                            Lorem ipsum dolor sit amet consectetur adipiscing metus elit.
                             </p>
                             </div>
 
                                 <div class="row text-center">
                                         <div class="col-sm-4 col-md-4 cv-theme-30"  >
                                             <div class="serviceBox_2" id="clickeable"  onclick="window.location='?p=transparencia&j=leyes'" >
-                                                <i class="fa fa-bell"></i>
+                                                <i class="fa fa-book"></i>
                                                 <h3>Leyes</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
+                                                <p>Leyes activas</p>
                                                 <!--<button  data-toggle="modal" data-target="#myModal" type="button" class="btn btn-info btn-lg" > Abrir</button>-->
                                             </div>
 
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30" >
                                             <div class="serviceBox_2"  onclick="window.location='?p=transparencia&j=articulos'">
-                                                <i class="fa fa-briefcase"></i>
+                                                <i class="fa fa-institution"></i>
                                                 <h3>Articulos</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
+                                                <p>Articulos relacionados con las leyes en activo</p>
                                                 
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
                                             <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=fraciones'">
-                                                <i class="fa fa-rocket"></i>
+                                                <i class="fa fa-legal"></i>
                                                 <h3>Fracciones</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
+                                                <p>Fraccion correspondiente al articulo, si aplica</p>
                                                
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
                                             <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=incisos'">
-                                                <i class="fa fa-location-arrow"></i>
+                                                <i class="fa fa-archive"></i>
                                                 <h3>Incisos</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
+                                                <p>Inciso correspondiente a la fraccion, si aplica</p>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
                                             <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=formatos'">
-                                                <i class="fa fa-envelope-o"></i>
+                                                <i class="fa fa-file-excel-o"></i>
                                                 <h3>Formatos</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
+                                                <p>Formatos correspondientes asignados</p>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
                                             <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=camposform'">
-                                                <i class="fa fa-line-chart"></i>
+                                                <i class="fa fa-ellipsis-h"></i>
                                                 <h3>Campos Formatos</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
+                                                <p>Campos que incluyen los formatos</p>
                                             </div>
                                         </div>
                                         <div class="col-sm-4 col-md-4 cv-theme-30">
                                             <div class="serviceBox_2" onclick="window.location='?p=transparencia&j=llenarinfo'">
-                                                <i class="fa fa-line-chart"></i>
+                                                <i class="fa fa-edit"></i>
                                                 <h3>Llenar Formatos</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam justo et nibh venenatis aliquet.</p>
+                                                <p>Generar informacion de los formatos correspondientes</p>
                                             </div>
                                         </div>
                                     </div>
