@@ -13,31 +13,45 @@
  ?>
 <div class="rows">
                   <h3></h3>
-                    <form class="form" target="" method="POST"  action="">
+                    <form class="form" target="" method="POST"  action="<?=$CONFIG['pathtrans']?>Incagregar.php">
 
                         
-                        <div class="input-field col s12 m6" style="align-items: center; text-align: center;">
-                          <select class="icons">
-                            <option value="" disabled selected>Opciones Disponibles</option>
-                            <option value="" data-icon="<?=$CONFIG['sitio']?>img/ley1.jpg" class="circle"><a href="#ley">Leyes</a></option>
-                            <option value="" data-icon="<?=$CONFIG['sitio']?>img/ley2.jpg" class="circle"><a href="#articulo">Articulos</a></option>
-                            <option value="" data-icon="<?=$CONFIG['sitio']?>img/ley3.jpg" class="circle">Fracciones</option>
-                            <option value="" data-icon="<?=$CONFIG['sitio']?>img/ley4.jpg" class="circle">Incisos</option>
+                        <div class="input-field col s12">                              
+                                 
+                          <select name="fkfracc">
+                             <option value="" disabled selected>Elige la Fraccion</option>
+                             <?php 
+                                 foreach ($datos as $row => $dato) {                                        
+                              ?> 
+                              <option value="<?=$dato['id_frac']?>" required><?=$dato['num_frac']?></option>
+                              <?php 
+                                 }
+                              ?>                            
                           </select>
-                          <label>Seleccionar una Opcion para Agregar Formatos</label>
+                          <label>Numero de Fraccion</label>
                         </div>
 
-                        <div id="ley" >
-                          aklsdjaksjd
+                        <div class="input-field col s12">
+                          <input name="Numinc"  type="text" class="validate" required >
+                          <label for="Numinc">Numero de Inciso</label>
+                        </div>  
+
+                         <div class="input-field col s12">
+                            <i class="material-icons prefix">note</i>
+                            <textarea id="icon_prefix2" class="materialize-textarea" name="incdesc" length="120" required></textarea>
+                            <label for="icon_prefix2">Descripcion del Inciso</label>
+                        </div> 
+
+                        <div class="input-field col s12">
+                          <input name="actiInc" id="actiFracc" type="number" max="1" min="0" class="validate" >
+                          <label for="actiInc">Activo</label>
                         </div>
-                        <div id="articulo">
-                          añlsdjk
-                        </div>
+                       
 
                         <div align="center" class="col l12" style="align-items: center;">
                             <button class="btn waves-effect waves-light col l12" type="submit" name="SubAgregar" >Enviar</button>
                         </div>
                     </form>                   
-                    <iframe name="agragar formato" height="0" width="0"  ></iframe> 
+                    <iframe name="agregarfraccion" height="0" width="0"  ></iframe> 
 
                 </div>

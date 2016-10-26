@@ -1,15 +1,21 @@
  <?php  
-                $pagina = isset($_GET['crud']) ? strtolower($_GET['crud']) : 'create';
+                $pagina = isset($_GET['crud']) ? strtolower($_GET['crud']) : 'inicio';
               ?>            
-                        <div class="">
-                          <ul class="nav nav-pills">
-                            <li class="<?php echo $pagina == 'create' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=transparencia&j=formatos&crud=create'">Agregar</a></li>
-                            <li class="<?php echo $pagina == 'read' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=transparencia&j=formatos&crud=read'">Consulta</a></li>
-                            
-                          </ul>
-                          <div>
+                       
+                              <!--li class="<?php echo $pagina == 'registrar' ? 'active' : ''; ?>">  <a data-toggle="pill" href="#" onclick="window.location='?p=evaluacion&j=registrar'">Registrar Evaluaciones</a></li-->
+                        
+              
+                          </div>
+                        <div id="demo" class="col l12"></div>
+
                             <?php 
                                 switch ($pagina) {
+
+                              case 'inicio':
+                                //include("capacitacion.php");
+                                require_once 'crud/' .'formato/' . 'inicio'. '.php';
+                                break;
+                              
                               case 'create':
                                 //include("capacitacion.php");
                                 require_once 'crud/' .'formato/' . 'create'. '.php';
@@ -26,7 +32,7 @@
                                 break;                                                                  
 
                               default:
-                                require_once 'crud/' .'formato/' . 'create'. '.php';
+                                require_once 'crud/' .'formato/' . 'inicio'. '.php';
                                 break;
                             }
                            ?>
