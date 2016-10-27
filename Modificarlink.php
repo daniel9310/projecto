@@ -27,19 +27,14 @@
 				          window.parent.location="Admin/paneladm.php?p=usuarios&j=consulta"			          
 				          </script>';
 		}else{
-			if (!preg_match("/^[0-9]$/",$vtipousr)) {
-			echo '<script type="text/javascript">
-				          alert("El campo de tipo de usuario admite solamente Digitos");
-				          window.parent.location="Admin/paneladm.php?p=usuarios&j=consulta"				          
-				          </script>';
-			}else{
+			
 				echo '<script type="text/javascript">
 				          alert("Usuario Guardado Satisfactoriamente");
 				          window.parent.location="Admin/paneladm.php?p=usuarios&j=consulta"				          
 				          </script>';
 				$Usr = $objUsr->Modificar_datos($vid_usr,$vnombreusuario, $vperfil,$vnombre, $vapellido,  $vtipousr);
 				
-			}	
+				
 		
 		}
 		

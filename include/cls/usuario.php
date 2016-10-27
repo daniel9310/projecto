@@ -11,6 +11,8 @@
 			$result = $link->query($sql);
 			
 			return $result;
+			$result->close();
+			$link->next_result();
 		}
 
 		function Borrar_datos($idusr){
@@ -24,6 +26,8 @@
 				$resultado = $row;
 			}*/
 			return $result;
+			$result->close();
+			$link->next_result();
 
 		}
 
@@ -38,6 +42,8 @@
 				//array_push($resultado,$row);
 			}
 			return $resultado;
+			$result->close();
+			$link->next_result();
 		}
 
 		function Consultar_usuario($idusr){
@@ -50,7 +56,9 @@
 				$resultado =$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;			
+			return $resultado;		
+			$result->close();
+			$link->next_result();
 		}
 
 		function Consulta_All(){
@@ -63,6 +71,8 @@
 				//array_push($resultado,$row);
 			}
 			return $resultado;
+			$result->close();
+			$link->next_result();
 		}
 
 		function Modificar_datos($idusr,$nombreusr,  $perfil,$nombre, $apellido, $tipousr )
@@ -78,18 +88,23 @@
 				$resultado = $row;
 			}*/
 			return $result;
+			$result->close();
+			$link->next_result();
 		}
 
 		function Tipo_usuario($idusr){
 			global $link;
-			$sql = "select * from ct_tipousr";
-			$result = $link->query($sql);
+			$sql = "CALL Usuario_tipo('%1\$s')";
+			$result = $link->query($sql,$idusr);
 			$resultado = array();
+
 			while( $row = mysqli_fetch_assoc($result) ){
-				$resultado[] =$row;
+				$resultado[] = $row;
 				//array_push($resultado,$row);
 			}
 			return $resultado;
+			$result->close();
+			$link->next_result();
 		}
 
 		

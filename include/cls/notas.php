@@ -13,6 +13,7 @@ class notas{
 			$resultado[] = $row;
 		}
 		return $resultado;
+			$link->next_result();
 	}
 	
 	function detalleNota($id_nota){
@@ -26,6 +27,7 @@ class notas{
 			$sql = sprintf($sql, $fecha,$ptitulo, $titulo,$rotativa, $descripcioncorta, $descripcion, $descripcioninterior, $nota, $pie, $imagen,$archivo,$url);
 			$result = $link->query($sql);
 			return $result;
+			$link->next_result();
 
 	}
 
@@ -39,7 +41,8 @@ class notas{
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;		
+			return $result;	
+			$link->next_result();	
 	}
 
 	function consultanota($vactivo){
@@ -54,6 +57,7 @@ class notas{
 				//array_push($resultado,$row);
 			}
 			return $resultado;
+			$link->next_result();
 		
 
 	}
@@ -71,6 +75,7 @@ class notas{
 			}
 			//print_r($resultado);
 			return $resultado;
+			$link->next_result();
 		
 
 	}
@@ -82,6 +87,7 @@ class notas{
 			$result = $link->query($sql);
 			
 			return $result;
+			$link->next_result();
 	}
 }
 

@@ -1,8 +1,8 @@
     <?php
             require_once($CONFIG['pathinclude']."config/cx.php");
             require_once($CONFIG['pathinclude']."cls/usuario.php");
-            $objMod = new datos;
-            $Modi = $objMod->Consultar_usuario($_POST['id_usr']);
+            $objUsr = new datos;
+            $Modi = $objUsr->Consultar_usuario($_POST['id_usr']); 
     ?>
     <section class="services-style-3 main-contain">
  	 	
@@ -66,14 +66,20 @@
                                                     <label for="username">Nombre de usuario</label>
                                                   </div>                                              
                                                 
-                                                  <div class="input-field col s12">
-                                                    <input name="perfil"  type="text" class="validate" value="<?=$Modi['PERFIL']?>" >
-                                                    <label for="perfil">Perfil</label>
+                                                   <div class="input-field col s12">
+                                                    <select name="perfil">
+                                                      <option value="Administrador">Administrador</option>
+                                                      <option value="Subir Notas">Subir Notas</option>
+                                                      <option value="Usuario">Usuario</option>
+                                                    </select>
                                                   </div>
 
-                                                  <div class="input-field col s12">
-                                                    <input name="tipo" type="text" class="validate" max="6" maxlength="2" min="1" value="<?=$Modi['DEPARTAMENTO']?>">
-                                                    <label for="perfil">Tipo de Usuario</label>
+                                                   <div class="input-field col s12">    
+                                                    <select name="tipo">
+                                                       <option value="<?=$Modi['TIPO']?>"  selected><?=$Modi['DEPARTAMENTO']?></option>
+                                                                                
+                                                    </select>
+                                                    <label>Tipo de Usuario</label>
                                                   </div>
                                                  
                                                   <div align="center" class="col l12" style="align-items: center;">
@@ -82,6 +88,7 @@
                                                         <i class="material-icons "></i>
                                                       </button>
                                                 </div>
+
                                               </form>
                                             </div>
                                         </div>

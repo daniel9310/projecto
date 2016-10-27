@@ -13,14 +13,13 @@
                                         
                                         <div class="form-main" >
                                             <div class="row">
-                                              <form class="col l12"  target="updatenota" method="POST" action="<?=$CONFIG['sitio']?>modificarnota.php">
+                                              <form class="col l12"  target="" method="POST" action="<?=$CONFIG['sitio']?>modificarnota.php"  enctype="multipart/form-data">
                                                 <div class="row">
                                                   <input type="hidden" name="id_nts" placeholder="ID DE USUARIO" value="<?=$_POST['nts_id']?>" >
-                                                  
                                                    <div class="input-field col s12">
 
                                                     <!--input type="date" class="datepicker validate"  name="fecha_nts" required-->        
-                                                    <input id="nombre" type="text" class="datepicker" name="fecha_nts" required value="<?=$_POST['nts_fecha']?>">
+                                                    <input id="nombre" type="text" class="datepicker" name="fecha_nts" required value="<?=$ConsulModi['FECHA']?>">
                                                     <label for="nombre">Fecha</label>
                                                   </div>
 
@@ -135,10 +134,11 @@
                                                           <div class="btn">
                                                             <i class="material-icons">photo</i>
                                                             <span>IMAGEN</span>
-                                                            <input type="file" name="archivo" value="<?=$ConsulModi['nts_imagen']?>" required >
+                                                            
+                                                            <input type="file" name="archiv" value="<?=$CONFIG['sitioimgnotas'].$ConsulModi['nts_imagen']?>"   >
                                                           </div>
                                                           <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" value="<?=$ConsulModi['nts_imagen']?>">
+                                                            <input class="file-path validate" name="path" type="text" value="<?=$ConsulModi['nts_imagen']?>">
                                                           </div>
                                                         </div>
                                                     </div>
@@ -150,33 +150,33 @@
                                                             
                                                             # si hay algun archivo que subir
 
-                                                            if($_FILES["archivo"]["name"])
+                                                            if($_FILES["archiv"]["name"])
                                                             { 
                                                                 
                                                                     # si es un formato de imagen
 
-                                                                    if($_FILES["archivo"]["type"]=="image/jpeg" || $_FILES["archivo"]["type"]=="image/pjpeg" || $_FILES["archivo"]["type"]=="image/gif" || $_FILES["archivo"]["type"]=="image/png" )
+                                                                    if($_FILES["archiv"]["type"]=="image/jpeg" || $_FILES["archiv"]["type"]=="image/pjpeg" || $_FILES["archiv"]["type"]=="image/gif" || $_FILES["archiv"]["type"]=="image/png" )
                                                                     {
                                                                         # si exsite la carpeta o se ha creado
 
                                                                         
-                                                                            $origen=$_FILES["archivo"]["tmp_name"];
+                                                                            $origen=$_FILES["archiv"]["tmp_name"];
 
-                                                                            $destino=$carpetaDestino.$_FILES["archivo"]["name"];
+                                                                            $destino=$carpetaDestino.$_FILES["archiv"]["name"];
                                                                             
                                                                             # movemos el archivo
 
                                                                             if(move_uploaded_file($origen, $destino))
                                                                             {
-                                                                                echo "<br>".$_FILES["archivo"]["name"]." movido correctamente";
+                                                                                echo "<br>".$_FILES["archiv"]["name"]." movido correctamente";
                                                                             }else{
-                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["archivo"]["name"];
+                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["archiv"]["name"];
                                                                             }
 
                                                                         
 
                                                                     }else{
-                                                                        echo "<br>".$_FILES["archivo"]["name"]." - NO es imagen jpg";
+                                                                        echo "<br>".$_FILES["archiv"]["name"]." - NO es imagen jpg";
                                                                     }
                                                                 
                                                             }else{

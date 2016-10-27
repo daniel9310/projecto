@@ -34,24 +34,34 @@ function showCustomer(str) {
                     $('inptextarea#icon_prefix2').characterCounter();
 
                   });
+
+                  //Es DATE PICKER
+                  jQuery.extend( jQuery.fn.pickadate.defaults, {
+    monthsFull: [ 'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre' ],
+    monthsShort: [ 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic' ],
+    weekdaysFull: [ 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado' ],
+    weekdaysShort: [ 'dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb' ],
+                    weekdaysLetter: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ],
+    today: 'hoy',
+    clear: 'borrar',
+    close: 'aceptar',
+    firstDay: 1,
+    format: 'dddd d !de mmmm !de yyyy',
+    formatSubmit: 'dd/mm/yyyy',
+    
+});
+
                    $('.datepicker').pickadate({
                     selectMonths: true, // Creates a dropdown to control month
                     selectYears: 5, // Creates a dropdown of 15 years to control year
                     labelMonthNext: 'Mes próximo',
                     labelMonthPrev: 'Mes anterior',
                     labelMonthSelect: 'Selecciona un mes',
-                    labelYearSelect: 'Selecciona un año',
-                    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-                    monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-                    weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-                    weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ],
-                    weekdaysLetter: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ],
-                    showWeekdaysShort: true,
-                    today: 'Hoy',
-                    clear: 'Limpiar',
-                    close: 'Aceptar',
-                    formatSubmit: 'dd/mm/yyyy'
+                    labelYearSelect: 'Selecciona un año',                  
+                    disable: [    1, 7  ],
                   });
+
+                   //MOSTRAR U OCULTAR
                     $(document).ready(function(){ 
                         $('#MosOcu').on('click',function(){
                         $('#uno').toggle();

@@ -54,7 +54,7 @@
 
                                         <div class="form-main" style="text-align: left; align-items: center;" align="center">
                                             <div class="row">
-                                              <form class="col l12" target="Modifi" method="POST" action="<?=$CONFIG['sitio']?>insertarlink.php">
+                                              <form class="col l12" target="Modifi" method="POST" action="<?=$CONFIG['sitio']?>insertarlink.php" autocomplete="off">
                                                 <div class="row">
                                                   <div class="input-field col s12">
                                                     <input id="nombre" type="text" class="validate" name="name" required>
@@ -79,7 +79,7 @@
                                                   <div class="input-field col s12">
                                                     <select name="perfil">
                                                       <option value="Administrador">Administrador</option>
-                                                      <option value="Subir_Notas">Subir Notas</option>
+                                                      <option value="Subir Notas">Subir Notas</option>
                                                       <option value="Usuario">Usuario</option>
                                                     </select>
                                                   </div>
