@@ -12,22 +12,17 @@ class notas{
 		while( $row = mysqli_fetch_assoc($result) ){
 			$resultado[] = $row;
 		}
-		return $resultado;
 			$link->next_result();
-	}
-	
-	function detalleNota($id_nota){
-			
-		
-	}
+		return $resultado;
+	}		
 	
 	function agregarnota($fecha,$ptitulo, $titulo,$rotativa, $descripcioncorta, $descripcion, $descripcioninterior, $nota, $pie, $imagen,$archivo,$url){
 		global $link;
 			$sql = "CALL Notas_agregar('%1\$s','%2\$s','%3\$s','%4\$s','%5\$s','%6\$s','%7\$s','%8\$s','%9\$s','%10\$s','%11\$s','%12\$s')";
 			$sql = sprintf($sql, $fecha,$ptitulo, $titulo,$rotativa, $descripcioncorta, $descripcion, $descripcioninterior, $nota, $pie, $imagen,$archivo,$url);
 			$result = $link->query($sql);
-			return $result;
 			$link->next_result();
+			return $result;
 
 	}
 
@@ -35,14 +30,13 @@ class notas{
 			global $link;
 			$sql = "CALL Notas_borrar('%1\$s')";
 			$sql = sprintf($sql, $id);
-			echo $sql;
 			$result = $link->query($sql);
 			/*$resultado = array();
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;	
-			$link->next_result();	
+			$link->next_result();
+			return $result;		
 	}
 
 	function consultanota($vactivo){
@@ -56,8 +50,8 @@ class notas{
 				$resultado[]=$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;
 			$link->next_result();
+			return $resultado;
 		
 
 	}
@@ -74,8 +68,8 @@ class notas{
 				//array_push($resultado,$row);
 			}
 			//print_r($resultado);
-			return $resultado;
 			$link->next_result();
+			return $resultado;
 		
 
 	}
@@ -84,10 +78,9 @@ class notas{
 		global $link;
 			$sql = "CALL Notas_modificar('%1\$s','%2\$s','%3\$s','%4\$s','%5\$s','%6\$s','%7\$s','%8\$s','%9\$s','%10\$s','%11\$s','%12\$s','%13\$s')";
 			$sql = sprintf($sql,$idnota,$fecha,$ptitulo, $titulo,$rotativa, $descripcioncorta, $descripcion, $descripcioninterior, $nota, $pie, $imagen,$archivo,$url);
-			$result = $link->query($sql);
-			
+			$result = $link->query($sql);	
+			$link->next_result();		
 			return $result;
-			$link->next_result();
 	}
 }
 

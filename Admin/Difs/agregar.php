@@ -50,9 +50,8 @@
                                                     </div>                        
                                                 
                                                     <div class="input-field col s12">
-                                                      <i class="material-icons prefix">note</i>
                                                       <textarea id="icon_prefix2" length="120" class="materialize-textarea" name="nota_nts"></textarea>
-                                                      <label for="icon_prefix2">Nota</label>
+                                                     
                                                     </div>   
 
                                                     <div class="input-field col s12">

@@ -3,6 +3,7 @@
             require_once($CONFIG['pathinclude']."cls/usuario.php");
             $objUsr = new datos;
             $Modi = $objUsr->Consultar_usuario($_POST['id_usr']); 
+             $datos = $objUsr->Tipo_usuario(1);
     ?>
     <section class="services-style-3 main-contain">
  	 	
@@ -77,7 +78,13 @@
                                                    <div class="input-field col s12">    
                                                     <select name="tipo">
                                                        <option value="<?=$Modi['TIPO']?>"  selected><?=$Modi['DEPARTAMENTO']?></option>
-                                                                                
+                                                        <?php 
+                                                           foreach ($datos as $row => $dato) {                                        
+                                                        ?> 
+                                                        <option value="<?=$dato['id_tipousr']?>" required><?=$dato['tusr_nombre']?></option>
+                                                        <?php 
+                                                           }
+                                                        ?>                                
                                                     </select>
                                                     <label>Tipo de Usuario</label>
                                                   </div>

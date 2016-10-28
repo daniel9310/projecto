@@ -40,7 +40,7 @@
 
 </head>
 <body>
-
+        <script src="//cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="<?=$CONFIG['sitio']?>materialize/js/materialize.min.js"></script>
 
@@ -88,7 +88,13 @@
             </div>
         <!-- End Header -->
 
-      <?php  trim($_SESSION['fk_típousuario']); ?>
+      <?php  
+
+      require_once("../include/config/config.php");
+      require_once("../include/cls/usuario.php");
+      $objUser =  new datos;
+      $revision = $objUser->Consultar_usuario($_SESSION['id_usr']);
+       ?>
 
 <!-- Cuerpo -->
     <aside class="left-side sidebar-offcanvas" >
@@ -98,44 +104,46 @@
 
               <li id="inicio" class="<?php echo $pagina == 'inicio' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='?p=inicio'">Inicio</a></li>
   
-                <?php if ($_SESSION['fk_típousuario'] != 2 or $_SESSION['fk_típousuario'] != 3 or $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6){ ?>
+                <?php 
+                if ($revision['TIPO'] != 2 && $revision['TIPO'] != 3 && $revision['TIPO'] != 4 && $revision['TIPO'] != 6){ 
+                  ?>
                   
                 
               <li id="transparencia" class="<?php echo $pagina == 'transparencia' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=transparencia'">Transparencia</a></li>
                <?php } 
-                if ($_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6) {
+                if ($revision['TIPO'] != 3 & $revision['TIPO'] != 4 & $revision['TIPO'] != 6) {
                 
                ?>
                
               <li id="difusion" class="<?php echo $pagina == 'difusion' ? 'active' : ''; ?>">   <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=difusion'">Difusion</a></li>
                 <?php }
-                  if ($_SESSION['fk_típousuario'] != 2 OR $_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 6) {
+                  if ($revision['TIPO'] != 2 & $revision['TIPO'] != 3 & $revision['TIPO'] != 6) {
                    
                  ?>
            
                
               <li class="<?php echo $pagina == 'capacitacion' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=capacitacion'">Capacitacion</a></li>
               <?php }
-                if ($_SESSION['fk_típousuario'] != 4) {
+                if ($revision['TIPO'] != 4) {
                  
                ?>
               
               <li id="pleno" class="<?php echo $pagina == 'pleno' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=pleno'">Pleno</a></li>
              <?php  }
-                if ($_SESSION['fk_típousuario'] != 2 OR $_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6) {
-                  # code...
+                if ($revision['TIPO'] != 2  & $revision['TIPO'] != 3 & $revision['TIPO'] != 4 & $revision['TIPO'] != 6) {
+                
                 
               ?>
              
               <li id="evaluacion" class="<?php echo $pagina == 'evaluacion' ? 'active' : ''; ?>">   <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=evaluacion'">Evaluacion</a></li>
                   <?php }
-                    if ($_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 6) {
+                    if ($revision['TIPO'] != 3 & $revision['TIPO'] != 4 & $revision['TIPO'] != 6) {
                     
                    ?>          
               
               <li id="galerias" class="<?php echo $pagina == 'galeria' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='paneladm.php?p=galeria'">Galerias</a></li>
                 <?php }
-                  if ($_SESSION['fk_típousuario'] != 2 OR $_SESSION['fk_típousuario'] != 3 OR $_SESSION['fk_típousuario'] != 4 OR $_SESSION['fk_típousuario'] != 5 OR $_SESSION['fk_típousuario'] != 6) {
+                  if ($revision['TIPO'] != 2  & $revision['TIPO'] != 3 & $revision['TIPO'] != 4 & $revision['TIPO'] != 6) {
                    
                  ?>                
                

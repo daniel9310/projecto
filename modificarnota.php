@@ -11,24 +11,21 @@
 	$v_nota = $_POST['nota_nts'];
 	$v_pienota = $_POST['pie_nts'];
 	$v_rotativo = $_POST['rotativo_nts'];
-	$varchivo =  $_FILES['Arch']["name"];
-	$vimagen = $_FILES["archiv"]["name"];
-	$vimagen2 = $_POST['path'];
+	$varchivo =  $_FILES['Doc']["name"];
+	$vimagen = $_FILES["Image"]["name"];
+	$iman = $_POST['imagehidden'];
 	$v_url = $_POST['url_nts'];
-	var_dump($vimagen2);
+	var_dump($vimagen);
 
 	require_once("include/config/config.php");
 	require_once($CONFIG['pathinclude']."config/cx.php");
 	require_once($CONFIG['pathinclude']."cls/notas.php");
 	$objNts = new notas;	
-	$mod = $objNts->consultarnotaModif($v_idnota);
-	$imagenan = $mod['nts_imagen'];
 
-	var_dump($imagenan);
 
 	//$UsrCon = $objNts->Consulta_All();
-	
-	
+	echo "                         .";
+	var_dump($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
 		
 		if (empty($v_fecha) and empty($v_titulo) and empty($v_titulop) and empty($v_descripcion) and empty($vimagen)) {
 			echo '<script type="text/javascript">
@@ -42,12 +39,20 @@
 				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
 				          </script>';
 			}else{
-				
-				echo '<script type="text/javascript">
+				if($vimagen == ""){
+					echo '<script type="text/javascript">
 				          alert("Usuario Guardado Satisfactoriamente");
 				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
 				          </script>';
-				$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
+					$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$iman , $varchivo ,$v_url);
+				}else{
+					echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+					$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
+				
+				}
 				
 				
 			}	

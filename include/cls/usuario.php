@@ -9,10 +9,10 @@
 			$sql = "CALL Usuario_insertar('%1\$s','%2\$s','%3\$s','%4\$s','%5\$s','%6\$s')";
 			$sql = sprintf($sql, $nombreusr, $passwd, $perfil,$nombre, $apellido, $tipousr);
 			$result = $link->query($sql);
-			
-			return $result;
 			$result->close();
 			$link->next_result();
+			return $result;
+			
 		}
 
 		function Borrar_datos($idusr){
@@ -25,9 +25,10 @@
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;
 			$result->close();
 			$link->next_result();
+			return $result;
+			
 
 		}
 
@@ -41,9 +42,10 @@
 				$resultado[]=$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;
 			$result->close();
 			$link->next_result();
+			return $resultado;
+			
 		}
 
 		function Consultar_usuario($idusr){
@@ -56,9 +58,10 @@
 				$resultado =$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;		
+				
 			$result->close();
 			$link->next_result();
+			return $resultado;	
 		}
 
 		function Consulta_All(){
@@ -70,9 +73,10 @@
 				$resultado[] =$row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;
+			
 			$result->close();
 			$link->next_result();
+			return $resultado;
 		}
 
 		function Modificar_datos($idusr,$nombreusr,  $perfil,$nombre, $apellido, $tipousr )
@@ -87,24 +91,31 @@
 			/*while( $row = mysqli_fetch_assoc($result) ){
 				$resultado = $row;
 			}*/
-			return $result;
 			$result->close();
 			$link->next_result();
+			return $result;
+			
 		}
 
 		function Tipo_usuario($idusr){
 			global $link;
+			//echo "idusr=".$idusr;
 			$sql = "CALL Usuario_tipo('%1\$s')";
-			$result = $link->query($sql,$idusr);
-			$resultado = array();
+			$sql = sprintf($sql,$idusr);
 
+			$result = $link->query($sql);
+			if($result == false)
+					echo $link->error;
+			$resultado = array();
+			//echo $sql;
 			while( $row = mysqli_fetch_assoc($result) ){
 				$resultado[] = $row;
 				//array_push($resultado,$row);
 			}
-			return $resultado;
+			
 			$result->close();
 			$link->next_result();
+			return $resultado;
 		}
 
 		

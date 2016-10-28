@@ -19,6 +19,7 @@
 		$objLogin = new login;
 		$login = $objLogin->Conectar_login($usuario,$pass); 
 		print_r($login);
+		var_dump($login);
 		unset($objLogin);
 		if (empty($usuario)) {
 			if (empty($pass)) {

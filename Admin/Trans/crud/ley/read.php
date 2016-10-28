@@ -11,6 +11,7 @@
     $objCampo = new campoformatos;
     $objIng = new ingresardatos;*/
  ?>
+ 
 <div >
                   <h3></h3>
                   <?php 
@@ -30,6 +31,7 @@
                                     frmDelLey.submit();
                                 }
                              </script>
+
                              <div class="table-responsive" >
                               <table class="table table-striped table-bordered table-hover table-condensed">
                                 <thead>
@@ -89,6 +91,7 @@
                                   </tr>
                                 </tbody>
                               </table>
+                             
                               </div>
                               <form  target="" name="frmDelLey"  action="<?=$CONFIG['pathtrans']?>leyborrar.php" method="post">
                               <input type="hidden" name="subleyid">

@@ -3,6 +3,8 @@
     require_once("../include/config/config.php");
     require_once($CONFIG['pathinclude']."config/cx.php");
     require_once($CONFIG['pathinclude']."cls/transparencia.php");
+    $objArt = new articulos;
+    $datos = $objArt->read(1);
     $objFracc = new fracciones;
     $UpFracc = $objFracc->readall($_POST['SubFracid']);
  ?>
@@ -21,7 +23,14 @@
 
                         <div class="input-field col s12" >      
                           <select name="fkart" >
-                             <option value="<?=$UpFracc['id_art']?>" ><?=$UpFracc['num_art']?></option>
+                             <option value="<?=$UpFracc['id_art']?>" selected disabled ><?=$UpFracc['num_art']?></option>
+                             <?php 
+                                 foreach ($datos as $row => $dato) {                                        
+                              ?> 
+                              <option value="<?=$dato['id_art']?>" required><?=$dato['num_art']?></option>
+                              <?php 
+                                 }
+                              ?>  
                           </select>
                           <label>Numero de Articulo</label>
                         </div>                                              

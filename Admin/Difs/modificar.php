@@ -52,9 +52,9 @@
                                                     </div>                        
                                                 
                                                     <div class="input-field col s12">
-                                                      <i class="material-icons prefix">note</i>
+
                                                       <textarea id="icon_prefix2" class="materialize-textarea" name="nota_nts"><?=$ConsulModi['nts_nota']?></textarea>
-                                                      <label for="icon_prefix2">Nota</label>
+                                                      
                                                     </div>   
 
                                                     <div class="input-field col s12">
@@ -78,10 +78,10 @@
                                                           <div class="btn">
                                                             <i class="material-icons">attach_file</i>
                                                             <span>Archivo</span>
-                                                            <input type="file" name="Arch" value="<?=$ConsulModi['nts_archivo']?>" >
+                                                            <input type="file" name="Doc" value="<?=$ConsulModi['nts_archivo']?>" >
                                                           </div>
                                                           <div class="file-path-wrapper">
-                                                            <input class="file-path validate" type="text" value="<?=$ConsulModi['nts_archivo']?>" >
+                                                            <input class="file-path validate" name="path" type="text" value="<?=$ConsulModi['nts_archivo']?>" >
                                                           </div>
                                                         </div>
                                                     </div>
@@ -93,39 +93,35 @@
                                                             
                                                             # si hay algun archivo que subir
 
-                                                            if($_FILES["Arch"]["name"])
+                                                            if($_FILES["Doc"]["name"])
                                                             { 
                                                                 
-                                                                    # si es un formato de imagen
+                                                                    # si es un formato aceptado
 
-                                                                    if( $_FILES["Arch"]["type"]=="application/pdf" || $_FILES["Arch"]["type"]=="application/msword")
+                                                                    if( $_FILES["Doc"]["type"]=="application/pdf" || $_FILES["Doc"]["type"]=="application/msword")
                                                                     {
                                                                         # si exsite la carpeta o se ha creado
 
                                                                         
-                                                                            $origen=$_FILES["Arch"]["tmp_name"];
+                                                                            $origen=$_FILES["Doc"]["tmp_name"];
 
-                                                                            $destino=$carpetaDestino.$_FILES["Arch"]["name"];
+                                                                            $destino=$carpetaDestino.$_FILES["Doc"]["name"];
                                                                             
                                                                             # movemos el archivo
 
                                                                             if(move_uploaded_file($origen, $destino))
                                                                             {
-                                                                                echo "<br>".$_FILES["Arch"]["name"]." movido correctamente";
+                                                                                echo "<br>".$_FILES["Doc"]["name"]." movido correctamente";
                                                                             }else{
-                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["Arch"]["name"];
+                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["Doc"]["name"];
                                                                             }
 
                                                                         
 
                                                                     }else{
-                                                                        echo "<br>".$_FILES["Arch"]["name"]." - NO es un archivo .doc  O .pdf";
+                                                                        echo "<br>".$_FILES["Doc"]["name"]." - NO es un archivo .doc  O .pdf";
                                                                     }
                                                                 
-                                                            }else{
-
-                                                              #  echo "<br>No se ha subido ningun archivo";
-
                                                             }
                                                     ?>  
 
@@ -135,13 +131,14 @@
                                                             <i class="material-icons">photo</i>
                                                             <span>IMAGEN</span>
                                                             
-                                                            <input type="file" name="archiv" value="<?=$CONFIG['sitioimgnotas'].$ConsulModi['nts_imagen']?>"   >
+                                                            <input type="file" name="Image" value="<?=$CONFIG['sitioimgnotas'].$ConsulModi['nts_imagen']?>"   >
                                                           </div>
                                                           <div class="file-path-wrapper">
-                                                            <input class="file-path validate" name="path" type="text" value="<?=$ConsulModi['nts_imagen']?>">
+                                                            <input class="file-path validate" type="text" value="<?=$ConsulModi['nts_imagen']?>">
                                                           </div>
                                                         </div>
                                                     </div>
+                                                    <input type="hidden" name="imagehidden" value="<?=$ConsulModi['nts_imagen']?>">
 
                                                     <?php
                                                             # definimos la carpeta destino
@@ -149,41 +146,42 @@
                                                             //$carpetaDestino= $CONFIG['sitioimgnotas'];
                                                             
                                                             # si hay algun archivo que subir
+                                                            $iman = $_POST['imagehidden'];
+                                                          if ($iman == $_FILES["Image"]["name"]) {
+                                                            echo "Es igual";
 
-                                                            if($_FILES["archiv"]["name"])
+                                                          }else{
+                                                            if($_FILES["Image"]["name"])
                                                             { 
                                                                 
                                                                     # si es un formato de imagen
 
-                                                                    if($_FILES["archiv"]["type"]=="image/jpeg" || $_FILES["archiv"]["type"]=="image/pjpeg" || $_FILES["archiv"]["type"]=="image/gif" || $_FILES["archiv"]["type"]=="image/png" )
+                                                                    if($_FILES["Image"]["type"]=="image/jpeg" || $_FILES["Image"]["type"]=="image/pjpeg" || $_FILES["Image"]["type"]=="image/gif" || $_FILES["Image"]["type"]=="image/png" )
                                                                     {
                                                                         # si exsite la carpeta o se ha creado
 
                                                                         
-                                                                            $origen=$_FILES["archiv"]["tmp_name"];
+                                                                            $origen=$_FILES["Image"]["tmp_name"];
 
-                                                                            $destino=$carpetaDestino.$_FILES["archiv"]["name"];
+                                                                            $destino=$carpetaDestino.$_FILES["Image"]["name"];
                                                                             
                                                                             # movemos el archivo
 
                                                                             if(move_uploaded_file($origen, $destino))
                                                                             {
-                                                                                echo "<br>".$_FILES["archiv"]["name"]." movido correctamente";
+                                                                                echo "<br>".$_FILES["Image"]["name"]." movido correctamente";
                                                                             }else{
-                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["archiv"]["name"];
+                                                                                echo "<br>No se ha podido mover el archivo: ".$_FILES["Image"]["name"];
                                                                             }
 
                                                                         
 
                                                                     }else{
-                                                                        echo "<br>".$_FILES["archiv"]["name"]." - NO es imagen jpg";
+                                                                        echo "<br>".$_FILES["Image"]["name"]." - NO es imagen jpg";
                                                                     }
                                                                 
-                                                            }else{
-
-#                                                                echo "<br>No se ha subido ninguna imagen";
-
                                                             }
+                                                          }
                                                     ?>  
 
                                                   <div align="center" class="col l12" style="align-items: center;">

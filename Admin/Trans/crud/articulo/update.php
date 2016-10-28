@@ -5,6 +5,8 @@
     require_once($CONFIG['pathinclude']."cls/transparencia.php");
     $objArt = new articulos;
     $UpArt = $objArt->readall($_POST['SubArtid']);
+    $objLey = new leyes;
+    $datos = $objLey->consult(1);
  ?>
 <div >
               <h3></h3>
@@ -14,7 +16,14 @@
 
                     <div class="input-field col s12">      
                           <select name="fkley" >
-                             <option value="<?=$UpArt['fk_idleyes_art']?>" ><?=$UpArt['tipo']?></option>
+                             <option value="<?=$UpArt['fk_idleyes_art']?>" selected disabled ><?=$UpArt['tipo']?></option>
+                             <?php 
+                                 foreach ($datos as $row => $dato) {                                        
+                              ?> 
+                              <option value="<?=$dato['id_leyes']?>" ><?=$dato['tipo']?></option>
+                              <?php 
+                                 }
+                              ?>     
                           </select>
                           <label>Tipo de Ley</label>
                         </div>                                              

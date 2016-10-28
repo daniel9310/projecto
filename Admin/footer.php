@@ -4,6 +4,10 @@
 <!-- Fin Cuerpo -->
 
 <script>
+            CKEDITOR.replace( 'nota_nts' );
+        </script>
+
+<script>
 function showCustomer(str) {
   var xhttp;    
   if (str == "") {
@@ -58,7 +62,7 @@ function showCustomer(str) {
                     labelMonthPrev: 'Mes anterior',
                     labelMonthSelect: 'Selecciona un mes',
                     labelYearSelect: 'Selecciona un año',                  
-                    disable: [    1, 7  ],
+                    disable: [    6, 7  ],
                   });
 
                    //MOSTRAR U OCULTAR
