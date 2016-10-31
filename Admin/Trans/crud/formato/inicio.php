@@ -12,7 +12,7 @@
                           </select>
                           <label>Seleccionar una Opcion para Agregar Formatos</label>
                         </div>
-                    </form>                   
+                    </form >                   
                     <iframe name="agragar formato" height="0" width="0"  ></iframe> 
 
                 </div>
