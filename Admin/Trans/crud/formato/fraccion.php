@@ -1,57 +1,38 @@
-<?php 
-    session_start();
-    require_once("../include/config/config.php");
-    require_once($CONFIG['pathinclude']."config/cx.php");
-    require_once($CONFIG['pathinclude']."cls/transparencia.php");
-    $objFrac = new fracciones;
-    $datos = $objFrac->read(1);
-    /*$objFrac = new fracciones;
-    /*$objInc = new incisos;
-    $objForm = new formatos;
-    $objCampo = new campoformatos;
-    $objIng = new ingresardatos;*/
- ?>
-<div class="rows">
-                  <h3> Fracciones</h3>
-                    <form class="form" target="" method="POST"  action="<?=$CONFIG['pathtrans']?>Incagregar.php">
+ <?php  
+                $pagina = isset($_GET['format']) ? strtolower($_GET['format']) : 'create';
+              ?>    
+               
+                        <div class="" align="center" style="text-align: center;"><h4>Fracciones</h4>
+                          <ul class="nav nav-pills">
+                            <li class="<?php echo $pagina == 'create' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=transparencia&j=formatos&crud=fraccion&format=create'">Agregar</a></li>
+                            <li class="<?php echo $pagina == 'read' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=transparencia&j=formatos&crud=fraccion&format=read'">Consulta</a></li>
+                            
+                          </ul>
+                          <div>
+                            <?php 
+                                switch ($pagina) {
+                              case 'create':
+                                //include("capacitacion.php");
+                                require_once 'fraccion/' . 'create'. '.php';
+                                break;
+                              
+                              case 'read':
+                                //include("capacitacion.php");
+                                require_once 'fraccion/' . 'read'. '.php';
+                                break;
+                              
+                              case 'update':
+                                //include("capacitacion.php");
+                                require_once 'fraccion/'  . 'update'. '.php';
+                                break;
+                                     
 
-                        
-                        <div class="input-field col s12">                              
-                                 
-                          <select name="fkfracc">
-                             <option value="" disabled selected>Elige la Fraccion</option>
-                             <?php 
-                                 foreach ($datos as $row => $dato) {                                        
-                              ?> 
-                              <option value="<?=$dato['id_frac']?>" required><?=$dato['num_frac']?></option>
-                              <?php 
-                                 }
-                              ?>                            
-                          </select>
-                          <label>Numero de Fraccion</label>
+                              default:
+                                require_once 'fraccion/' . 'create'. '.php';
+                                break;
+                            }
+                           ?>
+                          </div>
+                          
+                          
                         </div>
-
-                        <div class="input-field col s12">
-                          <input name="Numinc"  type="text" class="validate" required >
-                          <label for="Numinc">Numero de Inciso</label>
-                        </div>  
-
-                         <div class="input-field col s12">
-                            <i class="material-icons prefix">note</i>
-                            <textarea id="icon_prefix2" class="materialize-textarea" name="incdesc" length="120" required></textarea>
-                            <label for="icon_prefix2">Descripcion del Inciso</label>
-                        </div> 
-
-                        <div class="input-field col s12">
-                          <input name="actiInc" id="actiFracc" type="number" max="1" min="0" class="validate" >
-                          <label for="actiInc">Activo</label>
-                        </div>
-                       
-
-                        <div align="center" class="col l12" style="align-items: center;">
-                            <button class="btn waves-effect waves-light col l12" type="submit" name="SubAgregar" >Enviar</button>
-                        </div>
-                    </form>                   
-                    <iframe name="agregarfraccion" height="0" width="0"  ></iframe> 
-
-                </div>

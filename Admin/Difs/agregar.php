@@ -33,19 +33,19 @@
 
                                                   <div class="input-field col s12">
                                                       <i class="material-icons prefix">note</i>
-                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcioncorta_nts" length="120"></textarea>
+                                                      <textarea id="icon_prefix2" class="materialize-textarea" name="descripcioncorta_nts" length="200"></textarea>
                                                       <label for="icon_prefix2">Descripcion Corta</label>
                                                     </div>
 
                                                     <div class="input-field col s12">
                                                       <i class="material-icons prefix">note</i>
-                                                      <textarea length="120" id="icon_prefix2" class="materialize-textarea" name="descripcion_nts"></textarea>
+                                                      <textarea length="500" id="icon_prefix2" class="materialize-textarea" name="descripcion_nts"></textarea>
                                                       <label for="icon_prefix2">Descripcion</label>
                                                     </div>
 
                                                     <div class="input-field col s12">
                                                       <i class="material-icons prefix">note</i>
-                                                      <textarea id="icon_prefix2" length="120" class="materialize-textarea" name="descripcioninterior_nts"></textarea>
+                                                      <textarea id="icon_prefix2" length="300" class="materialize-textarea" name="descripcioninterior_nts"></textarea>
                                                       <label for="icon_prefix2">Descripcion Interior</label>
                                                     </div>                        
                                                 
@@ -56,7 +56,7 @@
 
                                                     <div class="input-field col s12">
                                                       <i class="material-icons prefix">note</i>
-                                                      <textarea id="icon_prefix2" length="120" class="materialize-textarea" name="pie_nts"></textarea>
+                                                      <textarea id="icon_prefix2" length="400" class="materialize-textarea" name="pie_nts"></textarea>
                                                       <label for="icon_prefix2">Pie de Nota</label>
                                                     </div>   
 

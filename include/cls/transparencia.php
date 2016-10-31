@@ -130,6 +130,20 @@
 						$link->next_result();			
 						return $resultado;	
 		}
+
+		function readwhere($idley){
+			global $link;
+			$sql = "CALL Art_consultaver('%1\$s')";			
+			$sql = sprintf($sql, $idley);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+				$resultado =$row;
+				//array_push($resultado,$row);
+			}
+			$link->next_result();			
+			return $resultado;	
+		}
 	}
 
 

@@ -4,7 +4,6 @@
               <div class="col l12" align="center" style="text-align: center;">
   
               <h3>Formatos</h3>
-                                <a class="waves-effect waves-light btn-large btn tooltipped" onclick="window.location='?p=transparencia&j=formatos&crud=articulo'" data-position="bottom" data-delay="50" data-tooltip="Articulos"><i class="fa fa-institution"></i></a>
                                 <a class="waves-effect waves-light btn-large btn tooltipped" onclick="window.location='?p=transparencia&j=formatos&crud=fraccion'" data-position="bottom" data-delay="50" data-tooltip="Fracciones"><i class="fa fa-legal"></i></a>
                                 <a class="waves-effect waves-light btn-large btn tooltipped" onclick="window.location='?p=transparencia&j=formatos&crud=inciso'" data-position="bottom" data-delay="50" data-tooltip="Incisos"><i class="fa fa-archive"></i></a>
                               </div>
@@ -16,27 +15,7 @@
                               case 'inicio':
                                 //include("capacitacion.php");
                                 require_once 'crud/' .'formato/' . 'inicio'. '.php';
-                                break;
-                              
-                              case 'create':
-                                //include("capacitacion.php");
-                                require_once 'crud/' .'formato/' . 'create'. '.php';
-                                break;
-                              
-                              case 'read':
-                                //include("capacitacion.php");
-                                require_once 'crud/' .'formato/' . 'read'. '.php';
-                                break;
-                              
-                              case 'update':
-                                //include("capacitacion.php");
-                                require_once 'crud/' .'formato/' . 'update'. '.php';
-                                break;           
-
-                              case 'articulo':
-                                //include("capacitacion.php");
-                                require_once 'crud/' .'formato/' . 'articulo'. '.php';
-                                break;
+                                break;                           
                               
                               case 'fraccion':
                                 //include("capacitacion.php");
