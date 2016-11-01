@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  $("[name='fkley']").on("change",function(){
+    var valor = $(this).val()
+  })
+
+</script>
 <?php 
     session_start();
     require_once("../include/config/config.php");
@@ -13,7 +19,7 @@
  ?>
 <div class="rows">
                   <h3></h3>
-                    <form class="form" target="" method="POST"  action="<?=$CONFIG['pathtrans']?>Incagregar.php">
+                    <form class="form" target="" method="POST"  action="<?=$CONFIG['pathformato']?>fraccion/agregar.php">
 
                         
                         <div class="input-field col s12 l12 m12">                              

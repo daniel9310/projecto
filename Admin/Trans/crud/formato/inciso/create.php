@@ -11,6 +11,9 @@
     $objCampo = new campoformatos;
     $objIng = new ingresardatos;*/
  ?>
+<script>
+
+</script>
 <div class="rows">
                   <h3></h3>
                     <form class="form" target="" method="POST"  action="<?=$CONFIG['pathtrans']?>Incagregar.php">
