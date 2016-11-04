@@ -12,9 +12,6 @@
       <link href="<?=$CONFIG['sitio']?>assets/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/style.css">
-        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/owl-carousel/owl.carousel.css">
-        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/owl-carousel/owl.theme.css">
-        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/FlexSlider/jquery.flexslider.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/animate.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/font-awesome.min.css">
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/magnific-popup.css">       
@@ -22,31 +19,12 @@
     <!-- Materialize-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="<?=$CONFIG['sitio']?>materialize/css/materialize.min.css"  media="screen,projection"/>
-
-
-   
-
-
     <!-- WEB FONTS -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <link href="http://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
-       
-
-
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-          <script>
-$(document).ready(function(){
-   $("#enlaceajax").click(function(evento){
-      evento.preventDefault();
-      $("#txtHint").load("http://materializecss.com/tabs.html");
-   });
-})
-</script>
-          
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
         <script src="//cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
@@ -54,15 +32,7 @@ $(document).ready(function(){
         <script type="text/javascript" src="<?=$CONFIG['sitio']?>materialize/js/materialize.min.js"></script>
 
         <link rel="stylesheet" href="<?=$CONFIG['sitio']?>plugins/FlexSlider/jquery.flexslider.css">
-        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/animate.css">
-        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/font-awesome.min.css">
-        <link rel="stylesheet" href="<?=$CONFIG['sitio']?>css/magnific-popup.css">
-
-        <!-- WEB FONTS -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-        <link href="http://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
-
+        
         <!-- REVOLUTION STYLE ICON/FONT -->
         <link rel="stylesheet" type="text/css" href="<?=$CONFIG['sitio']?>plugins/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
         <link rel="stylesheet" type="text/css" href="plugins/revolution/fonts/font-awesome/css/font-awesome.min.css">

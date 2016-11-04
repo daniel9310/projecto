@@ -17,18 +17,111 @@
 
                         
                         <div class="input-field col s12 l12 m12">                              
-                                 
-                          <select name="fkArt">
-                             <option value="" disabled selected>Elige el Inciso</option>
-                             <?php 
-                                 foreach ($datos as $row => $dato) {                                        
-                              ?> 
-                              <option value="<?=$dato['id_inc']?>" required><?=$dato['num_inc']?></option>
-                              <?php 
-                                 }
-                              ?>                            
-                          </select>
-                          <label>Numero de Inciso</label>
+                            <div class="divselec">
+                              <label>Tipo de Ley</label>
+                              <select name="fkley">                          
+                              </select>
+                            </div>
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $.ajax({
+                                            type: "POST",
+                                            url: "Trans/crud/formato/getLey.php",
+                                            success: function(response)
+                                            {
+                                                $('.divselec select').html(response).fadeIn();
+                                            }
+                                    });
+
+                                });
+                            </script>   
+                        </div>
+
+                        <div class="input-field col s12 l12 m12">                              
+                          <div class="Artdiv">
+                            <label>Numero de Articulo</label>
+                            <select name="fkArt">
+                                                    
+                            </select>
+                          </div>     
+                          <script type="text/javascript">
+                              $(document).ready(function() {
+                                  $(".divselec select").change(function() {
+                                      var form_data = {
+                                              is_ajax: 1,
+                                              ley: +$(".divselec select").val()
+                                      };
+                                      $.ajax({
+                                              type: "POST",
+                                              url: "Trans/crud/formato/getArticulo.php",
+                                              data: form_data,
+                                              success: function(response)
+                                              {
+                                                  $('.Artdiv select').html(response).fadeIn();
+                                              }
+                                      });
+                                  });
+
+                              });
+                          </script> 
+                          
+                        </div>
+
+                        <div class="input-field col s12 l12 m12">                              
+                          <div class="FracSel">
+                             <label>Numero de Fraccion</label>
+                             <select name="fkfrac">                                                   
+                             </select>
+                          </div>
+                         <script type="text/javascript">
+                              $(document).ready(function() {
+                                  $(".Artdiv select").change(function() {
+                                      var form_data = {
+                                              is_ajax: 1,
+                                              articulo: +$(".Artdiv select").val()
+                                      };
+                                      $.ajax({
+                                              type: "POST",
+                                              url: "Trans/crud/formato/getFraccion.php",
+                                              data: form_data,
+                                              success: function(response)
+                                              {
+                                                  $('.FracSel select').html(response).fadeIn();
+                                              }
+                                      });
+                                  });
+
+                              });
+                          </script> 
+                          
+                        </div>
+                        <div class="input-field col s12 l12 m12">                              
+                          <div class="IncSel">
+                             <label>Numero de Inciso</label>
+                             <select name="fkinc">                                                   
+                             </select>
+                          </div>
+                         <script type="text/javascript">
+                              $(document).ready(function() {
+                                  $(".FracSel select").change(function() {
+                                      var form_data = {
+                                              is_ajax: 1,
+                                              fraccion: +$(".FracSel select").val()
+                                      };
+                                      $.ajax({
+                                              type: "POST",
+                                              url: "Trans/crud/formato/getInciso.php",
+                                              data: form_data,
+                                              success: function(response)
+                                              {
+                                                  $('.IncSel select').html(response).fadeIn();
+                                              }
+                                      });
+                                  });
+
+                              });
+                          </script> 
+                          
                         </div>
 
                         <div class="input-field col s12 l12 m12">
