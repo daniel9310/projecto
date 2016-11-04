@@ -1,10 +1,12 @@
 <script type="text/javascript">
   $("[name='fkley']").on("change",function(){
-    var valor = $(this).val()
+    var valor = $(this).val();
+    $("#ley1").append(valor);
   })
 
+
 </script>
-<?php 
+<?php
     session_start();
     require_once("../include/config/config.php");
     require_once($CONFIG['pathinclude']."config/cx.php");
@@ -13,6 +15,7 @@
     $datosley = $objLey->consult(1);
     $objFrac = new fracciones;
     $datos = $objFrac->read(1);
+    $variablephp = "<script> document.write(singleValues) </script>";
     /*$objForm = new formatos;
     $objCampo = new campoformatos;
     $objIng = new ingresardatos;*/
@@ -20,16 +23,14 @@
 <div class="rows">
                   <h3></h3>
                     <form class="form" target="" method="POST"  action="<?=$CONFIG['pathformato']?>fraccion/agregar.php">
+                        <div class="input-field col s12 l12 m12">
 
-                        
-                        <div class="input-field col s12 l12 m12">                              
-                                 
-                          <select name="fkley">
+                          <select name="fkley" id="fkley">
                              <option value="" disabled selected>Elige la Ley</option>
                              <?php 
                                  foreach ($datosley as $row => $datoley) {                                        
                               ?> 
-                              <option value="<?=$datoley['id_leyes']?>" required><?=$datoley['tipo']?></option>
+                              <option value="<?=$datoley['id_leyes']?>" required ><?=$datoley['tipo']?></option>
                               <?php 
                                  }
                               ?>                            
@@ -38,15 +39,16 @@
                         </div>
 
                         <div class="input-field col s12 l12 m12">                              
-                                 
-                          <select name="fkArt">
+                                 <p id="ley1"></p>
+                          <select name="fkArt" id="fkArt">
                              <option value="" disabled selected>Elige el Articulo</option>
                              <?php 
                              
     $objArt = new articulos;
     $datosart = $objArt->read(1);
     $consultaart = $objArt->readwhere();
-                                 foreach ($datosart as $row => $datoart) {                                        
+
+                                 foreach ($consultaart as $row => $datoart) {                                        
                               ?> 
                               <option value="<?=$datoart['id_art']?>" required><?=$datoart['num_art']?></option>
                               <?php 
@@ -54,6 +56,9 @@
                               ?>                            
                           </select>
                           <label>Numero de Articulo</label>
+                        </div>
+                        <div>
+                          <p id="prueba"></p>
                         </div>
 
                         <div class="input-field col s12 l12 m12">                              
@@ -95,3 +100,52 @@
                     <iframe name="agregarfraccion" height="0" width="0"  ></iframe> 
 
                 </div>
+<script type="text/javascript">
+  $(document).on('ready',function(){
+       function displayVals(aux) {
+        $( "#prueba" ).html( "<b>Single:"+aux+"</b> " + singleValues);
+
+} 
+  $( "#fkley").change(function(){
+    var aux = $("#fkley option:selected").val();
+    console.log(aux);
+    displayVals(aux);
+    });
+  });
+
+  var json = JSON.stringify({ descripcion: descripcion, idperfil: idperfil });
+    console.log(json);
+    var methodUrl = "../Index/NuevaFilaModificar";
+  $.ajax({
+        url: this,
+        type: 'POST',
+        dataType: 'json',
+        data: json,
+        contentType: 'application/json; charset=utf-8',
+        success: function (response) {
+            console.log(response);
+            $("#modalLoader").closeModal();
+            if (response.status == "error") {
+                Materialize.toast("" + response.message, 5000);
+            }
+            else {
+                var chtml = $("#updateFilas tbody").html();
+                chtml += '<tr data-id="'+response.idfila+'">'+
+                            '<td>'+response.descripcion+'</td><td class="right"><a id="delupFila" href="#" data-id="'+response.idfila+'" class="btn-floating red" style="margin-left:.5em;margin-right:.5em;"><i class="material-icons">delete</i></a></td>'+
+                        '</tr>';
+                $("#updateFilas tbody").html(chtml);
+                $("#AddupFilatxt").val("");
+                Materialize.toast("Agregado correctamente.",5000);
+            }
+        },
+        error: function (response) {
+            if (true) {
+                $("#modalLoader").closeModal();
+                Materialize.toast("Ocurrio un error al conectarse con el servidor.", 5000);
+                return false;
+            }
+        }
+    });
+
+
+</script>

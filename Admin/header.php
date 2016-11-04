@@ -83,7 +83,7 @@ $(document).ready(function(){
                         <span class="main-border">Panel Administrativo</span>
                     </h3>
                 </aside>
-                <aside class="rigth-side col-md-3 col-sm-3">
+                <aside class="rigth-side col-md-2 col-sm-2">
                 <form action="<?=$CONFIG['sitio']?>cerrarsesion.php" name="form_logout">
                     
                     <div class="list-group" style="text-align:right; align:right;">  
@@ -109,7 +109,7 @@ $(document).ready(function(){
     <aside class="left-side sidebar-offcanvas" >
         <div class="sidebar-block">
              
-            <ul class="nav nav-pills nav-stacked sidebar col-md-1 col-sm-1" >
+            <ul class="nav nav-pills nav-stacked sidebar col-md-2 col-sm-2" >
 
               <li id="inicio" class="<?php echo $pagina == 'inicio' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='?p=inicio'">Inicio</a></li>
   
@@ -191,7 +191,7 @@ $(document).ready(function(){
             -->
 
         <section>
-        	<div class="tab-content col-md-10 col-sm-10 home-main-contant-style blog-page-blog-style sidebar row" >
+        	<div class="tab-content col-md-9 col-sm-9 home-main-contant-style blog-page-blog-style sidebar row" >
         
            
            
