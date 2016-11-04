@@ -18,6 +18,7 @@
                 $(document).ready(function() {
                   $('select').material_select();
                 });
+                $('select').material_select('destroy');
                   $(document).ready(function() {
                     $('inptextarea#icon_prefix2').characterCounter();
 

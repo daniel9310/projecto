@@ -1,12 +1,4 @@
-<script type="text/javascript">
-  $("[name='fkley']").on("change",function(){
-    var valor = $(this).val();
-    $("#ley1").append(valor);
-  })
-
-
-</script>
-<?php
+<?php 
     session_start();
     require_once("../include/config/config.php");
     require_once($CONFIG['pathinclude']."config/cx.php");
@@ -14,66 +6,95 @@
     $objLey = new leyes;
     $datosley = $objLey->consult(1);
     $objFrac = new fracciones;
-    $datos = $objFrac->read(1);
-    $variablephp = "<script> document.write(singleValues) </script>";
+    $datos = $objFrac->read(1);                             
+    $objArt = new articulos;
+    $datosart = $objArt->read(1);
+    //$consultaart = $objArt->readwhere();
     /*$objForm = new formatos;
     $objCampo = new campoformatos;
     $objIng = new ingresardatos;*/
  ?>
 <div class="rows">
                   <h3></h3>
-                    <form class="form" target="" method="POST"  action="<?=$CONFIG['pathformato']?>fraccion/agregar.php">
-                        <div class="input-field col s12 l12 m12">
+                    <form class="form" target="" method="POST"  action="<?=$CONFIG['pathtrans']?>Incagregar.php">
+                        <div class="input-field col s12 l12 m12">                              
+                            <div class="divselec">
+                              <label>Tipo de Ley</label>
+                              <select name="fkley">                          
+                              </select>
+                            </div>
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $.ajax({
+                                            type: "POST",
+                                            url: "Trans/crud/formato/getLey.php",
+                                            success: function(response)
+                                            {
+                                                $('.divselec select').html(response).fadeIn();
+                                            }
+                                    });
 
-                          <select name="fkley" id="fkley">
-                             <option value="" disabled selected>Elige la Ley</option>
-                             <?php 
-                                 foreach ($datosley as $row => $datoley) {                                        
-                              ?> 
-                              <option value="<?=$datoley['id_leyes']?>" required ><?=$datoley['tipo']?></option>
-                              <?php 
-                                 }
-                              ?>                            
-                          </select>
-                          <label>Numero de Ley</label>
+                                });
+                            </script>   
                         </div>
 
                         <div class="input-field col s12 l12 m12">                              
-                                 <p id="ley1"></p>
-                          <select name="fkArt" id="fkArt">
-                             <option value="" disabled selected>Elige el Articulo</option>
-                             <?php 
-                             
-    $objArt = new articulos;
-    $datosart = $objArt->read(1);
-    $consultaart = $objArt->readwhere();
+                          <div class="Artdiv">
+                            <label>Numero de Articulo</label>
+                            <select name="fkArt">
+                                                    
+                            </select>
+                          </div>     
+                          <script type="text/javascript">
+                              $(document).ready(function() {
+                                  $(".divselec select").change(function() {
+                                      var form_data = {
+                                              is_ajax: 1,
+                                              ley: +$(".divselec select").val()
+                                      };
+                                      $.ajax({
+                                              type: "POST",
+                                              url: "Trans/crud/formato/getArticulo.php",
+                                              data: form_data,
+                                              success: function(response)
+                                              {
+                                                  $('.Artdiv select').html(response).fadeIn();
+                                              }
+                                      });
+                                  });
 
-                                 foreach ($consultaart as $row => $datoart) {                                        
-                              ?> 
-                              <option value="<?=$datoart['id_art']?>" required><?=$datoart['num_art']?></option>
-                              <?php 
-                                 }
-                              ?>                            
-                          </select>
-                          <label>Numero de Articulo</label>
-                        </div>
-                        <div>
-                          <p id="prueba"></p>
+                              });
+                          </script> 
+                          
                         </div>
 
                         <div class="input-field col s12 l12 m12">                              
-                                 
-                          <select name="fkfrac">
-                             <option value="" disabled selected>Elige la Fraccion</option>
-                             <?php 
-                                 foreach ($datos as $row => $dato) {                                        
-                              ?> 
-                              <option value="<?=$dato['id_frac']?>" required><?=$dato['num_frac']?></option>
-                              <?php 
-                                 }
-                              ?>                            
-                          </select>
-                          <label>Numero de Fraccion</label>
+                          <div class="FracSel">
+                             <label>Numero de Fraccion</label>
+                             <select name="fkfrac">                                                   
+                             </select>
+                          </div>
+                         <script type="text/javascript">
+                              $(document).ready(function() {
+                                  $(".Artdiv select").change(function() {
+                                      var form_data = {
+                                              is_ajax: 1,
+                                              articulo: +$(".Artdiv select").val()
+                                      };
+                                      $.ajax({
+                                              type: "POST",
+                                              url: "Trans/crud/formato/getFraccion.php",
+                                              data: form_data,
+                                              success: function(response)
+                                              {
+                                                  $('.FracSel select').html(response).fadeIn();
+                                              }
+                                      });
+                                  });
+
+                              });
+                          </script> 
+                          
                         </div>
 
                         <div class="input-field col s12 l12 m12">
@@ -100,52 +121,3 @@
                     <iframe name="agregarfraccion" height="0" width="0"  ></iframe> 
 
                 </div>
-<script type="text/javascript">
-  $(document).on('ready',function(){
-       function displayVals(aux) {
-        $( "#prueba" ).html( "<b>Single:"+aux+"</b> " + singleValues);
-
-} 
-  $( "#fkley").change(function(){
-    var aux = $("#fkley option:selected").val();
-    console.log(aux);
-    displayVals(aux);
-    });
-  });
-
-  var json = JSON.stringify({ descripcion: descripcion, idperfil: idperfil });
-    console.log(json);
-    var methodUrl = "../Index/NuevaFilaModificar";
-  $.ajax({
-        url: this,
-        type: 'POST',
-        dataType: 'json',
-        data: json,
-        contentType: 'application/json; charset=utf-8',
-        success: function (response) {
-            console.log(response);
-            $("#modalLoader").closeModal();
-            if (response.status == "error") {
-                Materialize.toast("" + response.message, 5000);
-            }
-            else {
-                var chtml = $("#updateFilas tbody").html();
-                chtml += '<tr data-id="'+response.idfila+'">'+
-                            '<td>'+response.descripcion+'</td><td class="right"><a id="delupFila" href="#" data-id="'+response.idfila+'" class="btn-floating red" style="margin-left:.5em;margin-right:.5em;"><i class="material-icons">delete</i></a></td>'+
-                        '</tr>';
-                $("#updateFilas tbody").html(chtml);
-                $("#AddupFilatxt").val("");
-                Materialize.toast("Agregado correctamente.",5000);
-            }
-        },
-        error: function (response) {
-            if (true) {
-                $("#modalLoader").closeModal();
-                Materialize.toast("Ocurrio un error al conectarse con el servidor.", 5000);
-                return false;
-            }
-        }
-    });
-
-
-</script>
