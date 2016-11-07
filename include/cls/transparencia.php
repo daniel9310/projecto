@@ -277,25 +277,50 @@
 	/**
 	* 
 	*/
-	/*class formatos
+	class formatos
 	{
 		
-		function consult(argument)
+		function create($v_nombre,$v_nombrecorto,$v_descripcion)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Formato_ingresar('%1\$s','%2\$s','%3\$s')";
+			$sql = sprintf($sql, $descripcion, $tipo, $idusr,$activo);
+			$result = $link->query($sql);
+			$link->next_result();			
+			return $result;
 		}
-		function replace(argument)
+		/*
+		function read(argument)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Inciso_consulta(%1\$s) ";
+			$sql = sprintf($sql, $idusr);
+			$result = $link->query($sql);
+			$resultado = array();
+			while( $row = mysqli_fetch_assoc($result) ){
+			$resultado[] = $row;
+			}
+			$link->next_result();			
+			return $resultado;
 		}
 		function update(argument)
 		{
-			# code...
+			global $link;
+			$sql = "CALL Inciso_modificar('%1\$s','%2\$s','%3\$s','%4\$s')";
+			$sql = sprintf($sql,$incid, $descripcion, $numfinc, $fkfrac);
+			$result = $link->query($sql);	
+						$link->next_result();		
+			return $result;
 		}
 		function delete(argument)
 		{
-			# code...
-		}
+			global $link;
+			$sql = "CALL Inciso_borrar('%1\$s')";
+			$sql = sprintf($sql, $id);
+			$result = $link->query($sql);			
+			$link->next_result();			
+			return $result;
+		}*/
 	}
 
 	/**

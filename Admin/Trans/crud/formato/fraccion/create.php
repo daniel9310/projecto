@@ -71,7 +71,7 @@
                         <div class="input-field col s12 l12 m12">                              
                           <div class="FracSel">
                              <label>Numero de Fraccion</label>
-                             <select name="fkfrac">                                                   
+                             <select name="fkfrac" required="">                                                   
                              </select>
                           </div>
                          <script type="text/javascript">
