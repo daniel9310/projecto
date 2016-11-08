@@ -10,6 +10,7 @@ $CONFIG['sitioimgnotas'] = $CONFIG['sitio']."files/notas/img/";
 $CONFIG['pathtrans'] = $CONFIG['sitio']."Admin/Trans/relacion/";
 $CONFIG['pathtranscrud'] = $CONFIG['sitio']."Admin/Trans/crud/";
 $CONFIG['pathformato'] = $CONFIG['sitio']."Admin/Trans/crud/formato/";
+$CONFIG['pathpln'] = $CONFIG['sitio']."Admin/Plno/";
 
 $CONFIG['pathpuente'] = "/home/itiesorg/public_html/puente/";
 $CONFIG['sitiopuente'] = "http://".$_SERVER['HTTP_HOST']."/puente/";

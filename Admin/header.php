@@ -79,7 +79,7 @@
     <aside class="left-side sidebar-offcanvas" >
         <div class="sidebar-block">
              
-            <ul class="nav nav-pills nav-stacked sidebar col-md-1 col-sm-1" >
+            <ul class="nav nav-pills nav-stacked sidebar col-md-1 col-sm-2" >
 
               <li id="inicio" class="<?php echo $pagina == 'inicio' ? 'active' : ''; ?>">    <a data-toggle="pill" href="#" onclick="window.location='?p=inicio'">Inicio</a></li>
   
@@ -161,7 +161,7 @@
             -->
 
         <section>
-        	<div class="tab-content col-md-10 col-sm-10 home-main-contant-style blog-page-blog-style sidebar row" >
+        	<div class="tab-content col-md-10 col-sm-9 home-main-contant-style blog-page-blog-style sidebar row" >
         
            
            
