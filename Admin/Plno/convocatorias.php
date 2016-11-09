@@ -3,7 +3,7 @@
               ?>   
                
                         <div class="">
-                        <h2 style="text-align: center;">Resoluciones</h2>
+                        <h2 style="text-align: center;">Convocatorias</h2>
                           <ul class="nav nav-pills">
                             <li class="<?php echo $pagina == 'create' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=pleno&j=convocatorias&crud=create'">Agregar</a></li>
                             <li class="<?php echo $pagina == 'read' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=pleno&j=convocatorias&crud=read'">Consulta</a></li>

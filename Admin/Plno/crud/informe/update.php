@@ -1,8 +1,8 @@
     <?php
             require_once($CONFIG['pathinclude']."config/cx.php");
             require_once($CONFIG['pathinclude']."cls/pleno.php");
-            $objResMod = new resoluciones;
-            $ConsulModi = $objResMod->readid($_POST['rsl_id']);
+            $objInf = new informe;
+            $ConsulModi = $objInf->readid($_POST['id_inf']);
             //var_dump($ConsulModi['nts_fecha']);
     ?>
     <section class="services-style-3 main-contain">
@@ -13,38 +13,20 @@
                                         
                 <div class="form-main" >
                     <div class="row">
-                      <form class="col l12"  method="POST"   enctype="multipart/form-data" name="inscripcion" action="<?= $CONFIG['pathpln']?>relacion/Resolmodificar.php">
+                      <form class="col l12"  method="POST"   enctype="multipart/form-data" name="inscripcion" action="<?= $CONFIG['pathpln']?>relacion/Infmodificar.php">
                         <div class="row">
-                          <input type="hidden" name="id_rsl" placeholder="ID DE USUARIO" value="<?=$ConsulModi['rsl_id']?>" >
+                          <input type="hidden" name="id_inf" placeholder="ID DE USUARIO" value="<?=$ConsulModi['id_inf']?>" >
                           
-                          
+                           <div class="input-field col s12">
+                              <i class="material-icons prefix">note</i>
+                              <textarea length="500" id="icon_prefix2" class="materialize-textarea" name="descripcion_informe"><?=$ConsulModi['descripcion']?></textarea>
+                              <label for="icon_prefix2">Descripcion del Informe</label>
+                            </div>
 
                           <div class="input-field col s12">
-                            <input name="Expediente"  type="text" class="validate" required=""  value="<?=$ConsulModi['rsl_expediente']?>">
-                            <label for="Expediente">Nombre de Expediente</label>
-                          </div>                                               
-                       
-                          <div class="input-field col s12">
-                            <input name="SujetoOblig" type="text" class="validate" value="<?=$ConsulModi['rsl_sobligado']?>" >
-                            <label for="SujetoOblig">Nombre de Sujeto Obligado</label>
-                          </div>
-
-                          <div class="input-field col s12">
-                            <input name="Recurrente" type="text" class="validate" value="<?=$ConsulModi['rsl_recurrente']?>" >
-                            <label for="Recurrente">Nombre de Recurrente</label>
-                          </div>  
-
-                          <div class="input-field col s12">
-                            <input name="AResolucion" type="number" class="validate" min="2000" max="2020" step="1" value="<?=$ConsulModi['rsl_anio']?>" >
-                            <label for="AResolucion">Año de Resolucion</label>
-                          </div>  
-
-                          <div class="input-field col s12">                                                      
-                            <input id="nombre" type="text" class="datepicker" name="fecha_rsl" required value="<?=$ConsulModi['rsl_fecha']?>" >
-                            <label for="nombre">Fecha de Resolucion</label>
-                          </div>                                               
-
-                          
+                            <input name="anio_inf" type="number" class="validate" min="2000" max="2020" step="1" value="<?=$ConsulModi['anio']?>" >
+                            <label for="anio_inf">Año de Informe</label>
+                          </div>      
 
                             <div class="col s12">
                                 <div class="file-field input-field">
@@ -54,7 +36,7 @@
                                     <input type="file" name="Arch" required="" >
                                   </div>
                                   <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text" value="<?=$ConsulModi['rsl_archivo']?>">
+                                    <input class="file-path validate" type="text" value="<?=$ConsulModi['archivo']?>">
                                   </div>
                                 </div>
                             </div>

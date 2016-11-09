@@ -3,9 +3,9 @@
               ?>   
                
                         <div class="">
-                        <h2 style="text-align: center;">Resoluciones</h2>
+                        <h2 style="text-align: center;">Listas de Acuerdos</h2>
                           <ul class="nav nav-pills">
-                            <li class="<?php echo $pagina == 'create' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=pleno&j=lista&crud=create'">Agregar</a></li>
+                            <li class="<?php echo $pagina == 'create' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=pleno&j=listas&crud=create'">Agregar</a></li>
                             <li class="<?php echo $pagina == 'read' ? 'active' : ''; ?>"> <a data-toggle="pill" href="#" onclick="window.location='?p=pleno&j=listas&crud=read'">Consulta</a></li>
                             
                           </ul>
