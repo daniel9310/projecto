@@ -10,7 +10,7 @@
 	if (!empty($vid)) {
 			echo '<script type="text/javascript">
 				          alert("El Usuario Fue Borrado Satisfactoriamente");
-				          window.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"
 				          
 				          </script>';
 		}	

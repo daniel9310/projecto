@@ -13,19 +13,107 @@
 	$v_rotativo = $_POST['rotativo_nts'];
 	$varchivo =  $_FILES['Doc']["name"];
 	$vimagen = $_FILES["Image"]["name"];
-	$iman = $_POST['imagehidden'];
 	$v_url = $_POST['url_nts'];
-	var_dump($vimagen);
-
+	$iman = $_POST['imagehidden'];
+	$Doctipo = $_POST['dochidden'];
 	require_once("include/config/config.php");
 	require_once($CONFIG['pathinclude']."config/cx.php");
 	require_once($CONFIG['pathinclude']."cls/notas.php");
 	$objNts = new notas;	
 
 
+	  # definimos la carpeta destino
+	    $carpetaDestino=$CONFIG['path'].$CONFIG['notas'];
+	    //$carpetaDestino= $CONFIG['sitioimgnotas'];
+	     
+          if ($Doctipo == $_FILES["Doc"]["name"]) {
+            echo "Es igual"; }
+         else{
+	    # si hay algun archivo que subir
+
+	    if($_FILES['Doc']["name"])
+	    { 
+	        
+	            # si es un formato de imagen
+
+	            if( $_FILES["Doc"]["type"]=="application/pdf" || $_FILES["Doc"]["type"]=="application/msword")
+	            {
+	                # si exsite la carpeta o se ha creado
+
+	                
+	                    $origen=$_FILES["Doc"]["tmp_name"];
+
+	                    $destino=$carpetaDestino.$_FILES['Doc']["name"];
+	                    
+	                    # movemos el archivo
+
+	                    if(move_uploaded_file($origen, $destino))
+	                    {
+	                        echo "<br>".$_FILES['Doc']["name"]." movido correctamente";
+	                    }else{
+	                        echo "<br>No se ha podido mover el archivo: ".$_FILES['Doc']["name"];
+	                    }
+
+	                
+
+	            }else{
+	                echo "<br>".$_FILES['Doc']["name"]." - NO es un archivo .doc  O .pdf";
+	            }
+	        
+	    }else{
+
+	        echo "<br>No se ha subido ningun archivo";
+
+	    }
+	}
+
+	     # definimos la carpeta destino
+	    $carpetaDestino=$CONFIG['path'].$CONFIG['notas']."img/";
+        //$carpetaDestino= $CONFIG['sitioimgnotas'];
+        
+          if ($iman == $_FILES["Image"]["name"]) {
+            echo "Es igual"; }else{
+        # si hay algun archivo que subir
+
+	        if($_FILES["Image"]["name"])
+	        { 
+	            
+	                # si es un formato de imagen
+
+	                if($_FILES["Image"]["type"]=="image/jpeg" || $_FILES["Image"]["type"]=="image/pjpeg" || $_FILES["Image"]["type"]=="image/gif" || $_FILES["Image"]["type"]=="image/png" )
+	                {
+	                    # si exsite la carpeta o se ha creado
+
+	                    
+	                        $origen=$_FILES["Image"]["tmp_name"];
+
+	                        $destino=$carpetaDestino.$_FILES["Image"]["name"];
+	                        
+	                        # movemos el archivo
+
+	                        if(move_uploaded_file($origen, $destino))
+	                        {
+	                            echo "<br>".$_FILES["Image"]["name"]." movido correctamente";
+	                        }else{
+	                            echo "<br>No se ha podido mover el archivo: ".$_FILES["Image"]["name"];
+	                        }
+
+	                    
+
+	                }else{
+	                    echo "<br>".$_FILES["Image"]["name"]." - NO es imagen jpg";
+	                }
+	            
+	        }else{
+
+	            echo "<br>No se ha subido ninguna imagen";
+
+	        }
+    }
+
 	//$UsrCon = $objNts->Consulta_All();
-	echo "                         .";
-	var_dump($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
+	var_dump($iman,$Doctipo);
+	var_dump($vimagen,$varchivo);
 		
 		if (empty($v_fecha) and empty($v_titulo) and empty($v_titulop) and empty($v_descripcion) and empty($vimagen)) {
 			echo '<script type="text/javascript">
@@ -33,34 +121,74 @@
 				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"			          
 				          </script>';
 		}else{
-			if (!preg_match("/^[0-9]$/",$v_rotativo)) {
-			echo '<script type="text/javascript">
-				          alert("El campo de tipo de usuario admite solamente Digitos");
-				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
-				          </script>';
-			}else{
-				if($vimagen == ""){
-					echo '<script type="text/javascript">
+				if($vimagen == "" && $iman ==""){
+					if ($varchivo =="" && $Doctipo=="") {
+						echo '<script type="text/javascript">
 				          alert("Usuario Guardado Satisfactoriamente");
 				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
 				          </script>';
-					$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$iman , $varchivo ,$v_url);
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
+					}
+					elseif ($varchivo=="" && $Doctipo != "" ) {
+						echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $Doctipo ,$v_url);
+					}
+					else{
+						echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
+					}
+				}elseif($vimagen =="" && $iman !=""){
+					
+					if ($varchivo =="" && $Doctipo=="") {
+						echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$iman , $varchivo ,$v_url);
+					}
+					elseif ($varchivo=="" && $Doctipo != "" ) {
+						echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$iman , $Doctipo ,$v_url);
+					}
+					else{
+						echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$iman , $varchivo ,$v_url);
+					}
+				
 				}else{
-					echo '<script type="text/javascript">
+					if ($varchivo =="" && $Doctipo=="") {
+						echo '<script type="text/javascript">
 				          alert("Usuario Guardado Satisfactoriamente");
 				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
 				          </script>';
-					$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
-				
-				}
-				
-				
-			}	
-		
-		}
-		
-			
-		
-	
-	
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
+					}
+					elseif ($varchivo=="" && $Doctipo != "" ) {
+						echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $Doctipo ,$v_url);
+					}
+					else{
+						echo '<script type="text/javascript">
+				          alert("Usuario Guardado Satisfactoriamente");
+				          window.parent.location="Admin/paneladm.php?p=difusion&j=notas&k=consulta"				          
+				          </script>';
+						$NtsMod = $objNts->modificarNota($v_idnota,$v_fecha, $v_titulop,$v_titulo, $v_rotativo,  $v_descripcioncorta, $v_descripcion , $v_descripcioninterior, $v_nota,$v_pienota ,$vimagen , $varchivo ,$v_url);
+					}
+				}		
+		}	
 ?>

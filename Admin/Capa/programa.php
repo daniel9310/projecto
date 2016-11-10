@@ -1,5 +1,5 @@
 <?php
-    function to_roman($num) {
+   function to_roman($num) {
     if ($num <0 || $num >9999) {return -1;}
     $r_ones = array(1=>"I", 2=>"II", 3=>"III", 4=>"IV", 5=>"V", 6=>"VI", 7=>"VII", 8=>"VIII",
     9=>"IX");
@@ -23,11 +23,12 @@
     return $rnum;
     }
    ?>
-    <form method="post">
+    <!--form method="post">
     <input type="text" name="numero" class="validate" />
     <input type="submit" value="Comprobar"/>
     </form>
-    <?
-
-    ?>
-    <textarea><?='En numeros romanos: '.to_roman(@$_POST['numero']);?></textarea>
+    <textarea><?='En numeros romanos: '.to_roman(@$_POST['numero']);?></textarea-->
+   <div style="text-align: center; align-items: center;">
+   <img src="construccion.png" align="center">
+ </div>
+    

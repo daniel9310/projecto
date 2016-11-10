@@ -13,7 +13,7 @@
     $objIng = new ingresardatos;*/
  ?>
 
-  <div class="row">
+  <!--div class="row">
     <div class="col s12">
       <ul class="tabs">
       <?php 
@@ -40,5 +40,8 @@
     <?php 
        }
     ?> 
-  </div>
+  </div-->
+  <div style="text-align: center; align-items: center;">
+   <img src="construccion.png" align="center">
+ </div>
         

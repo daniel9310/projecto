@@ -11,7 +11,7 @@
 		$BorrarResol = $objres->delete($vid);
 			echo '<script type="text/javascript">
 				          alert("El Usuario Fue Borrado Satisfactoriamente");
-				          window.location="../../paneladm.php?p=pleno&j=resoluciones&crud=read"
+				          window.parent.location="../../paneladm.php?p=pleno&j=resoluciones&crud=read"
 				          </script>';
 				          
 		}	

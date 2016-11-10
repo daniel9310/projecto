@@ -11,6 +11,12 @@ $CONFIG['pathtrans'] = $CONFIG['sitio']."Admin/Trans/relacion/";
 $CONFIG['pathtranscrud'] = $CONFIG['sitio']."Admin/Trans/crud/";
 $CONFIG['pathformato'] = $CONFIG['sitio']."Admin/Trans/crud/formato/";
 $CONFIG['pathpln'] = $CONFIG['sitio']."Admin/Plno/";
+$CONFIG['resoluciones'] =  "files/resoluciones/";
+$CONFIG['actas'] =  "files/actas/";
+$CONFIG['acuerdos'] =  "files/acuerdos/";
+$CONFIG['convocatorias'] =  "files/convocatorias/";
+$CONFIG['informes'] =  "files/informes/";
+$CONFIG['notas'] =  "files/notas/";
 
 $CONFIG['pathpuente'] = "/home/itiesorg/public_html/puente/";
 $CONFIG['sitiopuente'] = "http://".$_SERVER['HTTP_HOST']."/puente/";
