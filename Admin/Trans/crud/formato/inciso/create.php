@@ -26,7 +26,7 @@
                                 $(document).ready(function() {
                                     $.ajax({
                                             type: "POST",
-                                            url: "Trans/crud/formato/getLey.php",
+                                            url: "Trans/relacion/getLey.php",
                                             success: function(response)
                                             {
                                                 $('.divselec select').html(response).fadeIn();
@@ -53,7 +53,7 @@
                                       };
                                       $.ajax({
                                               type: "POST",
-                                              url: "Trans/crud/formato/getArticulo.php",
+                                              url: "Trans/relacion/getArticulo.php",
                                               data: form_data,
                                               success: function(response)
                                               {
@@ -82,7 +82,7 @@
                                       };
                                       $.ajax({
                                               type: "POST",
-                                              url: "Trans/crud/formato/getFraccion.php",
+                                              url: "Trans/relacion/getFraccion.php",
                                               data: form_data,
                                               success: function(response)
                                               {
@@ -98,7 +98,7 @@
                         <div class="input-field col s12 l12 m12">                              
                           <div class="IncSel">
                              <label>Numero de Inciso</label>
-                             <select name="fkinc">                                                   
+                             <select name="fkinc" required="">                                                   
                              </select>
                           </div>
                          <script type="text/javascript">

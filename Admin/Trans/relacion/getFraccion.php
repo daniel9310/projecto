@@ -9,10 +9,7 @@ $result = mysql_query($query)
 mysql_close();
 echo '<option value="" disabled selected>Elige la Fraccion</option>';
 while (($fila = mysql_fetch_array($result)) != NULL) {
-    if ($fila== NULL) {
-		 echo '<option >'."No hay Elementos".'</option>';
-	}else{echo '<option value="'.$fila["id_frac"].'">'.$fila["num_frac"].'</option>';}
-    
+    echo '<option value="'.$fila["id_frac"].'">'.$fila["num_frac"].'</option>';
 }
 // Liberar resultados
 mysql_free_result($result);

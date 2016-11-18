@@ -9,7 +9,12 @@ $result = mysql_query($query)
 mysql_close();
 echo '<option value="" disabled selected>Elige el Articulo</option>';
 while (($fila = mysql_fetch_array($result)) != NULL) {
-    echo '<option value="'.$fila["id_art"].'">'.$fila["num_art"].'</option>';
+	if ($fila== NULL) {
+		 echo '<option >'."No hay Elementos".'</option>';
+	}else{
+		echo '<option value="'.$fila["id_art"].'">'.$fila["num_art"].'</option>';
+	}
+    
 }
 // Liberar resultados
 mysql_free_result($result);
